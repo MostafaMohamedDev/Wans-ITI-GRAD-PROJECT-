@@ -1,0 +1,25 @@
+.background-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .background-container {
+      background-size: contain;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .background-container {
+      background-size: cover;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .background-container {
+      background-size: contain;
+      background-position: top;
+    }
+  }
+  

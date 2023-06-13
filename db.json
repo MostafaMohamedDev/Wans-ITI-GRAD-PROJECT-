@@ -1,0 +1,516 @@
+{
+  "shelters": [
+    {
+      "id": 1,
+      "name": "Happy Tails Animal Shelter",
+      "phone": "111-111-1111",
+      "address": "123 Main St, Nasr City",
+      "type": "cat",
+      "pet": {
+        "name": "Buddy",
+        "image": "https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_700/MTk3MjI5OTczMDA0NjI0OTc5/cute-pet-names.webp",
+        "description": "Buddy is a charming and affectionate cat. He loves to curl up in your lap and enjoys being petted."
+      }
+    },
+    {
+      "id": 2,
+      "name": "Paw Prints Rescue Center",
+      "phone": "222-222-2222",
+      "address": "456 Elm St, Giza",
+      "type": "dog",
+      "pet": {
+        "name": "Fluffy",
+        "image": "https://media.istockphoto.com/id/1248529734/photo/golden-retriever-in-the-field-with-yellow-flowers.jpg?s=612x612&w=0&k=20&c=DQhfvzclkW-CJRE4vlJAG35PnDIewKgRO5zlBRif1Gg=",
+        "description": "Fluffy is a friendly and playful dog. She loves to go on long walks and enjoys playing fetch."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Loving Paws Adoption Agency",
+      "phone": "333-333-3333",
+      "address": "789 Oak St, Elsalam",
+      "type": "cat",
+      "pet": {
+        "name": "Lucy",
+        "image": "https://media.istockphoto.com/id/465257035/photo/small-orange-kitten-lie-on-the-bed.webp?b=1&s=170667a&w=0&k=20&c=bIYTs3vCGzOukVMQtqoSm8UAJk0hR792vdVYe6F8L-k=",
+        "description": "Lucy is a graceful and independent cat. She enjoys lounging in sunny spots and observing her surroundings."
+      }
+    },
+    {
+      "id": 4,
+      "name": "Furry Friends Sanctuary",
+      "phone": "444-444-4444",
+      "address": "567 Pine St, Dokii",
+      "type": "dog",
+      "pet": {
+        "name": "Max",
+        "image": "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "description": "Max is an energetic and intelligent dog. He is highly trainable and loves to learn new tricks."
+      }
+    },
+    {
+      "id": 5,
+      "name": "Whiskers and Wags Animal Rescue",
+      "phone": "555-555-5555",
+      "address": "321 Maple Ave, Sheraton",
+      "type": "dog",
+      "pet": {
+        "name": "Oscar",
+        "image": "https://media.istockphoto.com/id/1413640918/photo/dog-jumping-in-autumn-leaves.webp?b=1&s=170667a&w=0&k=20&c=2b1dPjUZnS-U_lmBYYIjbw9t3vOo7ILYr1K8eO73fDw=",
+        "description": "Oscar is a playful and curious dog. He loves playing around and enjoys eating dry food"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Pawsitive Vibes Shelter",
+      "phone": "666-666-6666",
+      "address": "789 Oak St, Hillioplis",
+      "type": "cat",
+      "pet": {
+        "name": " Luna",
+        "image": "https://media.istockphoto.com/id/1185437742/photo/close-up-view-of-gray-tabby-cute-kitten-pets-and-lifestyle-concept-lovely-fluffy-cat-on-grey.webp?b=1&s=170667a&w=0&k=20&c=pev30nO249Z-P_efXOM0iYqLoITGXghf_qnKqjJ-lNg=",
+        "description": "Luna is an elegant and affectionate cat. She loves to be petted and enjoys lounging in cozy spots."
+      }
+    },
+    {
+      "id": 7,
+      "name": "Fur-ever Homes Adoption Cente",
+      "phone": "777-777-7777",
+      "address": "987 Elm St, Townville",
+      "type": "cat",
+      "pet": {
+        "name": "Rocky",
+        "image": "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "description": "Rocky is a loyal and active cat. He enjoys going for runs and playing fetch with a tennis ball."
+      }
+    },
+    {
+      "id": 8,
+      "name": "Hopeful Hearts Animal Sanctuary",
+      "phone": "888-888-8888",
+      "address": "123 Oak St, Elharam",
+      "type": "dog",
+      "pet": {
+        "name": "Max",
+        "image": "https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "description": "Max is a playful and energetic dog. He loves hopping around and exploring his surroundings."
+      }
+    },
+    {
+      "id": 9,
+      "name": "Paws and Claws Adoption Center",
+      "phone": "999-999-9999",
+      "address": "456 Pine St, Ain Shams",
+      "type": "cat",
+      "pet": {
+        "name": "Loka",
+        "image": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhdHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "description": "Loka is an elegant and affectionate cat. She loves to be petted and enjoys lounging in cozy spots."
+      }
+    }
+  ],
+  "clinics": [
+    {
+      "id": 1,
+      "name": "Animal Medical Center",
+      "phone": "183-239-8115",
+      "address": "123 Oak St, Cityville",
+      "img": "https://media.istockphoto.com/id/1303833951/photo/vet-doctor-examining-labrador-dog.jpg?s=612x612&w=0&k=20&c=HWMvyA16YdGhkayGOTqlmM6gX7gSklzoOjzDlODD2Is=",
+      "availableAppointments": [
+        " Today : 9:00 AM",
+        " , 2:00 PM ",
+        "  , 4:30 PM "
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Happy Tails Veterinary Clinic",
+      "phone": "932-252-3281",
+      "address": "456 Elm St, Townville",
+      "img": "https://media.istockphoto.com/id/878447520/photo/vet-with-dog-and-cat.jpg?s=612x612&w=0&k=20&c=OumgIZ4isr4Gj8RZbriP5D0OWaX04C57kUzOT96K8tU=",
+      "availableAppointments": [
+        "  Today : 10:00 AM",
+        "  , 3:30 PM "
+      ]
+    },
+    {
+      "id": 3,
+      "name": "VCA Animal Hospital",
+      "phone": "395-123-7683",
+      "address": "789 Oak St, Villagetown",
+      "img": "https://media.istockphoto.com/id/885571364/photo/young-french-bulldog-on-the-visit-to-the-vet.jpg?s=612x612&w=0&k=20&c=VqeEbRjrDxb6mCBaIJfWooSDQAjkPS8aNTBJ8HQyZeA=",
+      "availableAppointments": [
+        " Today : 8:30 AM",
+        "  , 1:30 PM ",
+        "  , 5:00 PM "
+      ]
+    },
+    {
+      "id": 4,
+      "name": "BluePearl Veterinary Partners",
+      "phone": "414-984-7612",
+      "address": "567 Pine St, Countryside",
+      "img": "https://media.istockphoto.com/id/1158247958/photo/vet-cuddling-pet-dog.jpg?s=612x612&w=0&k=20&c=obxvtFgO1Um2UDfo8qPZk06VE8vK4s-oklvd0ZdFEQ0=",
+      "availableAppointments": [
+        " Today : 9:30 AM ",
+        " , 2:30 PM ",
+        "  , 4:00 PM "
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Bayshore Veterinary Clinic",
+      "phone": "845-234-1232",
+      "address": "321 Maple Ave, Citytown",
+      "img": "https://media.istockphoto.com/id/454435997/photo/this-isnt-a-chew-toy.jpg?s=612x612&w=0&k=20&c=U8nUsrWJFMHFlkvxiod17994T631U3pXf-om4xlXKU0=",
+      "availableAppointments": [
+        " Today :8:00 AM",
+        " , 1:00 PM",
+        " , 3:00 PM"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Oakhurst Veterinary Hospital",
+      "phone": "609-754-1254",
+      "address": "789 Elm St, Townville",
+      "img": "https://media.istockphoto.com/id/665117622/photo/curious-puppy.jpg?s=612x612&w=0&k=20&c=M6MOANnJoZg77b8sQKzZkCyDlRjNLIjmRIqs1sNR6ZE=",
+      "availableAppointments": [
+        " Today :9:00 AM",
+        " , 2:00 PM",
+        " , 4:30 PM"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Veterinary Medical Center",
+      "phone": "987-234-5443",
+      "address": "987 Oak St, Villagetown",
+      "img": "https://media.istockphoto.com/id/1162639281/photo/very-happy-veterinarian-getting-a-kiss-from-a-dog.jpg?s=612x612&w=0&k=20&c=WkWRTEuL5k8sMAktaeV-_eqdO6B7HWNwJCBq-8botaE=",
+      "availableAppointments": [
+        " Today :10:00 AM",
+        " , 3:30 PM"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Paws & Claws Animal Hospital",
+      "phone": "809-348-1287",
+      "address": "123 Pine St, Countryside",
+      "img": "https://media.istockphoto.com/id/1214635081/photo/vet-examining-the-pet.jpg?s=612x612&w=0&k=20&c=Q3GiFg6PhuidDxkoKJOB88Q-C5K9BvKSiAOSYDmBuOM=",
+      "availableAppointments": [
+        " Today :8:30 AM",
+        " , 1:30 PM",
+        "  , 5:00 PM"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Midtown Veterinary Hospital",
+      "phone": "876-325-6699",
+      "address": "456 Maple Ave, Citytown",
+      "img": "https://media.istockphoto.com/id/1187228710/photo/veterinarians-carry-through-an-ultrasound-examination-of-a-domestic-cat.jpg?s=612x612&w=0&k=20&c=n7ZEagYwhXFZIhdE_EZWA6bQDVzlNGEi7OLIqrVrPOQ=",
+      "availableAppointments": [
+        " Today : 9:30 AM",
+        " , 2:30 PM",
+        " , 4:00 PM"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Pet Bed",
+      "image": "https://m.media-amazon.com/images/I/61rkpTDc2XL._AC_SX679_.jpg",
+      "price": 29.99,
+      "details": "A comfortable bed for your pet to rest on",
+      "category": "beds"
+    },
+    {
+      "id": 2,
+      "name": "Pet Food",
+      "image": "https://cdn.sanity.io/images/0vv8moc6/nutrioutlook/c23019205bd4c2ca4ae546de4da8da9680d52c2a-500x500.jpg",
+      "price": 12.99,
+      "details": "High-quality food for your pet",
+      "category": "food"
+    },
+    {
+      "id": 3,
+      "name": "Pet Toy",
+      "image": "https://cdn.thewirecutter.com/wp-content/uploads/2021/12/dog-toys-2048px-0010.jpg",
+      "price": 5.99,
+      "details": "A fun toy for your pet to play with",
+      "category": "toys"
+    },
+    {
+      "id": 4,
+      "name": "Pet Shampoo",
+      "image": "https://happet.net/wp-content/uploads/2020/07/IMG20200713004949.jpg",
+      "price": 8.99,
+      "details": "A gentle shampoo for your pet",
+      "category": "grooming"
+    },
+    {
+      "id": 5,
+      "name": "Pet Collar",
+      "image": "https://m.media-amazon.com/images/I/61FBjvIoKUL.__AC_SY300_SX300_QL70_ML2_.jpg",
+      "price": 14.99,
+      "details": "A stylish collar for your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 6,
+      "name": "Dog Bed",
+      "image": "https://www.chewy.com/tuft-n-stuff-cloud-bed-dog/dp/171363",
+      "price": 39.99,
+      "details": "A plush and comfortable bed for your dog",
+      "category": "beds"
+    },
+    {
+      "id": 7,
+      "name": "Cat Bed",
+      "image": "https://www.chewy.com/ohana-cozy-cave-cat-bed/dp/207213",
+      "price": 24.99,
+      "details": "A cozy and stylish bed for your cat",
+      "category": "beds"
+    },
+    {
+      "id": 8,
+      "name": "Dog Food",
+      "image": "https://www.chewy.com/purina-pro-plan-sensitive-skin-stomach-salmon/dp/124728",
+      "price": 34.99,
+      "details": "A high-quality food for dogs with sensitive skin or stomachs",
+      "category": "food"
+    },
+    {
+      "id": 9,
+      "name": "Cat Food",
+      "image": "https://www.chewy.com/blue-buffalo-wilderness-grain-free-dry-cat/dp/133924",
+      "price": 29.99,
+      "details": "A high-quality food for cats that is grain-free",
+      "category": "food"
+    },
+    {
+      "id": 11,
+      "name": "Cat Toy",
+      "image": "https://www.chewy.com/pipsqueak-feather-teaser-cat-toy/dp/172425",
+      "price": 9.99,
+      "details": "A fun and interactive toy for your cat",
+      "category": "toys"
+    },
+    {
+      "id": 12,
+      "name": "Pet Carrier",
+      "image": "https://www.chewy.com/petstages-ultra-lightweight-soft-sided-dog/dp/145428",
+      "price": 29.99,
+      "details": "A sturdy and comfortable carrier for your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 13,
+      "name": "Pet Bowl",
+      "image": "https://www.chewy.com/petsafe-surefeed-microchip-feeding-bowl/dp/182587",
+      "price": 49.99,
+      "details": "A smart bowl that only lets your pet eat if they have a microchip",
+      "category": "accessories"
+    },
+    {
+      "id": 14,
+      "name": "Pet Water Fountain",
+      "image": "https://www.chewy.com/petsafe-drinkwell-platinum-pet-fountain/dp/120230",
+      "price": 59.99,
+      "details": "A fountain that keeps your pet's water fresh and flowing",
+      "category": "accessories"
+    },
+    {
+      "id": 15,
+      "name": "Pet Crate",
+      "image": "https://www.chewy.com/midwest-lifeguard-dog-crate/dp/103403",
+      "price": 129.99,
+      "details": "A sturdy and secure crate for your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 16,
+      "name": "Pet Harness",
+      "image": "https://www.chewy.com/harness-pro-harness-dog-harness/dp/175949",
+      "price": 24.99,
+      "details": "A comfortable and secure harness for your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 17,
+      "name": "Pet Leash",
+      "image": "https://www.chewy.com/petsafe-flexi-lead-dog-leash/dp/112679",
+      "price": 19.99,
+      "details": "A durable and adjustable leash for your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 18,
+      "name": "Pet Shampoo",
+      "image": "https://www.chewy.com/earthbath-oatmeal-tea-tree-dog-shampoo/dp/151336",
+      "price": 14.99,
+      "details": "A gentle shampoo for your pet's skin and coat",
+      "category": "grooming"
+    },
+    {
+      "id": 19,
+      "name": "Pet Conditioner",
+      "image": "https://www.chewy.com/earthbath-oatmeal-tea-tree-dog-conditioner/dp/151337",
+      "price": 14.99,
+      "details": "A conditioner that helps to detangle and moisturize your pet's fur",
+      "category": "grooming"
+    },
+    {
+      "id": 20,
+      "name": "Pet Grooming Brush",
+      "image": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?fit=crop&w=500&h=500&q=80",
+      "price": 12.99,
+      "details": "A grooming brush that helps remove loose hair and tangles",
+      "category": "grooming"
+    },
+    {
+      "id": 21,
+      "name": "Pet Treats",
+      "image": "https://images.unsplash.com/photo-1574158622678-8e1140f97f95?fit=crop&w=500&h=500&q=80",
+      "price": 7.99,
+      "details": "Delicious and healthy treats for your pet",
+      "category": "food"
+    },
+    {
+      "id": 22,
+      "name": "Pet ID Tag",
+      "image": "https://images.unsplash.com/photo-1583511655900-b5f8741af8a9?fit=crop&w=500&h=500&q=80",
+      "price": 4.99,
+      "details": "A customizable ID tag for your pet's collar",
+      "category": "accessories"
+    },
+    {
+      "id": 23,
+      "name": "Pet Nail Clippers",
+      "image": "https://images.unsplash.com/photo-1561948955-570b270e7c36?fit=crop&w=500&h=500&q=80",
+      "price": 9.99,
+      "details": "Easy-to-use nail clippers for your pet's grooming needs",
+      "category": "grooming"
+    },
+    {
+      "id": 24,
+      "name": "Pet Toothbrush",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?fit=crop&w=500&h=500&q=80",
+      "price": 3.99,
+      "details": "A toothbrush designed for your pet's oral hygiene",
+      "category": "grooming"
+    },
+    {
+      "id": 25,
+      "name": "Pet Dental Treats",
+      "image": "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?fit=crop&w=500&h=500&q=80",
+      "price": 8.99,
+      "details": "Treats that help maintain your pet's dental health",
+      "category": "food"
+    },
+    {
+      "id": 26,
+      "name": "Pet Litter Box",
+      "image": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?fit=crop&w=500&h=500&q=80",
+      "price": 29.99,
+      "details": "A convenient and easy-to-clean litter box for your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 27,
+      "name": "Pet Litter",
+      "image": "https://images.unsplash.com/photo-1574158622678-8e1140f97f95?fit=crop&w=500&h=500&q=80",
+      "price": 14.99,
+      "details": "High-quality litter for your pet's litter box",
+      "category": "accessories"
+    },
+    {
+      "id": 28,
+      "name": "Pet Training Pads",
+      "image": "https://images.unsplash.com/photo-1583511655900-b5f8741af8a9?fit=crop&w=500&h=500&q=80",
+      "price": 19.99,
+      "details": "Absorbent pads for house training your pet",
+      "category": "accessories"
+    },
+    {
+      "id": 29,
+      "name": "Pet Flea and Tick Prevention",
+      "image": "https://images.unsplash.com/photo-1561948955-570b270e7c36?fit=crop&w=500&h=500&q=80",
+      "price": 34.99,
+      "details": "A monthly treatment to protect your pet from fleas and ticks",
+      "category": "grooming"
+    },
+    {
+      "id": 30,
+      "name": "Pet Deodorizer",
+      "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006?fit=crop&w=500&h=500&q=80",
+      "price": 9.99,
+      "details": "A spray to neutralize pet odors in your home",
+      "category": "grooming"
+    },
+    {
+      "id": 31,
+      "name": "Pet Hair Remover",
+      "image": "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?fit=crop&w=500&h=500&q=80",
+      "price": 14.99,
+      "details": "A tool to easily remove pet hair from furniture and clothing",
+      "category": "grooming"
+    },
+    {
+      "id": 32,
+      "name": "Pet Travel Bag",
+      "image": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?fit=crop&w=500&h=500&q=80",
+      "price": 39.99,
+      "details": "A convenient bag for carrying your pet's essentials while traveling",
+      "category": "accessories"
+    },
+    {
+      "id": 33,
+      "name": "Pet First Aid Kit",
+      "image": "https://images.unsplash.com/photo-1574158622678-8e1140f97f95?fit=crop&w=500&h=500&q=80",
+      "price": 24.99,
+      "details": "A first aid kit with essential supplies for your pet",
+      "category": "accessories"
+    }
+  ],
+  "cart": {
+    "1": 0,
+    "2": 0,
+    "3": 3,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "20": 0,
+    "21": 0,
+    "22": 0,
+    "23": 0,
+    "24": 0,
+    "25": 0,
+    "26": 0,
+    "27": 0,
+    "28": 0,
+    "29": 0,
+    "30": 0,
+    "31": 0,
+    "32": 0,
+    "33": 0
+  },
+  "routes": {
+    "/cart": "cart"
+  }
+}

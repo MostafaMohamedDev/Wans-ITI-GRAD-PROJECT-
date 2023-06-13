@@ -1,0 +1,110 @@
+
+
+section {
+position: relative;
+/* background-image: url(../../../public/Images/patt.jpg); /
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+padding: 1.25rem; / Converted from 20px /
+border: 1px solid transparent;
+padding-top: 1.875rem; / Converted from 30px */
+}
+
+.subtitleHead{font-family: 'Signika', sans-serif;
+    font-weight : bolder;
+
+
+}
+.myRow {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.my-card {
+position: relative;
+overflow: hidden;
+background-color: #ff642e;
+}
+
+.card-img-wrapper {
+position: relative;
+border-bottom-right-radius: 100px;
+border: 1px solid transparent;
+}
+
+.card {
+border: 1px solid transparent;
+}
+
+.card-img-wrapper img {
+width: 30%;
+height: auto;
+}
+
+span {
+color: #ff642e;
+font-family: 'Signika', sans-serif;
+
+}
+
+.card {
+flex: 1 1 auto;
+margin-bottom: 1.25rem; /* Converted from 20px /
+height: auto;
+background-color: rgba(255, 255, 255, 0.79); / Converted from #ffffff79 /
+backdrop-filter: blur(1.25rem); / Converted from 20px */
+}
+
+.cardTitle {
+font-weight: bolder;
+color: #ff642e;
+font-family: 'Kanit', sans-serif;
+}
+
+.cardDate {
+font-weight: bold;
+}
+
+.cardText {
+    font-family: 'Mukta', sans-serif; font-weight: bold;
+}
+
+@media (max-width: 87.5rem) { /* Converted from 1400px */
+.card {
+flex-basis: 32%;
+}
+}
+
+h2 {
+color: #020202;
+margin-left: auto;
+margin-right: auto;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;
+font-size: 3.125rem; /* Converted from 50px /
+position: relative;
+margin-bottom: 0.9375rem; / Converted from 15px */
+}
+
+.readMoreBtn {
+border-radius: 999px;
+padding: 1rem 2rem; /* Converted from 1em 2em */
+background: #ff642e;
+border: transparent;
+color: rgb(255, 255, 255);
+font-size: 0.9rem;
+font-family: 'Kanit', sans-serif;
+font-weight: 500;
+cursor: pointer;
+transition: box-shadow 0.25s ease 0s;
+}
+
+.readMoreBtn:hover,
+.readMoreBtn:focus {
+background: linear-gradient(117deg, rgb(248, 137, 73), rgb(248, 82, 49));
+box-shadow: 0 0.1rem 0.8rem rgb(254, 100, 70);
+color: rgb(0, 0, 0);
+font-weight: bold;
+}

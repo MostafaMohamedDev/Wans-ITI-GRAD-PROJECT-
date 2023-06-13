@@ -1,0 +1,16 @@
+/* Styles for PC screens */
+@media (min-width: 768px) {
+    .responsive-image {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Styles for mobile screens */
+  @media (max-width: 767px) {
+    .responsive-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
