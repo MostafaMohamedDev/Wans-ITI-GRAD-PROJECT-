@@ -1,0 +1,148 @@
+.container {
+  position: relative;
+  height: 100vh;
+}
+
+.container::before {
+  content: "";
+  background-image: url(../../../public/Images/reg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(0.625rem); /* Adjust the blur value as desired */
+  z-index: -1; /* Ensure the blurred background is behind the content */
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Ensure the content is on top of the background */
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.25rem; /* Converted from 20px */
+}
+
+.column {
+  flex: 1;
+  padding: 5rem; /* Converted from 80px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  text-align: center;
+  background-color: #ffff;
+  box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  border-radius: 5rem; /* Converted from 10px */
+  padding: 1.25rem; /* Converted from 20px */
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.image {
+  width: 100%;
+  max-width: 21.875rem; /* Converted from 350px */
+  height: auto;
+  margin-bottom: 0.625rem; /* Converted from 10px */
+  border-radius: 5rem; /* Converted from 10px */
+}
+
+.btn {
+  margin-top: 0.625rem; /* Converted from 10px */
+  width: 50%;
+  font-size: 1rem; /* Converted from 16px */
+  padding: 0.625rem; /* Converted from 10px */
+  margin-left: 25%;
+}
+
+.businessBtn {
+  background-color: #F44336;
+  color: #fff;
+  border: none;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  font-size: 1.5625rem; /* Converted from 25px */
+}
+
+.userBtn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 400;
+  font-size: 1.5625rem; /* Converted from 25px */
+}
+
+/* Media Queries */
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .column {
+    padding: 3rem; /* Adjust the padding value as desired */
+  }
+
+  .image {
+    max-width: 18.75rem; /* Adjust the max-width value as desired */
+  }
+
+  .btn {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .container {
+    height: auto;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .column {
+    flex: 1 0 50%; /* Adjust the flex value as desired */
+    padding: 2rem; /* Adjust the padding value as desired */
+  }
+
+  .image {
+    max-width: 15.625rem; /* Adjust the max-width value as desired */
+  }
+
+  .btn {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+  .column {
+    padding: 1.5rem; /* Adjust the padding value as desired */
+  }
+
+  .image {
+    max-width: 12.5rem; /* Adjust the max-width value as desired */
+  }
+
+  .btn {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
