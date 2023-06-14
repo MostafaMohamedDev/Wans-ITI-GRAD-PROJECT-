@@ -48,7 +48,7 @@ const CardSection = () => {
             >
               <div className={`card ${styles.card}`}>
                 <img
-                  src="../Images/shoop.jpg"
+                  src="./../../../public/Images/shoop.jpg"
                   alt="Image 2"
                   className={`card-img-top ${styles.cardImage}`}
                 />

@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { CONSTANTS } from '../constants';
 export const ShopContext = createContext(null);
+const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
 
-const baseURL = 'http://localhost:4001/products';
-const cartURL = 'http://localhost:4001/cart';
+const baseURL = 'http://localhost:'+jsonPort+'/products';
+const cartURL = 'http://localhost:'+jsonPort+'/cart';
 
 const defaultCart = (items) => {
   let cart = {};

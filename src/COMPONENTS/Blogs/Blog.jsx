@@ -20,7 +20,7 @@ const Blog = () => {
         owner_email: "john.smith@example.com",
         owner_phone: "555-1234",
         date: "2023-05-28",
-        image: "images/blog-5.jpg"
+        image: "Images/blog-5.jpg"
       },
       {
         name: "Whiskers",
@@ -34,7 +34,7 @@ const Blog = () => {
         owner_email: "jane.doe@example.com",
         owner_phone: "555-5678",
         date: "2023-05-28",
-        image: "images/blog-4.jpg"
+        image: "Images/blog-4.jpg"
   
       },
       {
@@ -49,7 +49,7 @@ const Blog = () => {
         owner_email: "bob.johnson@example.com",
         owner_phone: "555-9012",
         date: "2023-05-12",
-        image: "images/blog-3.jpg"
+        image: "Images/blog-3.jpg"
       }  ];
 
   return (
