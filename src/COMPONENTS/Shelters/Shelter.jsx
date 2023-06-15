@@ -50,7 +50,7 @@ const Shelters = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3004/shelters")
+    fetch("http://localhost:4001/shelters")
       .then((res) => res.json())
       .then((data) => setShelterCard(data));
   }, []);
