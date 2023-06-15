@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Works.css"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Works.css";
@@ -15,7 +16,7 @@ const Works = () => {
              
             </div>
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-              <h4 className="iconHead">How  <span> it Works</span> </h4>
+              <h4 className="iconHead">How  <span className={styles.span} > it Works</span> </h4>
             </div>
           </div>
         </div>

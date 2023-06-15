@@ -32,8 +32,9 @@ const ClientForm = () => {
         <div className={styles.formRow}>
           <div className={styles.formColumn}>
             <div className={styles.formGroup}>
-              <label htmlFor="businessName">Business Name</label>
+              <label className={styles.label} htmlFor="businessName">Business Name</label>
               <input
+              className={styles.input}
                 type="text"
                 id="businessName"
                 value={businessName}
@@ -42,8 +43,9 @@ const ClientForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="businessType">Business Type</label>
+              <label className={styles.label} htmlFor="businessType">Business Type</label>
               <input
+              className={styles.input}
                 type="text"
                 id="businessType"
                 value={businessType}
@@ -52,8 +54,9 @@ const ClientForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="contactPhone">Contact Phone</label>
+              <label className={styles.label} htmlFor="contactPhone">Contact Phone</label>
               <input
+              className={styles.input}
                 type="tel"
                 id="contactPhone"
                 value={contactPhone}
@@ -64,8 +67,9 @@ const ClientForm = () => {
           </div>
           <div className={styles.formColumn}>
             <div className={styles.formGroup}>
-              <label htmlFor="contactEmail">Contact Email</label>
+              <label className={styles.label} htmlFor="contactEmail">Contact Email</label>
               <input
+              className={styles.input}
                 type="email"
                 id="contactEmail"
                 value={email}
@@ -74,8 +78,9 @@ const ClientForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="businessAddress">Business Address</label>
+              <label className={styles.label} htmlFor="businessAddress">Business Address</label>
               <textarea
+              className={styles.textarea}
                 id="businessAddress"
                 value={businessAddress}
                 onChange={(e) => setBusinessAddress(e.target.value)}
@@ -83,8 +88,9 @@ const ClientForm = () => {
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="password">Password</label>
+              <label className={styles.label} htmlFor="password">Password</label>
               <input
+              className={styles.input}
                 type="password"
                 id="password"
                 value={password}
@@ -95,7 +101,7 @@ const ClientForm = () => {
           </div>
         </div>
         <div className={styles.formGroup}>
-          <button type="submit">Register</button>
+          <button className={styles.button} type="submit">Register</button>
         </div>
       </form>
     </div>

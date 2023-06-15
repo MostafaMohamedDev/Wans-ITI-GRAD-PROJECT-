@@ -57,7 +57,7 @@ const Blog = () => {
       <section id='blog' className={  classNames( styles.block, styles.blogBlock , )}>
         <Container >
           <div className={classNames(styles.title, 'mt-4' , 'coontainer')}>
-            <h2 className={classNames('subtitleHead')}>LATEST <span>FROM BLOG</span> </h2>
+            <h2 className={classNames('subtitleHead')}>LATEST <span className={styles.span}>FROM BLOG</span> </h2>
             
           </div>
           <Row className={styles.myRow}>
