@@ -41,7 +41,7 @@ const Navbar = () => {
           <img
             className="nav navimg"
             src="Images/logo.png"
-            alt="Description of the image"
+            alt="Description of the"
           />
         </div>
 

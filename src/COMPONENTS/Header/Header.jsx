@@ -12,7 +12,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={styles.headerContainer}>
+    <div className={`${styles.headerContainer} container-fluid`}>
       <div className={styles.videoContainer}>
         <div className={styles.darkLayer}></div>
         {/* New: Dark layer on top of the video */}
@@ -25,14 +25,14 @@ const Header = () => {
 
       <div className={`${styles.contentContainer} container`}>
         <div className="row">
-          <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 offset-sm-1">
+          <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-1 col-sm-12 ">
             <img
-              className={`${styles.nav} ${styles.headimg}`}
+              className={`${styles.nav} ${styles.headimg} img-fluid`}
               src="Images/white.png"
               alt="Description of the image"
             />
 
-            <div className={styles.headerContent}>
+            <div className={`${styles.headerContent} text-center`}>
               <p>
                 Where Pets are Family! Discover a comprehensive directory of pet
                 clinics, expert articles, and helpful resources for optimal pet
@@ -42,7 +42,7 @@ const Header = () => {
                 like-minded individuals at Wans. Your go-to destination for all
                 things pets.
               </p>
-              <button className={`btn ${styles.btn}`}>
+              <button className={`btn ${styles.btn} btn-primary`}>
                 LEARN MORE
               </button>
             </div>
