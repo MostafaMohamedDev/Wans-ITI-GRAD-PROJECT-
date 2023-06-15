@@ -21,9 +21,10 @@ const CardSection = () => {
         </div>
 
         <div className={styles.cardSection}>
-          <div className="row">
+          <div className="row d-flex justify-content-center"> {/* Center the cards on small screens */}
+            {/* First Card */}
             <div
-              className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} col-lg-4 col-md-6 col-sm-12`}
+              className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
               <div className={`card ${styles.card}`}>
                 <img
@@ -43,8 +44,9 @@ const CardSection = () => {
               </div>
             </div>
 
+            {/* Second Card */}
             <div
-              className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} ${styles.psMd3} ${styles.psSm0} col-lg-4 col-md-6 col-sm-12`}
+              className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} ${styles.psMd3} ${styles.psSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
               <div className={`card ${styles.card}`}>
                 <img
@@ -64,8 +66,9 @@ const CardSection = () => {
               </div>
             </div>
 
+            {/* Third Card */}
             <div
-              className={`${styles.cardCircle} ${styles.psMd3} ${styles.psSm0} col-lg-4 col-md-6 col-sm-12`}
+              className={`${styles.cardCircle} ${styles.psMd3} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
               <div className={`card ${styles.card}`}>
                 <img
@@ -79,7 +82,7 @@ const CardSection = () => {
                     Safe <br /> Havens
                   </h3>
                   <p className={`card-text ${styles.cardDescription}`}>
-                    Discover shelters providing loving homes for pets.{" "}
+                    Discover shelters providing loving homes for pets.
                   </p>
                 </div>
               </div>

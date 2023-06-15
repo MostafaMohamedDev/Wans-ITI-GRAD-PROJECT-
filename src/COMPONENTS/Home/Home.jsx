@@ -8,18 +8,15 @@ import Blog from "../Blogs/Blog";
 import "./Home.css";
 import { Outlet } from "react-router-dom";
 import backgroundImage from "../../allground.jpg";
+{/* <div className="background-container" style={{backgroundImage: `url(${backgroundImage})`,}}> */}
+
 
 
 const Home = () => {
   return (
-    <>
-      <div
-        className="background-container"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
-      >
-        <NavBar />
+     <>
+      <div className="background-container" >
+        {/* <NavBar /> */}
         <Outlet></Outlet>
         <Header />
         <Works />

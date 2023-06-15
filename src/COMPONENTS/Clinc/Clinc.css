@@ -1,8 +1,10 @@
-.clinic-parentCard{
+/* .clinic-parentCard{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
+  box-sizing: border-box;
+} */
+
 .clinic-header {
   color: black;
   margin: 2rem 0;
@@ -13,16 +15,23 @@
 .clinic-parentCard .clinic-card {
   background-color: #f7f5f5;
   border-radius: 8px;
-  box-shadow: "8px 8px 4px #aaaaaa";
   cursor: pointer;
   overflow: hidden;
-  width: 30%;
   margin-bottom: 40px;
   border-radius: 10px;
   color: "purple";
   text-align: center;
-  position: relative;
   border-bottom: 1px solid #ff642e;
+  transition: all 0.4s;
+
+}
+.clinic-parentCard .clinic-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px 3px;
+  /* box-shadow: 5px 5px 5px 3px  #aaa; */
+
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px 0px; */
 
 }
 
@@ -32,7 +41,7 @@
 
 .clinic-parentCard .clinic-card-body {
   padding: 18px;
-  font-size: 19px;
+  font-size: 18px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   color:#333;
 }
@@ -51,9 +60,10 @@
 }
 
 .ClinicName{
-
   font-family: 'Signika', sans-serif;
-  font-weight : 
+}
+.popUp-ClinicName {
+  margin-bottom: 40px;
 
 }
 
@@ -66,18 +76,35 @@
   padding: 3rem 5rem;
   font-size: 18px;
   position: relative;
-  text-align: center;
+  text-align: left;
+  line-height: 2;
 }
 /* Styles for PC screens */
-@media (min-width: 768px) {
+/* @media (min-width: 781px) {
 .responsive-image {
   max-width: 100%;
   height: auto;
 }
+.clinic-parentCard .clinic-card{
+  width: 30%;
+  margin: auto;
 }
+}
+@media (min-width: 551px){
+  .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+  .clinic-parentCard .clinic-card{
+    width: 50%;
+    margin: auto;
+  }
+
+} */
+
 
 /* Styles for mobile screens */
-@media (max-width: 967px) {
+/* @media (max-width: 550px) {
 .responsive-image {
   width: 100%;
   height: auto;
@@ -87,7 +114,7 @@
   margin: auto;
 }
 
-}
+} */
 
 .clinic-popup-content .clinic-close-btn {
   background-color: #f2f2f2;
@@ -104,4 +131,8 @@
   top: -1rem;
   width: 3rem;
   z-index: 9999;
+}
+.clinic-btn {
+  width: 30%;
+  margin: auto;
 }

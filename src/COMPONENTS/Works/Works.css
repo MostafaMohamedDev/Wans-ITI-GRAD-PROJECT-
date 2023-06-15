@@ -21,15 +21,15 @@
 }
 
 .workCards {
+  justify-content: center;
   background-image: url(../../../public/Images/worksBG.jpg);
   background-size: cover;
   background-position: center;
   border: 1px transparent;
   border-radius: 1.25rem; /* Converted from 20px */
-  padding: 1.875rem 0; /* Converted from 30px */
+  padding: 1.875rem 1rem; /* Converted from 30px */
   margin-top: 1.875rem; /* Converted from 30px */
-  width: 85%;
-  margin-left: 5rem; /* Converted from 35px */
+  
 }
 
 .worksSection {
@@ -98,7 +98,7 @@
 
 .cards-work:hover > .cardd:not(:hover) {
   filter: blur(5px);
-  transform: scale(0.9);
+  transform: scale(0.8);
 }
 
 .cards-work .cardd:before {
@@ -145,7 +145,7 @@
 @media (max-width: 768px) {
   /* Small devices (landscape phones, 576px and up) */
   .cards-work .cardd {
-    flex-basis: 100%;
+    flex-basis: 80%;
   }
 }
 
