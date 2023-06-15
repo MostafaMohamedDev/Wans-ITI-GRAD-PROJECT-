@@ -2,7 +2,8 @@
   position: relative;
   height: 50rem; /* Converted from 864px */
   width: 100%;
-  margin-top: 12rem ;}
+  margin-top: 10rem ;
+}
 
 
 
@@ -38,14 +39,15 @@ span {
   flex-wrap: wrap;
   margin-top: 2.8125rem; /* Converted from 45px */
   cursor: pointer;
+
 }
 
 .card {
   position: relative;
   width: 100%;
   max-width: 18.75rem; /* Converted from 300px */
-  height: 20rem; /* Converted from 300px */
-  margin-bottom: 1.25rem; /* Converted from 20px */
+  height:25rem !important; /* Converted from 300px */
+  margin: 1rem; /* Converted from 20px */
   overflow: hidden;
   background-color: #f0f0f0;
   border-radius: 10%;
@@ -132,45 +134,5 @@ span {
 
 /* _____________________________THIRD-SECTIONS______________________________ */
 
-@media (max-width: 62rem) {
-  .cardSection {
-    justify-content: center;
-  }
 
-  .card {
-    max-width: 18.75rem; /* Converted from 300px */
-  }
-}
 
-@media (max-width: 48rem) {
-  .cardSection {
-    justify-content: center;
-  }
-
-  .card {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 36rem) {
-  .cardBody {
-    height: auto;
-  }
-
-  .card:hover .cardBody {
-    height: auto;
-  }
-
-  .finalSection {
-    margin-top: 1.25rem; /* Converted from 20px */
-  }
-
-  .statsContainer {
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  .statItem {
-    margin: 0.3125rem; /* Converted from 5px */
-  }
-}

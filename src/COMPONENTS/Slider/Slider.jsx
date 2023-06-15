@@ -15,6 +15,12 @@ const PartnersSlider = () => {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
@@ -37,15 +43,17 @@ const PartnersSlider = () => {
   };
 
   return (
-    <div className="container slidSection ">
-      <h2 className="header">Best <span>Sellers</span> </h2>
+    <div className="container slidSection">
+      <h2 className="header">
+        Best <span>Sellers</span>{" "}
+      </h2>
       <Slider {...settings} className="partners-slider mt-4">
         <div className="item">
           <a href="#1">
             <img width="100%" src="images/9.jpg" alt="img1" />
             <div className="layer">
               <div className="layer-content">
-                <h3 className="slidHead" > PetsCare Collection</h3>
+                <h3 className="slidHead">PetsCare Collection</h3>
                 <p>1500.00 EGP</p>
               </div>
             </div>
@@ -100,7 +108,7 @@ const PartnersSlider = () => {
             <img width="100%" src="images/10.jpg" alt="img1" />
             <div className=" layer">
               <div className="layer-content">
-                <h3 className="slidHead"> Dogcare Collection</h3>
+                <h3 className="slidHead">Dogcare Collection</h3>
                 <p>1200.00 EGP</p>
               </div>
             </div>
