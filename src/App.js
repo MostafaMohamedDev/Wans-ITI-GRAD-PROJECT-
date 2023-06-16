@@ -14,13 +14,16 @@ import UserForm from './COMPONENTS/UserForm/UserForm';
 import Shop from './COMPONENTS/Shop/Shop';
 import ShopContextProvider from './context/shop-context';
 import Cart from "./COMPONENTS/cart/cart";
+import Navtest from './COMPONENTS/navtest/navtest';
+import ShelterProfile from"./COMPONENTS/Profile/Profile"
+
 
 const App = () => {
   return (
     <div className="background-container">
-      <Navbar />
+      <Navtest/>
       <ShopContextProvider>
-      <Routes>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogging" element={<Blogging />} />
         <Route path="/services" element={<Services />} />
@@ -32,8 +35,12 @@ const App = () => {
         <Route path="/clientform" element={<ClientForm />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart"element={<Cart/>}/>
-      </Routes>
+        <Route path="/profile" element={<ShelterProfile />} />
+      </Routes>  
+      
+
       </ShopContextProvider>
+      {/* <ShelterProfile/> */}
     </div>
   );
 };

@@ -19,6 +19,7 @@ const Cart = () => {
       <div className="cartProduct">
         {productItems.map((product) => {
           if (cartItems[product.id] !== 0) {
+            // console.log(productItems);
             return (
               <CartItem
                 key={product.id}

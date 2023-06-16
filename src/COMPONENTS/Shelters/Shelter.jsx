@@ -4,6 +4,11 @@ import headerImage from "../../images/adopt1.jpg";
 import headerImageHover from "../../images/adopt2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { CONSTANTS } from '../../constants';
+
+
+const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
+const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
 
 
 const Shelters = () => {

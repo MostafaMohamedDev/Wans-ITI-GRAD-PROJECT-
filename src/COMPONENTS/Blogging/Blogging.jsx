@@ -4,13 +4,8 @@ import styles from "./Blogging.module.css"; // Update the import statement
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import BloggingImage1 from "../../images/blog6.jpg";
-import BloggingImage2 from "../../images/blog5.jpg";
-import BloggingImage3 from "../../images/blog4.jpg";
-import BloggingImage4 from "../../images/blog2.jpg";
-import BloggingImage5 from "../../images/blog3.jpg";
-import BloggingImage6 from "../../images/blog1.jpg";
-import blogImage from "../../images/shelter.jpg";
+
+import blogImage from "../../images/blog.jpg";
 
 const Blogging = () => {
   const settings = {
@@ -34,53 +29,6 @@ const Blogging = () => {
         />
       </div>
 
-      <div className={styles["blogSlider"]}>
-        <Slider {...settings} className={styles["blog-slide"]}>
-          <div className={styles["slide"]}>
-            <img
-              src={BloggingImage1}
-              alt="Header"
-              className={styles["responsive-image"]}
-              w-100
-            />
-          </div>
-          <div className={styles["slide"]}>
-            <img
-              src={BloggingImage2}
-              alt="Header"
-              className={styles["responsive-image"]}
-            />
-          </div>
-          <div className={styles["slide"]}>
-            <img
-              src={BloggingImage3}
-              alt="Header"
-              className={styles["responsive-image"]}
-            />
-          </div>
-          <div className={styles["slide"]}>
-            <img
-              src={BloggingImage4}
-              alt="Header"
-              className={styles["responsive-image"]}
-            />
-          </div>
-          <div className={styles["slide"]}>
-            <img
-              src={BloggingImage5}
-              alt="Header"
-              className={styles["responsive-image"]}
-            />
-          </div>
-          <div className={styles["slide"]}>
-            <img
-              src={BloggingImage6}
-              alt="Header"
-              className={styles["responsive-image"]}
-            />
-          </div>
-        </Slider>
-      </div>
 
       <div className={`${styles["blog-articals"]} container mt-5`}>
         <div className="card mb-3">
@@ -125,7 +73,7 @@ const Blogging = () => {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-titleBlog">
+                <h5 className={`${styles.h5} card-titleBlog`}>
                   The Essentials of Pet Nutrition: Feeding Your Furry Friend
                   Right
                 </h5>
@@ -157,7 +105,7 @@ const Blogging = () => {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-titleBlog">
+                <h5 className={`${styles.h5} card-titleBlog`}>
                   Creating a Pet-Friendly Home Making Your Space Safe and
                   Welcoming{" "}
                 </h5>
@@ -190,7 +138,7 @@ const Blogging = () => {
             </div>
             <div className="col-md-8">
               <div className="card-body">
-                <h5 className="card-titleBlog">
+                <h5 className={`${styles.h5} card-titleBlog`}>
                   Exercise and Play: Keeping Your Pet Active and Happy
                 </h5>
                 <p className={`${styles.p} card-text`}>

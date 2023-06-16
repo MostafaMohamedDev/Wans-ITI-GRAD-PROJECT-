@@ -27,11 +27,24 @@
 }
 .clinic-parentCard .clinic-card:hover{
   box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px 3px;
-  /* box-shadow: 5px 5px 5px 3px  #aaa; */
+}
 
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-  /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px 0px; */
+.clinic-btn{
+border-radius: 999px;
+padding: 0.8rem ; 
+background: #ff642e;
+border: transparent;
+color: rgb(255, 255, 255);
+font-size: 1.2rem;
+font-family: 'Kanit', sans-serif;
+cursor: pointer;
+transition: box-shadow 0.25s ease 0s;
+}
+.clinic-btn:hover,
+.clinic-btn:focus ,.clinic-close-btn:hover ,.clinic-close-btn:focus {
+background: linear-gradient(117deg, rgb(248, 137, 73), rgb(248, 82, 49));
+box-shadow: 0 0.1rem 0.8rem rgb(254, 100, 70);
+color: rgb(0, 0, 0);
 
 }
 
@@ -79,48 +92,12 @@
   text-align: left;
   line-height: 2;
 }
-/* Styles for PC screens */
-/* @media (min-width: 781px) {
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-}
-.clinic-parentCard .clinic-card{
-  width: 30%;
-  margin: auto;
-}
-}
-@media (min-width: 551px){
-  .responsive-image {
-    width: 100%;
-    height: auto;
-  }
-  .clinic-parentCard .clinic-card{
-    width: 50%;
-    margin: auto;
-  }
-
-} */
-
-
-/* Styles for mobile screens */
-/* @media (max-width: 550px) {
-.responsive-image {
-  width: 100%;
-  height: auto;
-}
-.clinic-parentCard .clinic-card{
-  width: 100%;
-  margin: auto;
-}
-
-} */
 
 .clinic-popup-content .clinic-close-btn {
-  background-color: #f2f2f2;
+  background-color: #ff642e;
+  color: #f7f5f5;
   border: none;
   border-radius: 50%;
-  /* color: #ff642e; */
   cursor: pointer;
   font-size: 1.2rem;
   height: 3rem;

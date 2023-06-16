@@ -20,8 +20,10 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(null);
 
   useEffect(() => {
-    axios.get(baseURL).then((res) => {
-      setProductItems(res.data);
+    axios.get("http://ah.khaledfathi.com/api/product").then((res) => {
+      console.log(res.data.data);
+      setProductItems(res.data.data);
+      // console.log(productItems);
     });
 
     axios.get(cartURL).then((res) => {
@@ -87,7 +89,9 @@ const ShopContextProvider = (props) => {
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = productItems.find((product) => product.id === +item);
-        totalAmount += itemInfo.price * cartItems[item];
+        if (itemInfo) {
+          totalAmount += itemInfo.price * cartItems[item];
+        }
       }
     }
     return totalAmount;
