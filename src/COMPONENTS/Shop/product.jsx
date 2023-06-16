@@ -50,21 +50,20 @@ export default function MultiActionAreaCard({data}) {
       const cartItemCount = cartItems[id];
 
   return (
-    <Card sx={{ maxWidth: 300,maxheight:700 ,marginBottom:"25px",padding:0,borderRedus:"5rem"}}>
+    <Card sx={{ maxWidth: 300,maxheight:700 ,marginBottom:"25px",padding:0,}}>
       <CardActionArea className='m-auto'>
         <CardMedia
           component="img"
           height="400"
-          image={"http://ah.khaledfathi.com/"+image}
-          // http://ah.khaledfathi.com/" + product.image
+          image={"http://ah.khaledfathi.com/" + image}
           alt="green iguana"
-          className='bg-dark imgShop'
+          className='bg-dark'
         />
-        <CardContent className='text-center'>
+        <CardContent >
           <Typography gutterBottom variant="h5" component="div">
             {name}
           </Typography>
-          <Typography variant="body3" color="">
+          <Typography variant="body2" color="">
             {price}
           </Typography>
         </CardContent>
@@ -72,8 +71,6 @@ export default function MultiActionAreaCard({data}) {
       <CardActions>
         <IconButton
               size="large"
-              style={{color:" #ff642e",  marginLeft: "auto"
-            }}
               aria-label="show 17 new notifications"
               color="inherit"
               onClick={()=>addToCart(id)}

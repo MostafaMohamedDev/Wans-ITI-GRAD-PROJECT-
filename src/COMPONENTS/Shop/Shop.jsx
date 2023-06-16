@@ -5,6 +5,8 @@ import Product from './product'
 import { useContext } from 'react'
 import { ShopContext } from '../../context/shop-context'
 import MultiActionAreaCard from "./product";
+import "./Shop.css"
+
 
 
 
@@ -22,7 +24,7 @@ import MultiActionAreaCard from "./product";
         </div>
       </div>
         <div className="container">
-        <h1>Pets Shop</h1>
+        <h1 className='HEADER'>Pets Shop</h1>
           <div className="row justify-content-around my-4">
             {productItems&&productItems.map((product) => (
               <MultiActionAreaCard

@@ -55,7 +55,7 @@ const Shelters = () => {
   };
 
   useEffect(() => {
-    fetch(baseURL)
+    fetch("http://localhost:4001/shelters")
       .then((res) => res.json())
       .then((data) => setShelterCard(data));
   }, []);
