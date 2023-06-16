@@ -24,15 +24,16 @@ const UserForm = () => {
         <div className={styles["signup-container"]}>
           <div className={`${styles["form-container"]} container`}>
             <div className={styles["signup-form"]}>
-              <h2>Register</h2>
+              <h2 className="h2">Register</h2>
               <form onSubmit={signUp}>
                 <div className={styles["form-group"]}>
-                  <label htmlFor="name">Name</label>
-                  <input type="text" id="name" placeholder="Enter your name" />
+                  <label className={styles.label} htmlFor="name">Name</label>
+                  <input className={styles.input} type="text" id="name" placeholder="Enter your name" />
                 </div>
                 <div className={styles["form-group"]}>
-                  <label htmlFor="email">Email</label>
+                  <label className={styles.label} htmlFor="email">Email</label>
                   <input
+                  className={styles.input}
                     type="email"
                     id="email"
                     placeholder="Enter your email"
@@ -41,8 +42,9 @@ const UserForm = () => {
                   />
                 </div>
                 <div className={styles["form-group"]}>
-                  <label htmlFor="password">Password</label>
+                  <label className={styles.label} htmlFor="password">Password</label>
                   <input
+                  className={styles.input}
                     type="password"
                     id="password"
                     placeholder="Create your password"
@@ -50,7 +52,8 @@ const UserForm = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <button type="submit">Sign Up</button>
+                <button className={styles.button} type="submit">Sign Up</button>
+                
               </form>
             </div>
           </div>

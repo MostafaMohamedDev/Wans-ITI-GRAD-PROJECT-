@@ -13,7 +13,7 @@ const CardSection = () => {
           <div className="col-lg-12 col-md-12 col-sm-12 text-center">
             <h4 className={styles.iconHeader}>
               Providing the{" "}
-              <span>
+              <span  className={styles.span} >
                 best <br /> quality services for your pets
               </span>
             </h4>
