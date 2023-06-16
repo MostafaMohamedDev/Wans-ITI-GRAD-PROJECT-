@@ -1,6 +1,7 @@
 import { ajax } from "../libCustomAjax_v1";
 import React, { createContext, useEffect, useState } from 'react'
-
+import { setSession , getSession , removeSession ,  getCurrentTime } from "../helper";
+import { useNavigate } from "react-router-dom";
 export const ApiContext = createContext(null);
 const apiUrl = "http://ah.khaledfathi.com/api/user"
 
@@ -9,6 +10,7 @@ const ApiContextProvider = (props) => {
     const [userData, setUserData] = useState()
     const [dataUpdated, setDataUpdated] = useState(false)
     const [createStatus,setCreateStatus] = useState()
+    const redirect = useNavigate();
 
     const fetchData = async () => {
         const response = await ajax(apiUrl);
@@ -41,13 +43,24 @@ const ApiContextProvider = (props) => {
         setUserData(userData.filter((item) => item.id !== id))
         setDataUpdated(true)
     }
-    const login = async (a,b) => {
-        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",{a,b});
+    const login = async (data) => {
+        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",data);
         console.log(response);
         const newData = await response.json();
         console.log(newData);
+        if(newData.status){
+            setSession('login' , true); 
+            setSession('auth' , newData.record); 
+        } 
+        /*************/ 
+        const routeToHome = () => {
+            redirect("/");
+        }
+        if (getSession('login')){
+            routeToHome(); 
+        }
+        /*************/ 
     }
-
     useEffect(() => {
         fetchData();
     }, [])

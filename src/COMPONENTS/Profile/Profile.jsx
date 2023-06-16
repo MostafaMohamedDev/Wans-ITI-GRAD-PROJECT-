@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Profile.css";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { setSession , getSession , removeSession ,  getCurrentTime } from "../../helper";
 
 const ShelterProfile = () => {
   const [editMode, setEditMode] = useState(false);
@@ -15,6 +18,7 @@ const ShelterProfile = () => {
   const [description, setDescription] = useState("");
   const [ShelterAddress, setShelterAddress] = useState("");
   const [ShelterPhone, setShelterPhone] = useState("");
+  const [auth, setAuth] = useState({});
 
   const handleEdit = () => {
     setEditMode(true);
@@ -55,12 +59,30 @@ const ShelterProfile = () => {
     setShowForm(false);
   };
 
+  /*******************/
+  const redirect = useNavigate();
+  const routeLogin = () => {
+      redirect("/login");
+  }
+   useEffect(()=>{
+    if (! getSession('login')){
+      routeLogin(); 
+    }else {
+      setAuth(getSession('auth')); 
+      console.log(auth);
+
+
+
+    }
+   },[]); 
+  /*******************/
+ 
   return (
     <div>
       <div className="prof">
         <div className="info">
           <img
-            src={profileImage}
+            src={(auth.image)?"http://ah.khaledfathi.com/"+auth.image:profileImage}
             className="profileImage"
             alt="Profile"
             style={{
@@ -82,7 +104,7 @@ const ShelterProfile = () => {
               fontSize: "30px",
             }}
           >
-            {name}
+            {auth.name}
           </h3>
           <h4
             style={{
@@ -91,7 +113,7 @@ const ShelterProfile = () => {
               marginBottom: "10px",
             }}
           >
-            {email}
+            {auth.email}
           </h4>
           <button
             className="Middle-Button"

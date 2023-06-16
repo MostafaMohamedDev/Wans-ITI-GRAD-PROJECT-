@@ -17,7 +17,6 @@ import Cart from "./COMPONENTS/cart/cart";
 import Navtest from './COMPONENTS/navtest/navtest';
 import ShelterProfile from"./COMPONENTS/Profile/Profile"
 import ApiContextProvider from './context/API-Context';
-import Admin from './COMPONENTS/Admin/Admin';
 
 
 const App = () => {
@@ -33,13 +32,11 @@ const App = () => {
         <Route path="/clinc" element={<Clinc />} />
         <Route path="/shelters" element={<Shelters />} />
         <Route path="/user" element={<User />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/userform" element={<UserForm />} />
         <Route path="/clientform" element={<ClientForm />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart"element={<Cart/>}/>
         <Route path="/profile" element={<ShelterProfile />} />
-        <Route path="/Admin" element={<Admin/>} />
       </Routes>  
       </ShopContextProvider>
       </ApiContextProvider>
