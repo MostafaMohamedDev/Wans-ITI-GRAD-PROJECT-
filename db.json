@@ -114,64 +114,54 @@
       "id": 1,
       "name": "Animal Medical Center",
       "phone": "183-239-8115",
-      "address": " Zamalek",
-      "fullAddress": "20 El Gezira Street, Zamalek, Cairo",
-      "locationMap": " https://maps.google.com/maps?width=100%25&height=600&hl=en&q=20%20El%20Gezira%20Street,%20Zamalek,%20Cairo%22+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "123 Oak St, Cityville",
       "img": "https://media.istockphoto.com/id/1303833951/photo/vet-doctor-examining-labrador-dog.jpg?s=612x612&w=0&k=20&c=HWMvyA16YdGhkayGOTqlmM6gX7gSklzoOjzDlODD2Is=",
       "availableAppointments": [
         " Today : 9:00 AM",
         " , 2:00 PM ",
-        " , 4:30 PM "
+        "  , 4:30 PM "
       ]
     },
     {
       "id": 2,
-      "name": "Happy Veterinary Clinic",
+      "name": "Happy Tails Veterinary Clinic",
       "phone": "932-252-3281",
-      "address": "Sheikh Zayed City",
-      "fullAddress": "123 ST Sheikh Zayed City , Giza ,Egypt",
-      "locationMap": " https://maps.google.com/maps?width=100%25&height=600&hl=en&q=123%20ST%20Sheikh%20Zayed%20City%20,%20Giza%20,Egypt+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "456 Elm St, Townville",
       "img": "https://media.istockphoto.com/id/878447520/photo/vet-with-dog-and-cat.jpg?s=612x612&w=0&k=20&c=OumgIZ4isr4Gj8RZbriP5D0OWaX04C57kUzOT96K8tU=",
       "availableAppointments": [
-        " Today : 10:00 AM",
-        " , 3:30 PM "
+        "  Today : 10:00 AM",
+        "  , 3:30 PM "
       ]
     },
     {
       "id": 3,
       "name": "VCA Animal Hospital",
       "phone": "395-123-7683",
-      "address": " Giza",
-      "fullAddress": " 7 El Wehda El Arabeya Street, Giza",
-      "locationMap": "https://maps.google.com/maps?width=100%25&height=600&hl=en&q=20%20El%20Gezira%20Street,%20Zamalek,%20Cairo+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "789 Oak St, Villagetown",
       "img": "https://media.istockphoto.com/id/885571364/photo/young-french-bulldog-on-the-visit-to-the-vet.jpg?s=612x612&w=0&k=20&c=VqeEbRjrDxb6mCBaIJfWooSDQAjkPS8aNTBJ8HQyZeA=",
       "availableAppointments": [
         " Today : 8:30 AM",
-        " , 1:30 PM ",
-        " , 5:00 PM "
+        "  , 1:30 PM ",
+        "  , 5:00 PM "
       ]
     },
     {
       "id": 4,
-      "name": "Pearl Veterinary Partners",
+      "name": "BluePearl Veterinary Partners",
       "phone": "414-984-7612",
-      "address": " Nasr City",
-      "fullAddress": "123 Main St, Nasr City",
-      "locationMap": "https://maps.google.com/maps?width=100%25&height=600&hl=en&q=123%20Main%20St,%20Nasr%20City+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "567 Pine St, Countryside",
       "img": "https://media.istockphoto.com/id/1158247958/photo/vet-cuddling-pet-dog.jpg?s=612x612&w=0&k=20&c=obxvtFgO1Um2UDfo8qPZk06VE8vK4s-oklvd0ZdFEQ0=",
       "availableAppointments": [
         " Today : 9:30 AM ",
         " , 2:30 PM ",
-        " , 4:00 PM "
+        "  , 4:00 PM "
       ]
     },
     {
       "id": 5,
       "name": "Bayshore Veterinary Clinic",
       "phone": "845-234-1232",
-      "address": " Heliopolis",
-      "fullAddress": "29 Shams El Din El Zahaby, Heliopolis",
-      "locationMap": "https://maps.google.com/maps?width=100%25&height=600&hl=en&q=29%20Shams%20El%20Din%20El%20Zahaby,%20Heliopolis+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "321 Maple Ave, Citytown",
       "img": "https://media.istockphoto.com/id/454435997/photo/this-isnt-a-chew-toy.jpg?s=612x612&w=0&k=20&c=U8nUsrWJFMHFlkvxiod17994T631U3pXf-om4xlXKU0=",
       "availableAppointments": [
         " Today :8:00 AM",
@@ -183,9 +173,7 @@
       "id": 6,
       "name": "Oakhurst Veterinary Hospital",
       "phone": "609-754-1254",
-      "address": "Ain Shams",
-      "fullAddress": "456 Pine St, Ain Shams,Cairo",
-      "locationMap": "https://maps.google.com/maps?width=100%25&height=600&hl=en&q=456,%20Ain%20Shams,Cairo+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "789 Elm St, Townville",
       "img": "https://media.istockphoto.com/id/665117622/photo/curious-puppy.jpg?s=612x612&w=0&k=20&c=M6MOANnJoZg77b8sQKzZkCyDlRjNLIjmRIqs1sNR6ZE=",
       "availableAppointments": [
         " Today :9:00 AM",
@@ -197,9 +185,7 @@
       "id": 7,
       "name": "Veterinary Medical Center",
       "phone": "987-234-5443",
-      "address": "Rehab City",
-      "fullAddress": "28 El Khalifa El Maamoun Street,Elrehab",
-      "locationMap": "https://maps.google.com/maps?width=100%25&height=600&hl=en&q=28%20Street,Elrehab+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed",
+      "address": "987 Oak St, Villagetown",
       "img": "https://media.istockphoto.com/id/1162639281/photo/very-happy-veterinarian-getting-a-kiss-from-a-dog.jpg?s=612x612&w=0&k=20&c=WkWRTEuL5k8sMAktaeV-_eqdO6B7HWNwJCBq-8botaE=",
       "availableAppointments": [
         " Today :10:00 AM",
@@ -208,10 +194,9 @@
     },
     {
       "id": 8,
-      "name": "Paws Animal Hospital",
+      "name": "Paws & Claws Animal Hospital",
       "phone": "809-348-1287",
-      "fullAddress": "Om El Seid Hill, El Hadaba, Sharm El Sheikh",
-      "address": " Sharm El Sheikh",
+      "address": "123 Pine St, Countryside",
       "img": "https://media.istockphoto.com/id/1214635081/photo/vet-examining-the-pet.jpg?s=612x612&w=0&k=20&c=Q3GiFg6PhuidDxkoKJOB88Q-C5K9BvKSiAOSYDmBuOM=",
       "availableAppointments": [
         " Today :8:30 AM",
@@ -223,8 +208,7 @@
       "id": 9,
       "name": "Midtown Veterinary Hospital",
       "phone": "876-325-6699",
-      "fullAddress": "7 El Nasr Street, Saba Pasha, Alexandria",
-      "address": "Alexandria",
+      "address": "456 Maple Ave, Citytown",
       "img": "https://media.istockphoto.com/id/1187228710/photo/veterinarians-carry-through-an-ultrasound-examination-of-a-domestic-cat.jpg?s=612x612&w=0&k=20&c=n7ZEagYwhXFZIhdE_EZWA6bQDVzlNGEi7OLIqrVrPOQ=",
       "availableAppointments": [
         " Today : 9:30 AM",
@@ -494,15 +478,10 @@
   "cart": {
     "1": 0,
     "2": 7,
-    "3": 3,
-    "4": 0,
-    "5": null,
-    "6": 0,
     "7": null,
-    "8": null,
-    "9": null
-    },
-    "routes": {
+    "8": 3
+  },
+  "routes": {
     "/cart": "cart"
     }
     }
