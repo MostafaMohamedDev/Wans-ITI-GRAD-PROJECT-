@@ -1,6 +1,6 @@
 import React from "react";
 import CardSection from "../CardSection/CardSection";
-import NavBar from "../NavBar/NavBar";
+// import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import Works from "../Works/Works";
 import Slider from "../Slider/Slider";
@@ -8,7 +8,6 @@ import Blog from "../Blogs/Blog";
 import "./Home.css";
 import { Outlet } from "react-router-dom";
 import backgroundImage from "../../allground.jpg";
-
 
 const Home = () => {
   return (
@@ -19,7 +18,7 @@ const Home = () => {
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        <NavBar />
+        {/* <NavBar /> */}
         <Outlet></Outlet>
         <Header />
         <Works />
