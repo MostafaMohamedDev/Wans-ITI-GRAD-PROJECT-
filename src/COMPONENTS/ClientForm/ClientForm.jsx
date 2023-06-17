@@ -1,34 +1,79 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./ClientForm.module.css";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import { ApiContext } from "../../context/API-Context";
+import { useContext } from "react";
 
 const ClientForm = () => {
-  const [businessName, setBusinessName] = useState("");
-  const [businessType, setBusinessType] = useState("");
-  const [contactPhone, setContactPhone] = useState("");
-  const [businessAddress, setBusinessAddress] = useState("");
-  const [cardNumber, setCardNumber] = useState("");
+  const {createData,createStatus} = useContext(ApiContext)
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [creationSuccess, setCreationSuccess] = useState(false);
+  const [creationFail, setCreationFail] = useState(false);
+  const fileInputRef = useRef(null);
+// console.log(fileInputRef.current);
+  const [newUser, setNewUser] = useState({
+    name:"",
+    password:"",
+    email:"",
+    type:"",
+    phone:"",
+    address:""
+});
 
-  //Authentication
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+  setNewUser({ ...newUser, [name]: value });
+}
 
-  const signUp = (e) => {
-    e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+const handleAddUser = async (event) => {
+  event.preventDefault();
+  if (newUser.password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  } else {
+    const file = fileInputRef.current !== null ? fileInputRef.current : undefined;
+    await createData(newUser, file);
+    setNewUser({
+      name: "",
+      password: "",
+      email: "",
+      type: "",
+      phone: "",
+      address: ""
+    });
+    setCreationSuccess(true);
+    setCreationFail(false);
+  }
+  setConfirmPassword("");
+  
+};
+
+
+
+useEffect(() => {
+  if (createStatus && createStatus.status) {
+    setCreationSuccess(true);
+    setCreationFail(false);
+  } else if (createStatus && !createStatus.status) {
+    setCreationSuccess(false);
+    setCreationFail(true);
+  }
+}, [createStatus]);
+
+
+
 
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={signUp}>
+      <form className={styles.form} onSubmit={handleAddUser}>
         <h2>Register</h2>
+        {creationSuccess && (
+                <div className="alert alert-success">
+                  User created successfully!
+                </div>
+              )}
+              {creationFail && (
+                <div className="alert alert-danger">{createStatus.msg}</div>
+              )}
         <div className={styles.formRow}>
           <div className={styles.formColumn}>
             <div className={styles.formGroup}>
@@ -37,31 +82,37 @@ const ClientForm = () => {
               className={styles.input}
                 type="text"
                 id="businessName"
-                value={businessName}
-                onChange={(e) => setBusinessName(e.target.value)}
-                required
+                name="name"
+                value={newUser.name}
+                onChange={handleInputChange}
+                
               />
             </div>
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="businessType">Business Type</label>
-              <input
-              className={styles.input}
-                type="text"
-                id="businessType"
-                value={businessType}
-                onChange={(e) => setBusinessType(e.target.value)}
-                required
-              />
-            </div>
+  <label className={styles.label} htmlFor="businessType">Business Type</label>
+  <select
+    className={styles.select}
+    id="businessType"
+    name="type"
+    value={newUser.type}
+    onChange={handleInputChange}
+  >
+    <option value="">Select Business Type</option>
+    <option value="clinics">Clinic</option>
+    <option value="shelter">Shelter</option>
+    <option value="suppler">Supplier</option>
+  </select>
+</div>
             <div className={styles.formGroup}>
               <label className={styles.label} htmlFor="contactPhone">Contact Phone</label>
               <input
               className={styles.input}
                 type="tel"
                 id="contactPhone"
-                value={contactPhone}
-                onChange={(e) => setContactPhone(e.target.value)}
-                required
+                name="phone"
+                value={newUser.phone}
+                onChange={handleInputChange}
+                
               />
             </div>
           </div>
@@ -72,9 +123,10 @@ const ClientForm = () => {
               className={styles.input}
                 type="email"
                 id="contactEmail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
+                name="email"
+                value={newUser.email}
+                onChange={handleInputChange}
+                
               />
             </div>
             <div className={styles.formGroup}>
@@ -82,9 +134,10 @@ const ClientForm = () => {
               <textarea
               className={styles.textarea}
                 id="businessAddress"
-                value={businessAddress}
-                onChange={(e) => setBusinessAddress(e.target.value)}
-                required
+                name="address"
+                value={newUser.address}
+                onChange={handleInputChange}
+                
               />
             </div>
             <div className={styles.formGroup}>
@@ -93,9 +146,31 @@ const ClientForm = () => {
               className={styles.input}
                 type="password"
                 id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
+                name="password"
+                value={newUser.password}
+                onChange={handleInputChange}
+                
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.label} htmlFor="file">Upload File</label>
+              <input
+                className={styles.input}
+                type="file"
+                id="file"
+                name="file"
+                ref={fileInputRef}
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.label} htmlFor="password">Confirm Password</label>
+              <input
+              className={styles.input}
+                type="password"
+                id="password"
+                value={confirmPassword}
+                onChange={(e)=>setConfirmPassword(e.target.value)}
+                
               />
             </div>
           </div>
