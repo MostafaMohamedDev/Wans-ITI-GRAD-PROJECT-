@@ -20,8 +20,10 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(null);
 
   useEffect(() => {
-    axios.get(baseURL).then((res) => {
-      setProductItems(res.data);
+    axios.get("http://ah.khaledfathi.com/api/product").then((res) => {
+      console.log(res.data.data);
+      setProductItems(res.data.data);
+      // console.log(productItems);
     });
 
     axios.get(cartURL).then((res) => {
