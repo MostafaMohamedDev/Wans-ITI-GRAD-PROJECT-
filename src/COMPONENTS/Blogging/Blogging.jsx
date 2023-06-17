@@ -83,21 +83,21 @@ const Blogging = () => {
       </div>
 
       <div className={`${styles["blog-articals"]} container mt-5`}>
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
+        <div className="card mb-3">
+          <div className="row g-0">
+            <div className="col-md-4">
               <img
                 src="./images/blog1.jpg"
                 alt="Trendy Pants and Shoes"
-                class="img-fluid rounded-start"
+                className="img-fluid rounded-start"
               />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-titleBlog">
+            <div className="col-md-8">ّ
+              <div className="card-body">
+                <h5 className={`${styles.h5} card-titleBlog`}>
                   Finding Your Perfect Fur-ever Friend
                 </h5>
-                <p class="card-text">
+                <p className={`${styles.p} card-text`}>
                   Are you considering adding a furry friend to your family?
                   Choosing the right pet is crucial for a successful and
                   fulfilling companionship. Factors like lifestyle, living
@@ -106,30 +106,30 @@ const Blogging = () => {
                   low-maintenance feline, this guide will provide essential tips
                   to help you find your perfect fur-ever friend.
                 </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                <p className={`${styles.p} card-text`}>
+                  <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
+        <div className="card mb-3">
+          <div className="row g-0">
+            <div className="col-md-4">
               <img
                 src="./images/blog2.jpg"
                 alt="Trendy Pants and Shoes"
-                class="img-fluid rounded-start"
+                className="img-fluid rounded-start"
               />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-titleBlog">
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-titleBlog">
                   The Essentials of Pet Nutrition: Feeding Your Furry Friend
                   Right
                 </h5>
-                <p class="card-text">
+                <p className={`${styles.p} card-text`}>
                   Are you considering adding a furry friend to your family?
                   Choosing the right pet is crucial for a successful and
                   fulfilling companionship. Factors like lifestyle, living
@@ -138,30 +138,30 @@ const Blogging = () => {
                   low-maintenance feline, this guide will provide essential tips
                   to help you find your perfect fur-ever friend.
                 </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                <p className={`${styles.p} card-text`}>
+                  <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
+        <div className="card mb-3">
+          <div className="row g-0">
+            <div className="col-md-4">
               <img
                 src="./images/blog-3.jpg"
                 alt="Trendy Pants and Shoes"
-                class="img-fluid rounded-start"
+                className="img-fluid rounded-start"
               />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-titleBlog">
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-titleBlog">
                   Creating a Pet-Friendly Home Making Your Space Safe and
                   Welcoming{" "}
                 </h5>
-                <p class="card-text">
+                <p className={`${styles.p} card-text`}>
                   A Haven for Your Furry Pal: Designing a Pet-Friendly Home"
                   Paragraph: Your home should be a sanctuary for your beloved
                   pet, where they can roam, play, and relax without any hazards.
@@ -171,29 +171,29 @@ const Blogging = () => {
                   areas, and ensuring their safety and comfort throughout the
                   house.
                 </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                <p className={`${styles.p} card-text`}>
+                  <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
+        <div className="card mb-3">
+          <div className="row g-0">
+            <div className="col-md-4">
               <img
                 src="./images/blog4.jpg"
                 alt="Trendy Pants and Shoes"
-                class="img-fluid rounded-start"
+                className="img-fluid rounded-start"
               />
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-titleBlog">
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-titleBlog">
                   Exercise and Play: Keeping Your Pet Active and Happy
                 </h5>
-                <p class="card-text">
+                <p className={`${styles.p} card-text`}>
                   Paws-itive Vibes: The Importance of Exercise and Play for Your
                   Pet" Paragraph: Regular exercise and playtime are essential
                   for maintaining your pet's physical and mental well-being.
@@ -203,8 +203,8 @@ const Blogging = () => {
                   socialization, and strengthening the bond between you and your
                   furry friend.
                 </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                <p className={`${styles.p} card-text`}>
+                  <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
               </div>
             </div>

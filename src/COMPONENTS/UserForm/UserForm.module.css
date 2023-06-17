@@ -45,12 +45,12 @@
   top : 2rem
 }
 
-h2 {
+.h2 {
   margin-bottom: 1rem;
   font-family: 'Kanit', sans-serif;
 }
 
-input {
+.input {
   display: block;
   width: 100%;
   padding: 0.8rem;
@@ -59,7 +59,7 @@ input {
   border-radius: 0.4rem;
 }
 
-button {
+.button {
   display: block;
   width: 100%;
   padding: 0.8rem;
@@ -70,20 +70,20 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background: linear-gradient(117deg, rgb(248, 137, 73), rgb(248, 82, 49));
   box-shadow: 0 0.0625rem 0.5rem rgb(254, 100, 70);
   color: black;
   font-weight: bold;
 }
 
-label {
+.label {
   position: relative;
   font-family: 'Mukta', sans-serif;
   font-weight: 500;
 }
 
-label::after {
+.label::after {
   content: "";
   position: absolute;
   bottom: -0.2rem;
@@ -95,7 +95,7 @@ label::after {
   transition: transform 0.3s ease-in-out;
 }
 
-input:focus::after {
+.input:focus::after {
   transform: scaleX(1);
 }
 

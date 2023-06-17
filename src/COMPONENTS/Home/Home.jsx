@@ -8,6 +8,9 @@ import Blog from "../Blogs/Blog";
 import "./Home.css";
 import { Outlet } from "react-router-dom";
 import backgroundImage from "../../allground.jpg";
+{
+  /* <div className="background-container" style={{backgroundImage: `url(${backgroundImage})`,}}> */
+}
 
 const Home = () => {
   return (
@@ -18,7 +21,7 @@ const Home = () => {
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        {/* <NavBar /> */}
+        <NavBar />
         <Outlet></Outlet>
         <Header />
         <Works />

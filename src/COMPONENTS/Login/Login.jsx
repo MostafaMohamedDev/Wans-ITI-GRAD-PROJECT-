@@ -22,11 +22,12 @@ const Login = () => {
     <div className={styles.login}>
       <div className={styles["login-container"]}>
         <div className={`${styles["form-container"]} ${styles["login-form"]}`}>
-          <h2>Login</h2>
+          <h2 className={styles.h2}>Login</h2>
           <form onSubmit={logInFun}>
             <div className={styles["form-group"]}>
-              <label htmlFor="userEmail">UserEmail</label>
+              <label className={styles.label} htmlFor="userEmail">UserEmail</label>
               <input
+              className={styles.input}
                 type="text"
                 id="userEmail"
                 placeholder="Enter your userEmail"
@@ -35,8 +36,9 @@ const Login = () => {
               />
             </div>
             <div className={styles["form-group"]}>
-              <label htmlFor="password">Password</label>
+              <label className={styles.label} htmlFor="password">Password</label>
               <input
+              className={styles.input}
                 type="password"
                 id="password"
                 placeholder="Enter your password"
@@ -44,7 +46,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button type="submit">Login</button>
+            <button className={styles.button} type="submit">Login</button>
           </form>
         </div>
       </div>
