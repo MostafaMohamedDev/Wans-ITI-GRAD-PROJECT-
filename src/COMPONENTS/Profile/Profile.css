@@ -1,0 +1,141 @@
+
+.prof{
+    background-image: url("../../../public/Images/10.jpg"); 
+   background-repeat: no-repeat;
+   background-size: 100%;
+   position: relative;
+   height: 300px;
+ 
+}
+.info{
+   position: absolute;
+   background-image: url("../../../public/Images/10.jpg"); 
+   background-repeat: no-repeat;
+   background-size: 100%;
+   top: 60%;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 60%;
+   border-radius: 20px;
+   color: white;
+   box-shadow: 3px -3px var(--main-color);
+   z-index: 100;
+}
+
+.editImage{
+   width: 120px;
+   height: 120px;
+   border: 1px solid white;
+   border-radius: 50%;
+   margin-left: 50%;
+   transform: translateX(-50%);
+   margin-top: 20px;
+   margin-bottom: 40px;
+}
+
+
+.file{
+   position: absolute;
+   left: 18%;
+   top:45%;
+   color: black;
+   font-size: 15px;
+   width: 65%;
+   height: 30px;
+   /* border-radius: 50%; */
+   background-color: #949aaa;
+   text-align: center;
+   cursor: pointer;
+   border: 0.1rem solid #ccc;
+   border-radius: 0.4rem;
+}
+
+
+.editNM{
+   text-align: left;
+   padding: 0 30px;
+   margin-top: 5px;
+   font-weight: normal;
+   font-size: 14px;
+}
+.editName ,.editEmail{
+   width: calc(100% - 30%);
+   margin: 0 30px 15px;
+   height: 30px;
+   padding: 0 15px;
+   outline: none;
+   border: 0.1rem solid #ccc;
+   border-radius: 0.4rem;
+}
+.save{
+   text-align: center;
+   background-color: rgb(6, 109, 165);
+   text-align: center;
+   width: 100px !important;
+   border-radius: 25px;
+   border: none;
+   color: white;
+   height: 50px;
+   font-size: 18px;
+   margin-left: 50%;
+   transform: translateX(-50%);
+   cursor: pointer;
+   margin-bottom: 10px;
+}
+/**************************************************************************************/
+
+
+
+.addShelter{
+   padding-top: 200px;
+   position: relative;
+   min-height: 700px;
+   background-color: #ececec;
+   height: 200vh;
+}
+
+
+.textarea{
+   width: 70%;
+   height: 50%;
+   border-radius: 30px;
+   margin-bottom: 20px;
+   border-style: none;
+   outline: none;
+   padding: 10px 20px;
+   background-color: #fff;
+   resize: none;
+   margin-left: 10%;
+}
+@media(max-width:760px){
+   .textarea{
+       width: 100%;
+       border-radius: 5px;
+       
+       margin-left: 30%;
+   }
+}
+
+
+
+#add{
+   text-align: center;
+   background-color: rgb(6, 109, 165);
+   text-align: center;
+   width: 200px;
+   border-radius: 25px;
+   color: white;
+   height: 60px;
+   font-size: 18px;
+   margin-left: 50%;
+   transform: translateX(-50%);
+   cursor: pointer;
+   margin-bottom: 100px;
+}
+
+
+#add:hover{
+   background-color: rgb(96, 161, 196);
+}
+
+
