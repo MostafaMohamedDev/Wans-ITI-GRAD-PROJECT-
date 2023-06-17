@@ -30,7 +30,7 @@ const Clinics = () => {
   };
 
   return (
-    <div>
+    <div className="clinc-section">
       <div className="ClincImage">
         <img
           src={clincImage}
@@ -54,7 +54,7 @@ const Clinics = () => {
                 </div>
                 <div className="clinic-card-body">
                   <h3 className="ClinicName">{clinic.name}</h3>
-                  <p>
+                  <p className="clincPar">
                     {" "}
                     <FontAwesomeIcon
                       icon={faLocationDot}

@@ -14,16 +14,26 @@ img {
   }
   .productName {
     
-    
+    font-family: 'Signika', sans-serif;
+    font-weight : bolder;
     margin-top: 70px; 
+    font-size : 4rem
 
-  }/*
+  }
   .productPrice {
-    margin-left: 90px ;
-  
+    font-family: 'Roboto', sans-serif;
     
   }
-   */
+  .cart-card{
+    background-color : rgb(220, 211, 180 , 0.70);
+    border-radius: 3rem;
+
+  }
+.cardCard{
+  position: absolute;
+
+}
+
 
   .btn-quantity {
     transition: background-color 0.3s ease;
@@ -159,4 +169,29 @@ img {
   
   
   
+  .btn{
+    background-color : rgba(104, 107, 72, 0.30)
+  }
+
+ 
+
+  .cartSection {
+    position: relative;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 40px;
+  }
   
+  .cartSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../../public/Images/cart.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Adjust the blur intensity as needed */
+    z-index: -1;
+  }

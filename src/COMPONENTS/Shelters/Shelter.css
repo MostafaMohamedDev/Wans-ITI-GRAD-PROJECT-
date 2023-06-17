@@ -133,7 +133,10 @@ body {
   font-weight : bold
 }
 
+.tittllee{
+  color: #ff642e;
 
+}
 
 .card__status {
   font-size:1em;
@@ -202,3 +205,5 @@ body {
     opacity: 1;
   }
 }
+
+

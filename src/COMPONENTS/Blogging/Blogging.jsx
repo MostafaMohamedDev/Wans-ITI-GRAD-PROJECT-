@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./Blogging.module.css"; // Update the import statement
 
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 
 import blogImage from "../../images/blog.jpg";
 
@@ -29,7 +31,7 @@ const Blogging = () => {
         />
       </div>
 
-
+      
       <div className={`${styles["blog-articals"]} container mt-5`}>
         <div className="card mb-3">
           <div className="row g-0">
@@ -45,6 +47,7 @@ const Blogging = () => {
                 <h5 className={`${styles.h5} card-titleBlog`}>
                   Finding Your Perfect Fur-ever Friend
                 </h5>
+                
                 <p className={`${styles.p} card-text`}>
                   Are you considering adding a furry friend to your family?
                   Choosing the right pet is crucial for a successful and
@@ -54,6 +57,13 @@ const Blogging = () => {
                   low-maintenance feline, this guide will provide essential tips
                   to help you find your perfect fur-ever friend.
                 </p>
+                <div className={styles.rating}>
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                </div>
                 <p className={`${styles.p} card-text`}>
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
@@ -86,6 +96,13 @@ const Blogging = () => {
                   low-maintenance feline, this guide will provide essential tips
                   to help you find your perfect fur-ever friend.
                 </p>
+                <div className={styles.rating}>
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                </div>
                 <p className={`${styles.p} card-text`}>
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
@@ -119,6 +136,13 @@ const Blogging = () => {
                   areas, and ensuring their safety and comfort throughout the
                   house.
                 </p>
+                <div className={styles.rating}>
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                </div>
                 <p className={`${styles.p} card-text`}>
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>
@@ -151,6 +175,13 @@ const Blogging = () => {
                   socialization, and strengthening the bond between you and your
                   furry friend.
                 </p>
+                <div className={styles.rating}>
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                  <FontAwesomeIcon icon={faStar} className={styles.star} />
+                </div>
                 <p className={`${styles.p} card-text`}>
                   <small className="text-muted">Last updated 3 mins ago</small>
                 </p>

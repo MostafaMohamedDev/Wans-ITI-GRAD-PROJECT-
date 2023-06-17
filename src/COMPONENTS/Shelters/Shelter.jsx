@@ -61,7 +61,7 @@ const Shelters = () => {
   }, []);
 
   return (
-    <div className="Shelters">
+    <div className="Shelters ">
       <div
         className="shelterscover"
         onMouseEnter={handleMouseEnter}
@@ -108,12 +108,12 @@ const Shelters = () => {
           </section>
           
           <h3 className="SHhead" style={{ marginRight: "2rem", fontSize: "2.5vw", textAlign: "center" }}>
-    Click to Choose your New Friend
+    Click to Choose <span className="tittllee">your New Friend</span>
     <br />
     <h4
       onClick={handleClickAll}
       style={{
-        cursor: "grab",
+        cursor: "pointer",
         marginTop: "1rem",
         color: "#ff642e",
         fontSize: "1.7vw",
@@ -125,11 +125,11 @@ const Shelters = () => {
 
           <section>
             <img
-              style={{ cursor: "grab",  width: "85%"
+              style={{ cursor: "pointer",  width: "85%" , marginTop: "3rem" , marginLeft: "3rem"
              }}
               onClick={handleClickDog}
               src="./Images/dog.jpg"
-              
+              className="doggimage"
               
               alt="Dog Icon"
             />

@@ -1,58 +1,82 @@
 /* Styles for PC screens */
 @media (min-width: 768px) {
-    .responsive-image {
-      max-width: 100%;
-      height: auto;
-    }
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
   }
-  
-  /* Styles for mobile screens */
-  @media (max-width: 767px) {
-    .responsive-image {
-      width: 100%;
-      height: auto;
-    }
-  }
-  
-.card-titleBlog{
-  font-family: 'Signika', sans-serif;
-  font-weight : bolder;
 }
 
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+  .responsive-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.card-titleBlog {
+  font-family: "Signika", sans-serif;
+  font-weight: bolder;
+}
 
 .BlogSection {
+  position: relative;
   justify-content: center;
-  align-items: center;
-  background-color : rgba(221, 208, 176, 0.150);
-  margin-top : 40px
+  align-items: center; 
+  margin-top: 40px;
 }
 
+.BlogSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../../../public/Images/blogbg.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px); /* Adjust the blur intensity as needed */
+  z-index: -1;
+}
 
 
 .responsive-image {
   border: 1px solid transparent;
   border-radius: 30px;
+z-index: 9999;
 }
 
-
-
-
-
-.blog-artimg{
-
+.blog-artimg {
   width: 150px;
-  height : 100px
+  height:50px;
 }
 
-.h5{
-  font-weight : bolder;
-  font-family: 'Kanit', sans-serif;}
+.h5 {
+  font-weight: bolder;
+  font-family: "Kanit", sans-serif;
+  color:#2a2a2a
+}
 
-.p{
+.p {
+  font-weight: 500;
+  font-family: "Mukta", sans-serif;
+  margin-top: 2rem;
+  text-align: justify;}
 
-  font-weight : 500;
-  font-family: 'Mukta', sans-serif;}
+.card {
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 2);
+}
 
-  .card {
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0,2);
-  }
+
+
+/* Blogging.module.css */
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: gold;
+  margin-right: 2px;
+}
