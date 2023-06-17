@@ -21,7 +21,7 @@ const Home = () => {
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        <NavBar />
+        {/* <NavBar /> */}
         <Outlet></Outlet>
         <Header />
         <Works />
