@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Login.module.css"; // Update the CSS file path
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   //Authentication
@@ -25,9 +26,11 @@ const Login = () => {
           <h2 className={styles.h2}>Login</h2>
           <form onSubmit={logInFun}>
             <div className={styles["form-group"]}>
-              <label className={styles.label} htmlFor="userEmail">UserEmail</label>
+              <label className={styles.label} htmlFor="userEmail">
+                UserEmail
+              </label>
               <input
-              className={styles.input}
+                className={styles.input}
                 type="text"
                 id="userEmail"
                 placeholder="Enter your userEmail"
@@ -36,9 +39,11 @@ const Login = () => {
               />
             </div>
             <div className={styles["form-group"]}>
-              <label className={styles.label} htmlFor="password">Password</label>
+              <label className={styles.label} htmlFor="password">
+                Password
+              </label>
               <input
-              className={styles.input}
+                className={styles.input}
                 type="password"
                 id="password"
                 placeholder="Enter your password"
@@ -46,8 +51,13 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button className={styles.button} type="submit">Login</button>
+            <button className={styles.button} type="submit">
+              Login
+            </button>
           </form>
+          <p style={{ marginTop: "40px" }}>
+            Don't have an account? <Link to="/user">Sign Up</Link>
+          </p>
         </div>
       </div>
     </div>

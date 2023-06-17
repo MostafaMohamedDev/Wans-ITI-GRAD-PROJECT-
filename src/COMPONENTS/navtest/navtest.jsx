@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./navtest.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Navtest = () => {
   return (
@@ -72,6 +73,13 @@ const Navtest = () => {
                 Blog
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/cart">
+                <FontAwesomeIcon icon={faCartShopping} size="lg" />
+              </Link>
+            </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/login">
                 <FontAwesomeIcon icon={faCircleUser} size="xl" />
