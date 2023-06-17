@@ -54,7 +54,8 @@ export default function MultiActionAreaCard({data}) {
         <CardMedia
           component="img"
           height="400"
-          image={image}
+          image={"http://ah.khaledfathi.com/"+image}
+          // http://ah.khaledfathi.com/" + product.image
           alt="green iguana"
           className='bg-dark'
         />

@@ -24,7 +24,7 @@ import MultiActionAreaCard from "./product";
         <div className="container">
         <h1>Pets Shop</h1>
           <div className="row justify-content-around my-4">
-            {productItems.map((product) => (
+            {productItems&&productItems.map((product) => (
               <MultiActionAreaCard
               key={product.id} data={{...product}}
               />
