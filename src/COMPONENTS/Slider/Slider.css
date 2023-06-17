@@ -58,7 +58,7 @@
   z-index: 1;
 }
 
-@media (max-width:945px) {
+@media (max-width:665px) {
   .slidSection {
     margin-top: 750px; 
     width: 25rem;
