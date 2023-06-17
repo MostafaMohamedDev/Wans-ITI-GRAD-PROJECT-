@@ -26,14 +26,14 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 8rem;
   position: relative;
 }
 
 .login-form {
   width: 26rem;
-  height: 31rem;
+  height: 29rem;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.62);
   border-radius: 0.8rem;
