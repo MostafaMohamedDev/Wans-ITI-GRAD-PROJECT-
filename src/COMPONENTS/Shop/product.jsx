@@ -9,6 +9,7 @@ import { Button, CardActionArea, CardActions, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Badge } from '@mui/icons-material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import "./Shop.css"
 
 
 
@@ -49,7 +50,7 @@ export default function MultiActionAreaCard({data}) {
       const cartItemCount = cartItems[id];
 
   return (
-    <Card sx={{ maxWidth: 300,maxheight:700 ,marginBottom:"25px",padding:0,}}>
+    <Card sx={{ maxWidth: 300,maxheight:700 ,marginBottom:"25px",padding:0,borderRedus:"5rem"}}>
       <CardActionArea className='m-auto'>
         <CardMedia
           component="img"
@@ -57,13 +58,13 @@ export default function MultiActionAreaCard({data}) {
           image={"http://ah.khaledfathi.com/"+image}
           // http://ah.khaledfathi.com/" + product.image
           alt="green iguana"
-          className='bg-dark'
+          className='bg-dark imgShop'
         />
-        <CardContent >
+        <CardContent className='text-center'>
           <Typography gutterBottom variant="h5" component="div">
             {name}
           </Typography>
-          <Typography variant="body2" color="">
+          <Typography variant="body3" color="">
             {price}
           </Typography>
         </CardContent>
@@ -71,6 +72,8 @@ export default function MultiActionAreaCard({data}) {
       <CardActions>
         <IconButton
               size="large"
+              style={{color:" #ff642e",  marginLeft: "auto"
+            }}
               aria-label="show 17 new notifications"
               color="inherit"
               onClick={()=>addToCart(id)}

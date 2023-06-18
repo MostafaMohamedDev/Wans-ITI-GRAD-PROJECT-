@@ -78,8 +78,10 @@ const Shelters = () => {
           className="icon-container"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <section>
-          <div className="graph__wrapper" style={{ width: "100%", height: "auto", paddingBottom: "33.97%" }}>
+
+<section>
+            
+<div className="graph__wrapper" style={{ width: "70%", height: "auto"}}>
   <svg width="100%" height="100%" viewBox="0 0 315 107" version="1.1" preserveAspectRatio="xMidYMid meet" style={{ overflow: "visible" }}>
     <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" sketchType="MSPage">
       <path id="Path-1" className="path" fill="none" stroke="#ff642e" strokeWidth="5" strokeLinejoin="round" strokeMiterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81" />
@@ -94,40 +96,41 @@ const Shelters = () => {
   </svg>
 </div>
 
-
             <img
               className="CatImg"
-              style={{ cursor: "grab", width: "100%",marginTop:"-70px" }}
+              style={{ cursor: "grab", width: "65%",marginTop:"-45px" }}
               onClick={handleClickCat}
               src="./Images/cat.jpg"
-              width="500rem"
-              height="300rem"
+             
+              
               alt="Cat Icon"
             />
           </section>
-          <h3 className="SHhead">
-            Click to Choose your New Friend
-            <br />
-            <h4
-              onClick={handleClickAll}
-              style={{
-                cursor: "grab",
-                marginTop: "2rem",
-                color: "#ff642e",
-                fontSize: "2rem",
-              }}
-            >
-              Or Both
-            </h4>
-          </h3>
+          
+          <h3 className="SHhead" style={{ marginRight: "2rem", fontSize: "2.5vw", textAlign: "center" }}>
+    Click to Choose your New Friend
+    <br />
+    <h4
+      onClick={handleClickAll}
+      style={{
+        cursor: "grab",
+        marginTop: "1rem",
+        color: "#ff642e",
+        fontSize: "1.7vw",
+      }}
+    >
+      Or Both
+    </h4>
+  </h3>
 
           <section>
             <img
-              style={{ cursor: "grab",  width: "100%" }}
+              style={{ cursor: "grab",  width: "85%"
+             }}
               onClick={handleClickDog}
               src="./Images/dog.jpg"
-              width="500rem"
-              height="350rem"
+              
+              
               alt="Dog Icon"
             />
           </section>

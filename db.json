@@ -26,14 +26,14 @@
     },
     {
       "id": 3,
-      "name": "Loving Paws Adoption Agency",
+      "name": "Loving Paws Agency",
       "phone": "333-333-3333",
       "address": "789 Oak St, Elsalam",
       "type": "cat",
       "pet": {
         "name": "Lucy",
         "image": "https://media.istockphoto.com/id/465257035/photo/small-orange-kitten-lie-on-the-bed.webp?b=1&s=170667a&w=0&k=20&c=bIYTs3vCGzOukVMQtqoSm8UAJk0hR792vdVYe6F8L-k=",
-        "description": "Lucy is a graceful and independent cat. She enjoys lounging in sunny spots and observing her surroundings."
+        "description": "Lucy is a graceful and independent cat. She enjoys lounging in sunny spots."
       }
     },
     {
@@ -477,8 +477,15 @@
   ],
   "cart": {
     "1": 0,
-    "2": 7,
-    "7": null
+    "2": 5,
+    "3": 2,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0
   },
   "routes": {
     "/cart": "cart"

@@ -6,10 +6,23 @@ const Header = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    const playVideo = () => {
+      if (videoRef.current) {
+        videoRef.current.play();
+      }
+    };
+  
     if (videoRef.current) {
-      videoRef.current.play();
+      videoRef.current.addEventListener("canplay", playVideo);
     }
+  
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener("canplay", playVideo);
+      }
+    };
   }, []);
+  
 
   return (
     <div className={`${styles.headerContainer} container-fluid`}>
