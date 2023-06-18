@@ -21,8 +21,8 @@ const UserForm = () => {
   return (
     <div className={styles.user}>
       <div className={styles.signup}>
-        <div className={styles["signup-container"]}>
-          <div className={`${styles["form-container"]} container`}>
+        <div className={styles["signup-container"]} >
+          <div className={`${styles["form-container"]}`}>
             <div className={styles["signup-form"]}>
               <h2 className="h2">Register</h2>
               <form onSubmit={signUp}>
@@ -43,6 +43,17 @@ const UserForm = () => {
                 </div>
                 <div className={styles["form-group"]}>
                   <label className={styles.label} htmlFor="password">Password</label>
+                  <input
+                  className={styles.input}
+                    type="password"
+                    id="password"
+                    placeholder="Create your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className={styles["form-group"]}>
+                  <label className={styles.label} htmlFor="password">Confirm Password</label>
                   <input
                   className={styles.input}
                     type="password"
