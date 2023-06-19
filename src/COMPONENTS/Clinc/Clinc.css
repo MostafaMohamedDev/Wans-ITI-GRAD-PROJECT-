@@ -23,6 +23,7 @@
   text-align: center;
   border-bottom: 1px solid #ff642e;
   transition: all 0.4s;
+  padding-bottom: 0.5rem;
 
 }
 .clinic-parentCard .clinic-card:hover{
@@ -30,13 +31,14 @@
 }
 
 .clinic-btn{
-border-radius: 999px;
+border-radius: 20px;
 padding: 0.8rem ; 
 background: #ff642e;
 border: transparent;
 color: rgb(255, 255, 255);
 font-size: 1.2rem;
 font-family: 'Kanit', sans-serif;
+font-weight: 300;
 cursor: pointer;
 transition: box-shadow 0.25s ease 0s;
 }
