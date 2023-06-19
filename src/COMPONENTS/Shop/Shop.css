@@ -1,21 +1,38 @@
 /* Styles for PC screens */
 @media (min-width: 768px) {
-    .responsive-image {
-      max-width: 100%;
-      height: auto;
-    }
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
   }
-  
-  /* Styles for mobile screens */
-  @media (max-width: 767px) {
-    .responsive-image {
-      width: 100%;
-      height: auto;
-    }
+}
+
+/* Styles for mobile screens */
+@media (max-width: 767px) {
+  .responsive-image {
+    width: 100%;
+    height: auto;
   }
 
-  .imgShop{
+}
 
-    height: 250px;
-  } 
-  
+.imgShop{
+
+  height: 250px;
+}
+
+
+
+
+.line-head{
+  font-family: 'Signika', sans-serif;
+  font-weight : bold;
+  font-size : 25px
+}
+
+.HEADER {
+  font-family: 'Signika', sans-serif;
+  font-weight: bold;
+  font-size: 70px;
+  text-align: center;
+  letter-spacing : 2px
+}
