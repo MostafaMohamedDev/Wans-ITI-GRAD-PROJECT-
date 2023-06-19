@@ -1,8 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaw } from "@fortawesome/free-solid-svg-icons";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./CardSection.module.css";
 
 const CardSection = () => {
@@ -13,7 +9,7 @@ const CardSection = () => {
           <div className="col-lg-12 col-md-12 col-sm-12 text-center">
             <h4 className={styles.iconHeader}>
               Providing the{" "}
-              <span  className={styles.span} >
+              <span className={styles.span}>
                 best <br /> quality services for your pets
               </span>
             </h4>
@@ -21,15 +17,17 @@ const CardSection = () => {
         </div>
 
         <div className={styles.cardSection}>
-          <div className="row d-flex justify-content-center"> {/* Center the cards on small screens */}
+          <div className="row d-flex justify-content-center">
+            {" "}
+            {/* Center the cards on small screens */}
             {/* First Card */}
             <div
               className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
               <div className={`card ${styles.card}`}>
                 <img
-                  src="../Images/vetclinic.jpg"
-                  alt="Image 1"
+                  src="Images/vetclinic.jpg"
+                  alt="Im1"
                   className={`card-img-top ${styles.cardImage}`}
                 />
                 <div className={`card-overlay ${styles.cardOverlay}`}></div>
@@ -43,15 +41,14 @@ const CardSection = () => {
                 </div>
               </div>
             </div>
-
             {/* Second Card */}
             <div
               className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} ${styles.psMd3} ${styles.psSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
               <div className={`card ${styles.card}`}>
                 <img
-                  src="./../../../public/Images/shoop.jpg"
-                  alt="Image 2"
+                  src="Images/shoop.jpg"
+                  alt="Im2"
                   className={`card-img-top ${styles.cardImage}`}
                 />
                 <div className={`card-overlay ${styles.cardOverlay}`}></div>
@@ -65,15 +62,14 @@ const CardSection = () => {
                 </div>
               </div>
             </div>
-
             {/* Third Card */}
             <div
               className={`${styles.cardCircle} ${styles.psMd3} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
               <div className={`card ${styles.card}`}>
                 <img
-                  src="../Images/chelter.jpg"
-                  alt="Image 3"
+                  src="Images/chelter.jpg"
+                  alt="Ima3"
                   className={`card-img-top ${styles.cardImage}`}
                 />
                 <div className={`card-overlay ${styles.cardOverlay}`}></div>

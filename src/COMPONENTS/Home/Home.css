@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
   }
   
-  @media only screen and (max-width: 1200px) {
+  /* @media only screen and (max-width: 1200px) {
     .background-container {
       background-size: contain;
     }
@@ -22,4 +22,4 @@
       background-position: top;
     }
   }
-  
+   */

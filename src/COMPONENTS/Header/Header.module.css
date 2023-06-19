@@ -46,12 +46,13 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
-    padding: 1.25rem; /* Converted from 20px */
+    padding: 1.25rem; 
     color: #fff;
     text-align: left;
     line-height: 1.5625rem; /* Converted from 25px */
     font-family: 'Geologica', sans-serif;
     font-weight: lighter;
+  
   }
   
   .contentContainer h1 {
@@ -62,12 +63,15 @@
   .contentContainer p {
     font-size: 1rem; /* Converted from 18px */
     line-height: 1.875rem; /* Converted from 30px */
+    /* text-align: left; */
+    text-align: justify;
+     font-weight:300;
   }
   
-  .btn {
+  .headerBtn {
     border-radius: 2rem;
     padding: 1rem 2rem; /* Converted from 16px */
-    background: #786B3E;
+    background-color: #786B3E;
     border: transparent;
     color: #fff;
     font-size: 1rem;
@@ -81,8 +85,8 @@
     width: 50%
   }
   
-  .btn:hover,
-  .btn:focus {
+  .headerBtn:hover,
+  .headerBtn:focus {
     background: linear-gradient(117deg, rgb(248, 137, 73), rgb(248, 82, 49));
     box-shadow: 0 0.0625rem 0.5rem rgb(254, 100, 70); /* Converted from 0 0.1rem 0.8rem rgb(254, 100, 70) */
     color: black;

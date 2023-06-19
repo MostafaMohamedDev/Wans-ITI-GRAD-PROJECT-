@@ -1,5 +1,5 @@
 .slidSection {
-  margin-bottom: 20%;
+  padding :10rem 0
 }
 
 .header {
@@ -57,16 +57,3 @@
   position: relative;
   z-index: 1;
 }
-
-@media (max-width:665px) {
-  .slidSection {
-    margin-top: 750px; 
-    width: 25rem;
-
-  }
-}
-
-/* @media (max-width: 768px) {  .slidSection {
-  margin-top: 850px; 
-  width: 30rem;
-} } */

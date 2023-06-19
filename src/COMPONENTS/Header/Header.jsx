@@ -12,7 +12,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={`${styles.headerContainer} container-fluid`}>
+    <div className={`${styles.headerContainer} `}>
       <div className={styles.videoContainer}>
         <div className={styles.darkLayer}></div>
         {/* New: Dark layer on top of the video */}
@@ -34,17 +34,16 @@ const Header = () => {
 
             <div className={`${styles.headerContent} text-center`}>
               <p>
-                Where Pets are Family! Discover a comprehensive directory of pet
-                clinics, expert articles, and helpful resources for optimal pet
-                care. Join our community of passionate pet lovers and ensure
+                Where Pets are Family ! Discover a comprehensive directory of
+                pet clinics, expert articles, and helpful resources for optimal
+                pet care. Join our community of passionate pet lovers and ensure
                 your furry friends live their happiest, healthiest lives. Find
-                trusted veterinarians, explore pet care topics, and connect with
-                like-minded individuals at Wans. Your go-to destination for all
-                things pets.
+                trusted veterinarians, explore pet care topics, Excellent online
+                shop products, and connect with like-minded individuals at Wans.
+                Your go-to destination for all things pets we wish Happy
+                Journey.
               </p>
-              <button className={`btn ${styles.btn} btn-primary`}>
-                LEARN MORE
-              </button>
+              <button className={` ${styles.headerBtn} `}>LEARN MORE</button>
             </div>
           </div>
         </div>
