@@ -41,8 +41,8 @@ const ApiContextProvider = (props) => {
         setUserData(userData.filter((item) => item.id !== id))
         setDataUpdated(true)
     }
-    const login = async (a,b) => {
-        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",{a,b});
+    const login = async (data) => {
+        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",data);
         console.log(response);
         const newData = await response.json();
         console.log(newData);

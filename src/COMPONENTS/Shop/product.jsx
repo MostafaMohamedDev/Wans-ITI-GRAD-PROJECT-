@@ -82,7 +82,7 @@ export default function MultiActionAreaCard({data}) {
             </CardContent>
 
           </CardActionArea>
-          <CardActions className="bottom-card" style={{ backgroundColor: "#333", padding: "10px" }}>
+          <CardActions className="bottom-card" style={{ backgroundColor: "#333", padding: "10px"}}>
   <IconButton
     size="large"
     style={{
