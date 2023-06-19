@@ -9,11 +9,13 @@
   color: black;
   font-weight: bolder;
 }
-
+.slid-container {
+  width: 90%;
+  margin: auto;
+}
 .item {
   position: relative;
 }
-
 .item .layer {
   position: absolute;
   width: 100%;
@@ -25,7 +27,6 @@
   visibility: hidden;
   transition: all 0.4s ease-in-out;
 }
-
 .item .layer .layer-content {
   position: absolute;
   text-align: center;

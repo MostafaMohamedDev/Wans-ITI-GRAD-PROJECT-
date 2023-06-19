@@ -43,7 +43,7 @@ const PartnersSlider = () => {
   };
 
   return (
-    <div className="container slidSection">
+    <div className="slid-container slidSection">
       <h2 className="header">
         Best <span>Sellers</span>{" "}
       </h2>
