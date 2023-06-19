@@ -1,7 +1,5 @@
 .servicesSection {
   position: relative;
-  height: 50rem; /* Converted from 864px */
-  width: 100%;
   margin-top: 10rem ;
 }
 
@@ -31,10 +29,8 @@
   font-family: 'Signika', sans-serif;
 }
 
-
-
 .cardSection {
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 2.8125rem; /* Converted from 45px */
@@ -89,6 +85,7 @@
 .card:hover .cardBody {
   opacity: 1;
   transform: translateY(0);
+  color: #fff;
   height: 8.75rem; /* Converted from 140px */
 }
 
@@ -133,6 +130,5 @@
 }
 
 /* _____________________________THIRD-SECTIONS______________________________ */
-
 
 

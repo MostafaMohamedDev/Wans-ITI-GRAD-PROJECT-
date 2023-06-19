@@ -31,17 +31,51 @@ const Cart = () => {
           }
         })}
       </div>
-      <p>subTotal: ${totalAmount}</p>
-      <button onClick={() => navigate("/")}>Continue Shopping</button>
-      <button
-        onClick={() => {
-          checkout();
-          navigate("/");
-        }}>
-        Checkout
-      </button>
+      <div className="text-center mt-5">
+      <p style={{fontSize:"2rem"}}>SubTotal: <span style={{fontSize:"1.5rem",color:" #ff642e"}}>${totalAmount}</span></p>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+  <button
+    style={{
+      backgroundColor: '#007bff',
+      color: '#fff',
+      padding: '10px 20px',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+
+    }}
+    onClick={() => navigate("/shop")}
+  >
+    Continue 
+    
+  </button>
+
+  <button
+    style={{
+      backgroundColor: '#007bff',
+      color: '#fff',
+      padding: '10px 20px',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      
+      
+    }}
+    onClick={() => {
+      checkout();
+      navigate("/");
+    }}
+  >
+    Checkout
+  </button>
+</div>
+<div style={{ display: 'flex', justifyContent: 'center', marginTop:"2rem" }}>
         <PayPalScriptProvider options={{"client-id":"AdhDbKF_Lov12WaVtt1dRbyhS4W3Np2M9SfjGlY5vrs4q8NOwMjG8icMqBxlvvdsOWjTilS-iVYyWdpD"}}>
             <PayPalButtons
+            
+            
+            
             createOrder={(data, actions) => {
                 return actions.order.create({
                   purchase_units: [
@@ -60,6 +94,7 @@ const Cart = () => {
               }}
             />
         </PayPalScriptProvider>
+    </div>
     </div>
   );
 };
