@@ -12,7 +12,7 @@ const CartItem = ({ data }) => {
   const { id, name, price, image } = data;
 
   return (
-    <div className="cart-container">
+    <div className="container">
       <div className="items">
         <div className="grid_4 item">
           <a href="#" className="btn-remove">
