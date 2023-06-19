@@ -1,64 +1,63 @@
-import React from "react";
-import { useContext } from "react";
-import { ShopContext } from "../../context/shop-context";
-import { faTrashAlt, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react'
+import { useContext } from 'react';
+import { ShopContext } from '../../context/shop-context';
+import { faTrashAlt, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import "./cart-item.css";
-const CartItem = ({ data }) => {
-  const { addToCart, removeFromCart, cartItems, updateCartItem } =
-    useContext(ShopContext);
+import "./cart-item.css"
+const CartItem = ({data}) => {
 
-  const { id, name, price, image } = data;
+    const {addToCart,removeFromCart,cartItems,updateCartItem,} = useContext(ShopContext)
 
-  return (
-    <div className="container">
-      <div className="items">
-        <div className="grid_4 item">
-          <a href="#" className="btn-remove">
-            <FontAwesomeIcon icon={faTrashAlt} />
-          </a>
-          <div className="preview">
-            <img src={image} alt="Item Preview" />
-          </div>
-          <div className="details">
-            <h3 className="productName">{name}</h3>
-            <h6 className="productPrice">{price}</h6>
-          </div>
-          <div className="inner_container">
-            <div className="col_1of2 align-center picker">
-              <button
-                className="btn-quantity plus"
-                onClick={() => addToCart(id)}
-              >
-                <FontAwesomeIcon icon={faPlus} />
-              </button>
+    const {id,name,price,image} = data;
 
-              <div className="col_1of2 quantity-text">
-                <input
-                  style={{
-                    textAlign: "center",
-                    color: "red",
-                    borderRadius: "7%",
-                  }}
-                  type="number"
-                  value={cartItems[id]}
-                  onChange={(e) => updateCartItem(+e.target.value, id)}
-                />{" "}
-              </div>
-              <button
-                className="btn-quantity minus"
-                onClick={() => removeFromCart(id)}
-              >
-                {" "}
-                <FontAwesomeIcon icon={faMinus} />{" "}
-              </button>
-            </div>
-          </div>
-        </div>
+    return (
+      <div className="container">
+  <div className="row bg-light">
+    <div className="col-sm-12 col-md-4">
+     
+      <div className="preview">
+        <img src={"http://ah.khaledfathi.com/"+image} alt="Item Preview" className="img-fluid" />
       </div>
     </div>
-  );
-};
+    <div className="col-sm-12 col-md-8">
+      <div className="details">
+        <h3 className='productName text-center'>
+          {name}
+        </h3>
+        <h5 className='productPrice text-center'>
+          {price}
+        </h5>
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="picker">
+            <button className="btn btn-quantity" onClick={()=>addToCart(id)}>
+              <FontAwesomeIcon icon={faPlus} color="#ff642e" />
+            </button>
+            <input
+              style={{ textAlign: "center", color: "#ff642e", border: "0.1rem solid #ccc", borderRadius: "0.4rem" }}
+              type="number"
+              className="form-control"
+              value={cartItems[id]}
+              onChange={(e) => updateCartItem(+e.target.value, id)}
+            />
+            <button className="btn btn-quantity" onClick={()=>removeFromCart(id)}>
+              <FontAwesomeIcon icon={faMinus} color="#ff642e" />
+            </button>
+            {/* <a href="#" className="btn btn-remove">
+        <FontAwesomeIcon icon={faTrashAlt} color="#ff642e" />
+      </a> */}
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    )    
+  };
+
 
 export default CartItem;
