@@ -8,6 +8,7 @@ const ApiContextProvider = (props) => {
 
     const [userData, setUserData] = useState()
     const [dataUpdated, setDataUpdated] = useState(false)
+    const [createStatus,setCreateStatus] = useState()
 
     const fetchData = async () => {
         const response = await ajax(apiUrl);
@@ -16,8 +17,12 @@ const ApiContextProvider = (props) => {
     }
 
     const createData = async (data) => {
+        console.log(data);
         const response = await ajax(apiUrl, "post", data);
-        const newData = await response.json()   ;
+        console.log(response);
+        const newData = await response.json();
+        // console.log(newData);
+        setCreateStatus(newData)
         setUserData((prevUserData) => [...prevUserData, newData]);
         setDataUpdated(true)
     }
@@ -36,6 +41,13 @@ const ApiContextProvider = (props) => {
         setUserData(userData.filter((item) => item.id !== id))
         setDataUpdated(true)
     }
+    const login = async (a,b) => {
+        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",{a,b});
+        console.log(response);
+        const newData = await response.json();
+        console.log(newData);
+    }
+
     useEffect(() => {
         fetchData();
     }, [])
@@ -48,13 +60,13 @@ const ApiContextProvider = (props) => {
     }, [dataUpdated])
 
 
-    console.log(userData)
-
     const contextValues = {
         userData,
         createData,
         updateData,
-        deleteData
+        deleteData,
+        createStatus,
+        login
     }
 
     return (

@@ -25,7 +25,6 @@
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
-  width: 100% ;
   padding: 8rem;
   position: relative;
 }
@@ -36,15 +35,14 @@
 }
 
 .signup-form {
-  /* width: 26rem; */
+  width: 28rem;
   /* height: 31rem; */
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.62);
   border-radius: 0.8rem;
   position: relative;
-  width: 100%;
-  /* right: 4rem; */
-  top : 1rem
+  right: 0rem;
+  top : 2rem
 }
 
 .h2 {
@@ -106,7 +104,6 @@
   .container {
     padding-left: 15px;
     padding-right: 15px;
-    width: 100%;
   }
 
   /* Adjust the background image size if needed */
@@ -117,7 +114,6 @@
   
   .signup-container {
     padding: 2rem;
-    width: 100%;
   }
   
   .signup-form {
@@ -131,7 +127,6 @@
 @media (min-width: 577px) and (max-width: 992px) {
   .container {
     max-width: 750px;
-    width: 100%;
   }
 }
 
@@ -139,7 +134,5 @@
 @media (min-width: 993px) {
   .container {
     max-width: 970px;
-    width: 100%;
-
   }
 }

@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css"; // Update the CSS file path
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { ApiContext } from "../../context/API-Context";
 const Login = () => {
   //Authentication
+  const {login} =useContext(ApiContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const logInFun = (e) => {
+  const logInFun = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    await login(email, password);
   };
 
   return (
@@ -33,6 +27,7 @@ const Login = () => {
                 className={styles.input}
                 type="text"
                 id="userEmail"
+                name="email"
                 placeholder="Enter your userEmail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -46,6 +41,7 @@ const Login = () => {
                 className={styles.input}
                 type="password"
                 id="password"
+                name="password"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
