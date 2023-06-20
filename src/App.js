@@ -18,6 +18,7 @@ import Navtest from './COMPONENTS/navtest/navtest';
 import ShelterProfile from"./COMPONENTS/Profile/Profile"
 import ApiContextProvider from './context/API-Context';
 import Admin from './COMPONENTS/Admin/Admin';
+import Logout from './COMPONENTS/Logout/logout';
 
 
 const App = () => {
@@ -38,6 +39,8 @@ const App = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart"element={<Cart/>}/>
         <Route path="/profile" element={<ShelterProfile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/Admin" element={<Admin/>} />
       </Routes>  
       </ShopContextProvider>
