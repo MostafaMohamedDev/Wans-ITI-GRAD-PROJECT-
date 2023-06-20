@@ -18,16 +18,23 @@ const ApiContextProvider = (props) => {
         setUserData(data.data)
     }
 
-    const createData = async (data) => {
+    const createData = async (data,ref) => {
         console.log(data);
-        const response = await ajax(apiUrl, "post", data);
+        ref = (ref.value)? ref:null
+        const response = await ajax(apiUrl, "post", data,ref);
         console.log(response);
         const newData = await response.json();
-        // console.log(newData);
+        console.log(newData);
+        
         setCreateStatus(newData)
         setUserData((prevUserData) => [...prevUserData, newData]);
         setDataUpdated(true)
+        if(newData.status){
+            redirect("./login")
+        }
+        
     }
+
     const updateData = async (id, data) => {
         const response = await ajax(apiUrl + "/" + id + "/update", "POST", data);
         const updatedData = await response.json();
@@ -79,7 +86,7 @@ const ApiContextProvider = (props) => {
         updateData,
         deleteData,
         createStatus,
-        login
+        login,
     }
 
     return (
