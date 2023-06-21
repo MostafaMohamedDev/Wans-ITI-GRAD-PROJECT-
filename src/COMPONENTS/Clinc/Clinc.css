@@ -143,3 +143,10 @@ color: rgb(0, 0, 0);
   filter: blur(3px); /* Adjust the blur intensity as needed */
   z-index: -1;
 }
+
+.CLINCIMAGE{
+
+  width: 150px;
+  height : 200px;
+  background-color : red
+}
