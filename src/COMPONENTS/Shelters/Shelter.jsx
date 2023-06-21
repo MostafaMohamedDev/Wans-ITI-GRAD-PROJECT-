@@ -4,12 +4,10 @@ import headerImage from "../../images/adopt1.jpg";
 import headerImageHover from "../../images/adopt2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { CONSTANTS } from '../../constants';
+import { CONSTANTS } from "../../constants";
 
-
-const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
-const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
-
+const jsonPort = CONSTANTS.JSON_SERVER.PORT;
+const baseURL = "http://localhost:" + jsonPort + "/Shelters";
 
 const Shelters = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -78,59 +76,103 @@ const Shelters = () => {
           className="icon-container"
           style={{ display: "flex", justifyContent: "center" }}
         >
+          <section>
+            {/* <div
+              className="graph__wrapper"
+              style={{ width: "70%", height: "auto" }}
+            >
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 315 107"
+                version="1.1"
+                preserveAspectRatio="xMidYMid meet"
+                style={{ overflow: "visible" }}
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  strokeWidth="1"
+                  fill="none"
+                  fillRule="evenodd"
+                  sketchType="MSPage"
+                >
+                  <path
+                    id="Path-1"
+                    className="path"
+                    fill="none"
+                    stroke="#ff642e"
+                    strokeWidth="5"
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81"
+                  />
+                  <path
+                    className="dashed"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="8"
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81"
+                  />
 
-<section>
-            
-<div className="graph__wrapper" style={{ width: "70%", height: "auto"}}>
-  <svg width="100%" height="100%" viewBox="0 0 315 107" version="1.1" preserveAspectRatio="xMidYMid meet" style={{ overflow: "visible" }}>
-    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" sketchType="MSPage">
-      <path id="Path-1" className="path" fill="none" stroke="#ff642e" strokeWidth="5" strokeLinejoin="round" strokeMiterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81" />
-      <path className="dashed" fill="none" stroke="white" strokeWidth="8" strokeLinejoin="round" strokeMiterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81" />
-
-      <polyline id="arrow" points="0,-9 18,0 0,9 5,0" fill="#ff642e">
-        <animateMotion rotate="auto" begin="1s" dur="1.6s" repeatCount="1" fill="freeze">
-          <mpath xlinkHref="#Path-1" />
-        </animateMotion>
-      </polyline>
-    </g>
-  </svg>
-</div>
+                  <polyline
+                    id="arrow"
+                    points="0,-9 18,0 0,9 5,0"
+                    fill="#ff642e"
+                  >
+                    <animateMotion
+                      rotate="auto"
+                      begin="1s"
+                      dur="1.6s"
+                      repeatCount="1"
+                      fill="freeze"
+                    >
+                      <mpath xlinkHref="#Path-1" />
+                    </animateMotion>
+                  </polyline>
+                </g>
+              </svg>
+            </div> */}
 
             <img
               className="CatImg"
-              style={{ cursor: "grab", width: "65%",marginTop:"-45px" }}
+              style={{ cursor: "grab", width: "65%", marginTop: "-45px" }}
               onClick={handleClickCat}
               src="./Images/cat.jpg"
-             
-              
               alt="Cat Icon"
             />
           </section>
-          
-          <h3 className="SHhead" style={{ marginRight: "2rem", fontSize: "2.5vw", textAlign: "center" }}>
-    Click to Choose your New Friend
-    <br />
-    <h4
-      onClick={handleClickAll}
-      style={{
-        cursor: "grab",
-        marginTop: "1rem",
-        color: "#ff642e",
-        fontSize: "1.7vw",
-      }}
-    >
-      Or Both
-    </h4>
-  </h3>
+
+          <h3
+            className="SHhead"
+            style={{
+              marginRight: "2rem",
+              fontSize: "2.5vw",
+              textAlign: "center",
+            }}
+          >
+            Click to Choose your New Friend
+            <br />
+            <h4
+              onClick={handleClickAll}
+              style={{
+                cursor: "grab",
+                marginTop: "1rem",
+                color: "#ff642e",
+                fontSize: "1.7vw",
+              }}
+            >
+              Or Both
+            </h4>
+          </h3>
 
           <section>
             <img
-              style={{ cursor: "grab",  width: "85%"
-             }}
+              style={{ cursor: "grab", width: "85%" }}
               onClick={handleClickDog}
-              src="./Images/dog.jpg"
-              
-              
+              src="./Images/dog1.png"
               alt="Dog Icon"
             />
           </section>
@@ -145,11 +187,7 @@ const Shelters = () => {
               key={shelter.id}
             >
               <a className="card">
-                <img
-                  src={shelter.pet.image}
-                  className="card__image"
-                  alt=""
-                />
+                <img src={shelter.pet.image} className="card__image" alt="" />
                 <div className="card__overlay">
                   <div className="card__header">
                     <svg
@@ -168,9 +206,7 @@ const Shelters = () => {
                       <span className="card__status">{shelter.name}</span>
                     </div>
                   </div>
-                  <p className="card__description">
-                    {shelter.pet.description}
-                  </p>
+                  <p className="card__description">{shelter.pet.description}</p>
                   <p className="cardMoreInfo1">{shelter.address}</p>
                   <p className="cardMoreInfo2">
                     <FontAwesomeIcon

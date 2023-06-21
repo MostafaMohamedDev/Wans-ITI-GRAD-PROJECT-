@@ -3,14 +3,6 @@
 section {
 position: relative;
 padding-bottom:10rem ;
-
-/* background-image: url(../../../public/Images/patt.jpg); /
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-padding: 1.25rem; / Converted from 20px /
-border: 1px solid transparent;
-padding-top: 1.875rem; / Converted from 30px */
 }
 
 .subtitleHead{font-family: 'Signika', sans-serif;
@@ -71,6 +63,7 @@ font-weight: bold;
 
 .cardText {
     font-family: 'Mukta', sans-serif; font-weight: bold;
+    
 }
 
 @media (max-width: 87.5rem) { /* Converted from 1400px */

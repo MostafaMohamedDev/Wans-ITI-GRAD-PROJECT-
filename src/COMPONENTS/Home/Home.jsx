@@ -17,9 +17,9 @@ const Home = () => {
     <>
       <div
         className="background-container"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
+        // style={{
+        //   backgroundImage: `url(${backgroundImage})`,
+        // }}
       >
         <Outlet></Outlet>
         <Header />
