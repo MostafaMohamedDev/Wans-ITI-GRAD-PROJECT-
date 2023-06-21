@@ -5,6 +5,7 @@ import headerImageHover from "../../images/adopt2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { CONSTANTS } from '../../constants';
+import axios from "axios";
 
 
 const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
@@ -34,10 +35,10 @@ const Shelters = () => {
   };
 
   const filteredShelterCards = shelterCard.filter((shelter) => {
-    if (showOnlyDogCards && shelter.type === "dog") {
+    if (showOnlyDogCards && shelter.animal_type === "dog") {
       return true;
     }
-    if (showOnlyCatCards && shelter.type === "cat") {
+    if (showOnlyCatCards && shelter.animal_type === "cat") {
       return true;
     }
     if (!showOnlyDogCards && !showOnlyCatCards) {
@@ -54,10 +55,17 @@ const Shelters = () => {
     setIsHovered(false);
   };
 
+  // useEffect(() => {
+  //   fetch("http://localhost:4001/shelters")
+  //     .then((res) => res.json())
+  //     .then((data) => setShelterCard(data));
+  // }, []);
   useEffect(() => {
-    fetch("http://localhost:4001/shelters")
-      .then((res) => res.json())
-      .then((data) => setShelterCard(data));
+    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/shelter").then((res) => {
+      console.log(res.data.data);
+      setShelterCard(res.data.data);
+      console.log(shelterCard);
+    });
   }, []);
 
   return (
@@ -146,7 +154,7 @@ const Shelters = () => {
             >
               <a className="card">
                 <img
-                  src={shelter.pet.image}
+                  src={"http://ah.khaledfathi.com/"+shelter.image}
                   className="card__image"
                   alt=""
                 />
@@ -160,16 +168,16 @@ const Shelters = () => {
                     </svg>
                     <img
                       className="card__thumb"
-                      src={shelter.pet.image}
+                      src={"http://ah.khaledfathi.com/"+shelter.image}
                       alt=""
                     />
                     <div className="card__header-text">
-                      <h3 className="card__title">{shelter.pet.name}</h3>
+                      <h3 className="card__title">{shelter.name}</h3>
                       <span className="card__status">{shelter.name}</span>
                     </div>
                   </div>
                   <p className="card__description">
-                    {shelter.pet.description}
+                    {shelter.description}
                   </p>
                   <p className="cardMoreInfo1">{shelter.address}</p>
                   <p className="cardMoreInfo2">
