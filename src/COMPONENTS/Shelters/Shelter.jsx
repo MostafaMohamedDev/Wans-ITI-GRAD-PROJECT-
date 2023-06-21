@@ -4,19 +4,10 @@ import headerImage from "../../images/adopt1.jpg";
 import headerImageHover from "../../images/adopt2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-<<<<<<< HEAD
-import { CONSTANTS } from "../../constants";
-=======
 import { CONSTANTS } from '../../constants';
 import axios from "axios";
 
 
-const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
-const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
-
-const jsonPort = CONSTANTS.JSON_SERVER.PORT;
-const baseURL = "http://localhost:" + jsonPort + "/Shelters";
 
 const Shelters = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -160,37 +151,6 @@ const Shelters = () => {
               alt="Cat Icon"
             />
           </section>
-<<<<<<< HEAD
-
-          <h3
-            className="SHhead"
-            style={{
-              marginRight: "2rem",
-              fontSize: "2.5vw",
-              textAlign: "center",
-            }}
-          >
-            Click to Choose your New Friend
-            <br />
-            <h4
-              onClick={handleClickAll}
-              style={{
-                cursor: "grab",
-                marginTop: "1rem",
-                color: "#ff642e",
-                fontSize: "1.7vw",
-              }}
-            >
-              Or Both
-            </h4>
-          </h3>
-
-          <section>
-            <img
-              style={{ cursor: "grab", width: "85%" }}
-              onClick={handleClickDog}
-              src="./Images/dog1.png"
-=======
           
           <h3 className="SHhead" style={{ marginRight: "2rem", fontSize: "2.5vw", textAlign: "center" }}>
     Click to Choose <span className="tittllee">your New Friend</span>
@@ -215,8 +175,6 @@ const Shelters = () => {
               onClick={handleClickDog}
               src="./Images/dog.jpg"
               className="doggimage"
-              
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
               alt="Dog Icon"
             />
           </section>
@@ -231,15 +189,12 @@ const Shelters = () => {
               key={shelter.id}
             >
               <a className="card">
-<<<<<<< HEAD
-                <img src={shelter.pet.image} className="card__image" alt="" />
-=======
+
                 <img
                   src={"http://ah.khaledfathi.com/"+shelter.image}
                   className="card__image"
                   alt=""
                 />
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
                 <div className="card__overlay">
                   <div className="card__header">
                     <svg
@@ -258,13 +213,10 @@ const Shelters = () => {
                       <span className="card__status">{shelter.name}</span>
                     </div>
                   </div>
-<<<<<<< HEAD
-                  <p className="card__description">{shelter.pet.description}</p>
-=======
+
                   <p className="card__description">
                     {shelter.description}
                   </p>
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
                   <p className="cardMoreInfo1">{shelter.address}</p>
                   <p className="cardMoreInfo2">
                     <FontAwesomeIcon

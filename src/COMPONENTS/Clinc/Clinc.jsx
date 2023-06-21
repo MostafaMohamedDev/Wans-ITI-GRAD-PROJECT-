@@ -58,7 +58,7 @@ const Clinics = () => {
                 onClick={() => handleCardClick(clinic)}
               >
                 <div className="clinic-card-header">
-                  <img src={clinic.img} alt="img" width="400px"></img>
+                  <img src={"http://ah.khaledfathi.com/"+clinic.image} alt="img" width="400px"></img>
                 </div>
                 <div className="clinic-card-body">
                   <h3 className="ClinicName">{clinic.name}</h3>

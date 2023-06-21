@@ -29,11 +29,8 @@ const Home = () => {
   return (
     <>
       <div
-<<<<<<< HEAD
         className="background-container"
-=======
         // className="background-container"
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
         // style={{
         //   backgroundImage: `url(${backgroundImage})`,
         // }}

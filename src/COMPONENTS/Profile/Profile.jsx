@@ -6,19 +6,12 @@ import { setSession , getSession , removeSession ,  getCurrentTime } from "../..
 
 const ShelterProfile = () => {
   const [editMode, setEditMode] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [auth, setAuth] = useState({});
   const [name, setName] = useState("Asmaa");
   const [email, setEmail] = useState("Asmaa@gmail.com");
   const [profileImage, setProfileImage] = useState("./Images/profile .jpg");
   const [profileImage2, setProfileImage2] = useState("./Images/profile .jpg");
-  const [showForm, setShowForm] = useState(false);
-  const [ShelterImage, setShelterImage] = useState("./Images/bloggg.jpg");
-  const [PetName, setPetName] = useState("");
-  const [ShelterName, setShelterName] = useState("");
-  const [people, setPeople] = useState("");
-  const [description, setDescription] = useState("");
-  const [ShelterAddress, setShelterAddress] = useState("");
-  const [ShelterPhone, setShelterPhone] = useState("");
-  const [auth, setAuth] = useState({});
 
   const handleEdit = () => {
     setEditMode(true);
@@ -33,31 +26,53 @@ const ShelterProfile = () => {
     setEditMode(false);
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
+  const [newShelter, setNewShelter] = useState({
+    name:"",
+    phone:"",
+    address:"",
+    working_hours:"",
+    description:"",
+    animal_type:"",
+    approval:"pending",
+    service_type:"shelter",
+});
+const [userInfo, setUserInfo] = useState({
+  user_name:"",
+  password:"",
+  email:"",
+});
 
-    reader.onload = () => {
-      if (editMode) {
-        setProfileImage(reader.result);
-      } else {
-        setShelterImage(reader.result);
-      }
-    };
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+  setNewShelter({ ...newUser, [name]: value });
+  setUserInfo({ ...newUser, [name]: value });
+}
 
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-  };
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   const reader = new FileReader();
 
-  const handleAddShelter = () => {
-    setShowForm(true);
-  };
+  //   reader.onload = () => {
+  //     if (editMode) {
+  //       setProfileImage(reader.result);
+  //     } else {
+  //       setShelterImage(reader.result);
+  //     }
+  //   };
 
-  const handleSaveShelter = () => {
-    // Perform validation and save shelter data
-    setShowForm(false);
-  };
+  //   if (file) {
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
+
+  // const handleAddShelter = () => {
+  //   setShowForm(true);
+  // };
+
+  // const handleSaveShelter = () => {
+  //   // Perform validation and save shelter data
+  //   setShowForm(false);
+  // };
 
   /*******************/
   const redirect = useNavigate();
@@ -167,14 +182,16 @@ const ShelterProfile = () => {
               className="editName"
               type="text"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              name="user_name"
+              onChange={handleInputChange}
             />
             <h5 className="editNM">Email</h5>
             <input
               className="editEmail"
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              onChange={handleInputChange}
             />
             <button className="save" onClick={handleSave}>
               Save
@@ -185,20 +202,22 @@ const ShelterProfile = () => {
         {/* ////////////////////////////////////////////////////////////////////////// */}
       </div>
       <div className="addShelter">
-        <button id="add" onClick={handleAddShelter}>
+        <button id="add" 
+        // onClick={handleAddShelter}
+        >
           Add Shelter
         </button>
       </div>
 
-      {showForm && (
+      {/* {showForm && ( */}
         <div className="form" id="form">
-          <img className="editImage" src={ShelterImage} alt="shelter" />
+          {/* <img className="editImage" src={ShelterImage} alt="shelter" /> */}
           <label className="file-label">
             <input
               type="file"
               className="file-input"
               accept="image/*"
-              onChange={handleImageChange}
+              // onChange={handleImageChange}
             />
             <span className="file-custom">
               <i className="fas fa-upload"></i> Choose File
@@ -210,8 +229,9 @@ const ShelterProfile = () => {
               <input
                 type="text"
                 className="editName"
-                value={PetName}
-                onChange={(e) => setPetName(e.target.value)}
+                value={newShelter.name}
+                name="name"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group">
@@ -219,8 +239,9 @@ const ShelterProfile = () => {
               <input
                 type="text"
                 className="editName"
-                value={ShelterName}
-                onChange={(e) => setShelterName(e.target.value)}
+                value={newShelter.user_name}
+                name="user_name"
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -230,8 +251,8 @@ const ShelterProfile = () => {
               <input
                 type="text"
                 className="editName"
-                value={ShelterAddress}
-                onChange={(e) => setShelterAddress(e.target.value)}
+                value={newShelter.address}
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group">
@@ -239,24 +260,38 @@ const ShelterProfile = () => {
               <input
                 type="text"
                 className="editName"
-                value={ShelterPhone}
-                onChange={(e) => setShelterPhone(e.target.value)}
+                value={newShelter.phone}
+                name="phone"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="form-group">
+              <h5 className="editNM">Working Hours</h5>
+              <input
+                type="text"
+                className="editName"
+                value={newShelter.working_hours}
+                name="working_hours"
+                onChange={handleInputChange}
               />
             </div>
           </div>
           <div className="form-group">
             <h5 className="editNM">Description</h5>
             <textarea 
-              className="textarea "
-              value={description }
-              onChange={(e) => setDescription(e.target.value)}
+              className="textarea"
+              value={newShelter.description}
+              name="description"
+              onChange={handleInputChange}
             ></textarea>
           </div>
-          <button className="save" onClick={handleSaveShelter}>
+          <button className="save" 
+          // onClick={handleSaveShelter}
+          >
             Save
           </button>
         </div>
-      )}
+      {/* )} */}
       
     </div>
   );
