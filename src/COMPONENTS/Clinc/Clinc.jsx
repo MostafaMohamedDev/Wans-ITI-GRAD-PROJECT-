@@ -14,11 +14,19 @@ const Clinics = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedClinic, setSelectedClinic] = useState({});
 
+  // useEffect(() => {
+  //   axios.get("http://localhost:4001/clinics").then((response) => {
+  //     setClinics(response.data);
+  //   });
+  // }, []);
   useEffect(() => {
-    axios.get("http://localhost:4001/clinics").then((response) => {
-      setClinics(response.data);
+    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/clinics").then((res) => {
+      console.log(res.data.data);
+      setClinics(res.data.data);
+      console.log(clinics);
     });
   }, []);
+
 
   const handleCardClick = (clinic) => {
     setSelectedClinic(clinic);
