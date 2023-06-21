@@ -31,7 +31,7 @@ const CartItem = ({ data }) => {
               <div className="d-flex justify-content-center align-items-center cardCard ">
                 <div className="picker">
                   <button
-                    className="btn btn-quantity"
+                    className="btnBTN btn-quantity"
                     onClick={() => addToCart(id)}
                   >
                     <FontAwesomeIcon icon={faPlus} color="#ff642e" />

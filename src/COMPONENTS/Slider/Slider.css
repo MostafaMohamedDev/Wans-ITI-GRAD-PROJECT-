@@ -58,3 +58,8 @@
   position: relative;
   z-index: 1;
 }
+.slidspan {
+  color: red;
+  font-weight : bolder;
+
+}

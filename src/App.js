@@ -19,6 +19,7 @@ import ShelterProfile from"./COMPONENTS/Profile/Profile"
 import ApiContextProvider from './context/API-Context';
 import Admin from './COMPONENTS/Admin/Admin';
 import Logout from './COMPONENTS/Logout/logout';
+import Footer from './COMPONENTS/Footer/Footer';
 
 
 const App = () => {
@@ -43,6 +44,8 @@ const App = () => {
         <Route path="/logout" element={<Logout />} />
         <Route path="/Admin" element={<Admin/>} />
       </Routes>  
+      <Footer/>
+
       </ShopContextProvider>
       </ApiContextProvider>
       {/* <ShelterProfile/> */}

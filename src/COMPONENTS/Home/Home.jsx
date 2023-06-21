@@ -29,10 +29,10 @@ const Home = () => {
   return (
     <>
       <div
-        className="background-container"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
+        // className="background-container"
+        // style={{
+        //   backgroundImage: `url(${backgroundImage})`,
+        // }}
       >
         <Outlet></Outlet>
         <Header />
@@ -41,6 +41,7 @@ const Home = () => {
         <Slider />
         <Blog />
       </div>
+      
     </>
   );
 };
