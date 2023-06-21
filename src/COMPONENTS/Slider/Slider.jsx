@@ -45,7 +45,7 @@ const PartnersSlider = () => {
   return (
     <div className="slid-container slidSection">
       <h2 className="header">
-        Best <span>Sellers</span>{" "}
+        Best <span classNAme="slidspan">Sellers</span>
       </h2>
       <Slider {...settings} className="partners-slider mt-4">
         <div className="item">

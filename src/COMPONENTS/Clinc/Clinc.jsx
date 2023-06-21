@@ -14,11 +14,19 @@ const Clinics = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedClinic, setSelectedClinic] = useState({});
 
+  // useEffect(() => {
+  //   axios.get("http://localhost:4001/clinics").then((response) => {
+  //     setClinics(response.data);
+  //   });
+  // }, []);
   useEffect(() => {
-    axios.get("http://localhost:4001/clinics").then((response) => {
-      setClinics(response.data);
+    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/clinics").then((res) => {
+      console.log(res.data.data);
+      setClinics(res.data.data);
+      console.log(clinics);
     });
   }, []);
+
 
   const handleCardClick = (clinic) => {
     setSelectedClinic(clinic);
@@ -30,7 +38,7 @@ const Clinics = () => {
   };
 
   return (
-    <div>
+    <div className="clinc-section">
       <div className="ClincImage">
         <img
           src={clincImage}
@@ -54,7 +62,7 @@ const Clinics = () => {
                 </div>
                 <div className="clinic-card-body">
                   <h3 className="ClinicName">{clinic.name}</h3>
-                  <p>
+                  <p className="clincPar">
                     {" "}
                     <FontAwesomeIcon
                       icon={faLocationDot}

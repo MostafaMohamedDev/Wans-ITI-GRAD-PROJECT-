@@ -16,7 +16,7 @@ const Works = () => {
               
             </div>
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-              <h4 className="iconHead">How  <span> it Works</span> </h4>
+              <h4 className="iconHead">How  <span className="workspan"> it Works</span> </h4>
             </div>
           </div>
         </div>

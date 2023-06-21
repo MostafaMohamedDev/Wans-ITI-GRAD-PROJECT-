@@ -4,7 +4,16 @@ import headerImage from "../../images/adopt1.jpg";
 import headerImageHover from "../../images/adopt2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+<<<<<<< HEAD
 import { CONSTANTS } from "../../constants";
+=======
+import { CONSTANTS } from '../../constants';
+import axios from "axios";
+
+
+const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
+const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
+>>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
 
 const jsonPort = CONSTANTS.JSON_SERVER.PORT;
 const baseURL = "http://localhost:" + jsonPort + "/Shelters";
@@ -32,10 +41,10 @@ const Shelters = () => {
   };
 
   const filteredShelterCards = shelterCard.filter((shelter) => {
-    if (showOnlyDogCards && shelter.type === "dog") {
+    if (showOnlyDogCards && shelter.animal_type === "dog") {
       return true;
     }
-    if (showOnlyCatCards && shelter.type === "cat") {
+    if (showOnlyCatCards && shelter.animal_type === "cat") {
       return true;
     }
     if (!showOnlyDogCards && !showOnlyCatCards) {
@@ -52,14 +61,21 @@ const Shelters = () => {
     setIsHovered(false);
   };
 
+  // useEffect(() => {
+  //   fetch("http://localhost:4001/shelters")
+  //     .then((res) => res.json())
+  //     .then((data) => setShelterCard(data));
+  // }, []);
   useEffect(() => {
-    fetch("http://localhost:4001/shelters")
-      .then((res) => res.json())
-      .then((data) => setShelterCard(data));
+    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/shelter").then((res) => {
+      console.log(res.data.data);
+      setShelterCard(res.data.data);
+      console.log(shelterCard);
+    });
   }, []);
 
   return (
-    <div className="Shelters">
+    <div className="Shelters ">
       <div
         className="shelterscover"
         onMouseEnter={handleMouseEnter}
@@ -144,6 +160,7 @@ const Shelters = () => {
               alt="Cat Icon"
             />
           </section>
+<<<<<<< HEAD
 
           <h3
             className="SHhead"
@@ -173,6 +190,33 @@ const Shelters = () => {
               style={{ cursor: "grab", width: "85%" }}
               onClick={handleClickDog}
               src="./Images/dog1.png"
+=======
+          
+          <h3 className="SHhead" style={{ marginRight: "2rem", fontSize: "2.5vw", textAlign: "center" }}>
+    Click to Choose <span className="tittllee">your New Friend</span>
+    <br />
+    <h4
+      onClick={handleClickAll}
+      style={{
+        cursor: "pointer",
+        marginTop: "1rem",
+        color: "#ff642e",
+        fontSize: "1.7vw",
+      }}
+    >
+      Or Both
+    </h4>
+  </h3>
+
+          <section>
+            <img
+              style={{ cursor: "pointer",  width: "85%" , marginTop: "3rem" , marginLeft: "3rem"
+             }}
+              onClick={handleClickDog}
+              src="./Images/dog.jpg"
+              className="doggimage"
+              
+>>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
               alt="Dog Icon"
             />
           </section>
@@ -187,7 +231,15 @@ const Shelters = () => {
               key={shelter.id}
             >
               <a className="card">
+<<<<<<< HEAD
                 <img src={shelter.pet.image} className="card__image" alt="" />
+=======
+                <img
+                  src={"http://ah.khaledfathi.com/"+shelter.image}
+                  className="card__image"
+                  alt=""
+                />
+>>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
                 <div className="card__overlay">
                   <div className="card__header">
                     <svg
@@ -198,15 +250,21 @@ const Shelters = () => {
                     </svg>
                     <img
                       className="card__thumb"
-                      src={shelter.pet.image}
+                      src={"http://ah.khaledfathi.com/"+shelter.image}
                       alt=""
                     />
                     <div className="card__header-text">
-                      <h3 className="card__title">{shelter.pet.name}</h3>
+                      <h3 className="card__title">{shelter.name}</h3>
                       <span className="card__status">{shelter.name}</span>
                     </div>
                   </div>
+<<<<<<< HEAD
                   <p className="card__description">{shelter.pet.description}</p>
+=======
+                  <p className="card__description">
+                    {shelter.description}
+                  </p>
+>>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
                   <p className="cardMoreInfo1">{shelter.address}</p>
                   <p className="cardMoreInfo2">
                     <FontAwesomeIcon

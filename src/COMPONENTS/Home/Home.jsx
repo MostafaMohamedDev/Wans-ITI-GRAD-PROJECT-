@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CardSection from "../CardSection/CardSection";
 // import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
@@ -8,15 +8,32 @@ import Blog from "../Blogs/Blog";
 import "./Home.css";
 import { Outlet } from "react-router-dom";
 import backgroundImage from "../../allground.jpg";
+import { useNavigate } from "react-router-dom";
+import { getSession } from "../../helper";
 {
   /* <div className="background-container" style={{backgroundImage: `url(${backgroundImage})`,}}> */
 }
 
 const Home = () => {
+  /*******************/
+  const redirect = useNavigate();
+  const routeLogin = () => {
+      redirect("/login");
+  }
+   useEffect(()=>{
+    if (! getSession('login')){
+      routeLogin(); 
+    }
+   },[]); 
+  /*******************/
   return (
     <>
       <div
+<<<<<<< HEAD
         className="background-container"
+=======
+        // className="background-container"
+>>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
         // style={{
         //   backgroundImage: `url(${backgroundImage})`,
         // }}
@@ -28,6 +45,7 @@ const Home = () => {
         <Slider />
         <Blog />
       </div>
+      
     </>
   );
 };

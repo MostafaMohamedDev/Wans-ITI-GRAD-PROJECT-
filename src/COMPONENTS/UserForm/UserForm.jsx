@@ -1,4 +1,4 @@
-  import React, { useEffect, useState } from "react";
+  import React, { useEffect, useRef, useState } from "react";
   import styles from "./UserForm.module.css"; // Import the CSS module
   import { ApiContext } from "../../context/API-Context";
   import { useContext } from "react";
@@ -9,6 +9,7 @@
     const [confirmPassword, setConfirmPassword] = useState("");
     const [creationSuccess, setCreationSuccess] = useState(false);
     const [creationFail, setCreationFail] = useState(false);
+    const fileInputRef = useRef(null);
 
     console.log(createStatus);
 
@@ -36,7 +37,8 @@
         return;
       }
       else{
-        await createData(newUser);
+        const file = fileInputRef.current !== null ? fileInputRef.current : undefined;
+        await createData(newUser, file);
         setNewUser({
             name:"",
             password:"",
@@ -124,6 +126,17 @@
                       onChange={(e)=>setConfirmPassword(e.target.value)}
                     />
                   </div>
+                  <div className={styles.formGroup}>
+              <label className={styles.label} htmlFor="file"></label>
+              <input
+                className={styles.input}
+                type="file"
+                id="file"
+                name="file"
+                ref={fileInputRef}
+                hidden
+              />
+            </div>
                   <button className={styles.button} type="submit">Sign Up</button>
                   
                 </form>

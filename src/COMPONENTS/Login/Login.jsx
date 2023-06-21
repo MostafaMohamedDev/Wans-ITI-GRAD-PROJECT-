@@ -3,14 +3,24 @@ import styles from "./Login.module.css"; // Update the CSS file path
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ApiContext } from "../../context/API-Context";
+import { setSession , getSession , removeSession ,  getCurrentTime } from "../../helper";
 const Login = () => {
   //Authentication
   const {login} =useContext(ApiContext)
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [data, setData] = useState({
+    email:"",
+    password:""
+});
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+  setData({ ...data, [name]: value });
+}
   const logInFun = async (e) => {
     e.preventDefault();
-    await login(email, password);
+    await login(data);
+    console.log(data);
   };
 
   return (
@@ -29,8 +39,8 @@ const Login = () => {
                 id="userEmail"
                 name="email"
                 placeholder="Enter your userEmail"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={data.email}
+                onChange={handleInputChange}
               />
             </div>
             <div className={styles["form-group"]}>
@@ -43,8 +53,8 @@ const Login = () => {
                 id="password"
                 name="password"
                 placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={data.password}
+                onChange={handleInputChange}
               />
             </div>
             <button className={styles.button} type="submit">
