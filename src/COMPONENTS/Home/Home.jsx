@@ -29,6 +29,7 @@ const Home = () => {
   return (
     <>
       <div
+        className="background-container"
         // className="background-container"
         // style={{
         //   backgroundImage: `url(${backgroundImage})`,

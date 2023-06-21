@@ -8,9 +8,6 @@ import { CONSTANTS } from '../../constants';
 import axios from "axios";
 
 
-const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
-const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
-
 
 const Shelters = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -86,31 +83,71 @@ const Shelters = () => {
           className="icon-container"
           style={{ display: "flex", justifyContent: "center" }}
         >
+          <section>
+            {/* <div
+              className="graph__wrapper"
+              style={{ width: "70%", height: "auto" }}
+            >
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 315 107"
+                version="1.1"
+                preserveAspectRatio="xMidYMid meet"
+                style={{ overflow: "visible" }}
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  strokeWidth="1"
+                  fill="none"
+                  fillRule="evenodd"
+                  sketchType="MSPage"
+                >
+                  <path
+                    id="Path-1"
+                    className="path"
+                    fill="none"
+                    stroke="#ff642e"
+                    strokeWidth="5"
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81"
+                  />
+                  <path
+                    className="dashed"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="8"
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81"
+                  />
 
-<section>
-            
-<div className="graph__wrapper" style={{ width: "70%", height: "auto"}}>
-  <svg width="100%" height="100%" viewBox="0 0 315 107" version="1.1" preserveAspectRatio="xMidYMid meet" style={{ overflow: "visible" }}>
-    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" sketchType="MSPage">
-      <path id="Path-1" className="path" fill="none" stroke="#ff642e" strokeWidth="5" strokeLinejoin="round" strokeMiterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81" />
-      <path className="dashed" fill="none" stroke="white" strokeWidth="8" strokeLinejoin="round" strokeMiterlimit="10" d="M1.4,2.1c0,0,86,57,211.5,41.5s172.5-24.5,289,81" />
-
-      <polyline id="arrow" points="0,-9 18,0 0,9 5,0" fill="#ff642e">
-        <animateMotion rotate="auto" begin="1s" dur="1.6s" repeatCount="1" fill="freeze">
-          <mpath xlinkHref="#Path-1" />
-        </animateMotion>
-      </polyline>
-    </g>
-  </svg>
-</div>
+                  <polyline
+                    id="arrow"
+                    points="0,-9 18,0 0,9 5,0"
+                    fill="#ff642e"
+                  >
+                    <animateMotion
+                      rotate="auto"
+                      begin="1s"
+                      dur="1.6s"
+                      repeatCount="1"
+                      fill="freeze"
+                    >
+                      <mpath xlinkHref="#Path-1" />
+                    </animateMotion>
+                  </polyline>
+                </g>
+              </svg>
+            </div> */}
 
             <img
               className="CatImg"
-              style={{ cursor: "grab", width: "65%",marginTop:"-45px" }}
+              style={{ cursor: "grab", width: "65%", marginTop: "-45px" }}
               onClick={handleClickCat}
               src="./Images/cat.jpg"
-             
-              
               alt="Cat Icon"
             />
           </section>
@@ -138,7 +175,6 @@ const Shelters = () => {
               onClick={handleClickDog}
               src="./Images/dog.jpg"
               className="doggimage"
-              
               alt="Dog Icon"
             />
           </section>
@@ -153,6 +189,7 @@ const Shelters = () => {
               key={shelter.id}
             >
               <a className="card">
+
                 <img
                   src={"http://ah.khaledfathi.com/"+shelter.image}
                   className="card__image"
@@ -176,6 +213,7 @@ const Shelters = () => {
                       <span className="card__status">{shelter.name}</span>
                     </div>
                   </div>
+
                   <p className="card__description">
                     {shelter.description}
                   </p>
