@@ -8,6 +8,8 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import clincImage from "../../images/clinc.jpg";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Clinics = () => {
   const [clinics, setClinics] = useState([]);
@@ -49,18 +51,18 @@ const Clinics = () => {
       </div>
       <h2 className="clinic-header">Clinics</h2>
       <div className="clinic-parentCard container">
-        <div className="row">
+        <div className="row"   >
           {clinics.map((clinic) => (
-            <div className="col-sm-12 col-md-6 col-lg-4 px-3">
+            <div className="col-sm-12 col-md-6 col-lg-4 px-3"   >
               <div
                 key={clinic.id}
-                className="clinic-card "
+                className="clinic-card " 
                 onClick={() => handleCardClick(clinic)}
               >
-                <div className="clinic-card-header">
-                  <img src={"http://ah.khaledfathi.com/"+clinic.image} alt="img" width="400px"></img>
+                <div className="clinic-card-header"   data-aos="fade-up"  >
+                  <img src={"http://ah.khaledfathi.com/"+clinic.image} alt="img" width="400px"  ></img>
                 </div>
-                <div className="clinic-card-body">
+                <div className="clinic-card-body" >
                   <h3 className="ClinicName">{clinic.name}</h3>
                   <p className="clincPar">
                     {" "}

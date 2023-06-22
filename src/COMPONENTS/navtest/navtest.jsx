@@ -4,8 +4,11 @@ import "./navtest.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from 'react-i18next';
+
 
 const Navtest = () => {
+  const [t,i18n]= useTranslation();
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -35,9 +38,12 @@ const Navtest = () => {
                 aria-current="page"
                 to="/"
               >
-                Home
+           {t("Home")}
               </Link>
             </li>
+
+
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -47,30 +53,30 @@ const Navtest = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Services
+              {t("Services")} 
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <Link className="dropdown-item " to="/clinc">
-                    Clincs
+                  {t("Clincs")}  
                   </Link>
                 </li>
                 <li>
                   <Link className="dropdown-item" to="/shelters">
-                    Shelters
+                  {t("Shelters")}   
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/shop">
-                Shop
+              {t("Shop")} 
               </Link>
             </li>
 
             <li className="nav-item">
               <Link className="nav-link " aria-current="page" to="/Blogging">
-                Blog
+              {t("Blog")} 
               </Link>
             </li>
 
@@ -88,6 +94,19 @@ const Navtest = () => {
           </ul>
         </div>
       </div>
+
+
+
+     <div >  {i18n.language==="ar"&&< input   type='button' value="AR" onClick={()=>{
+      i18n.changeLanguage("en")
+  }}></input>}
+   {i18n.language==="en"&&<input     type='button' value="EN" onClick={()=>{
+      i18n.changeLanguage("ar")
+  }}></input>}  </div> 
+
+
+
+
     </nav>
   );
 };
