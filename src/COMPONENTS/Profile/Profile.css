@@ -4,6 +4,8 @@
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
+  height: 300px;
+
 
 
 }
@@ -101,7 +103,7 @@
 
 .form {
   background-color: #fff;
-  border: 1px solid transperant;
+  border: 1px solid transparent;
   border-radius: 8px;
   width: 30%;
   margin: 0 auto;
@@ -184,7 +186,7 @@
  }
  
  .form-group {
-   width: 48%;
+   width: 100%;
  }
  
  .form-group textarea {
@@ -209,7 +211,7 @@
   background-color: #ffffff;
   position: absolute;
   width: 25%;
-  height: 650px;
+  /* height: 650px; */
   border: 1px solid #e6e6e6;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-left: 65%;

@@ -2,14 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navtest.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faCircleUser, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { getSession } from "../../helper";
 
 const Navtest = () => {
+  
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="/">
           <img
             className="nav navimg"
             src="Images/logo.png"
@@ -17,7 +19,7 @@ const Navtest = () => {
           />
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -25,11 +27,11 @@ const Navtest = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
               <Link
                 className="nav-link active home-link"
                 aria-current="page"
@@ -38,9 +40,9 @@ const Navtest = () => {
                 Home
               </Link>
             </li>
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -49,7 +51,7 @@ const Navtest = () => {
               >
                 Services
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <Link className="dropdown-item " to="/clinc">
                     Clincs
@@ -79,12 +81,25 @@ const Navtest = () => {
                 <FontAwesomeIcon icon={faCartShopping} size="lg" />
               </Link>
             </li>
-
+            {(getSession("login"))?
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                <FontAwesomeIcon icon={faCircleUser} size="xl" />
-              </Link>
+              <a className="nav-link" href="/profile">
+                <FontAwesomeIcon icon={faCircleUser} size="lg" />
+              </a>
+            </li>:
+              <li className="nav-item">
+              <a className="nav-link" href="./login">
+                <FontAwesomeIcon icon={faCircleUser} size="lg" />
+              </a>
             </li>
+            }   
+            {(getSession("login"))?
+            <li className="nav-item">
+              <a className="nav-link" href="./logout">
+              <FontAwesomeIcon icon={faRightFromBracket} size="lg"/>        
+            </a>
+            </li>:""
+            }
           </ul>
         </div>
       </div>
