@@ -21,7 +21,6 @@ const handleInputChange = (event) => {
   const logInFun = async (e) => {
     e.preventDefault();
     await login(data);
-    console.log(data);
   };
 
   return (

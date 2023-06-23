@@ -58,7 +58,6 @@ const ShelterProfile = () => {
     event.preventDefault();
     const file =
       fileInputRef.current !== null ? fileInputRef.current : undefined;
-    console.log(editUser);
     await updateData(editUser.id, editUser, file);
     setEditUser({
       name: "",
@@ -80,7 +79,6 @@ const ShelterProfile = () => {
     const file =
       fileInputRef.current !== null ? fileInputRef.current : undefined;
     await addServiceData(newShelter, file);
-    // console.log();
     setNewShelter({
       name: "",
       phone: "",
@@ -113,7 +111,6 @@ const ShelterProfile = () => {
       routeLogin();
     } else {
       setAuth(getSession("auth"));
-      console.log(auth);
     }
   }, []);
 
@@ -124,7 +121,6 @@ const ShelterProfile = () => {
 //     }
 // }, [dataUpdated])
   /*******************/
-  // console.log(auth);
 
   return (
     <div>
@@ -261,8 +257,8 @@ const ShelterProfile = () => {
                 className="editEmail"
                 type="text"
                 value={auth.type}
-                // name="address"
-                // onChange={handleInputChange}
+                name="address"
+                onChange={handleInputChange}
                 hidden
               />
               <input

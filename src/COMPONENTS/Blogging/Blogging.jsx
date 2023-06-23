@@ -27,10 +27,7 @@ const Blogging = () => {
 
   useEffect(() => {
     axios.get("http://ah.khaledfathi.com/api/blog").then((res) => {
-      console.log(res.data.data);
       setBlogData(res.data.data);
-      console.log(blogData);
-      console.log(blogData.image);
     });
   }, []);
 
@@ -44,8 +41,8 @@ const Blogging = () => {
           className={styles["responsive-image1"]}
         />
       </div>
-    {blogData.map((item) => (
-      <div>
+    {blogData.map((item , index) => (
+      <div key={index}>
       <div className={`${styles["blog-articals"]} container mt-5`}>
         <div className="card mb-3">
           <div className="row g-0">

@@ -99,7 +99,6 @@ const Clinics = () => {
                 <p>
                   <FontAwesomeIcon icon={faCalendarCheck} color="#ff642e" />{" "}
                   Avilable Appointements :{selectedClinic.working_hours}
-                  {console.log(getCurrentTime(selectedClinic.working_hours))}
                 </p>
                 <div>
                   <iframe

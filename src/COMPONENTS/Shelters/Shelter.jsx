@@ -1,13 +1,13 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import "./Shelter.css";
 import headerImage from "../../images/adopt1.jpg";
 import headerImageHover from "../../images/adopt2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { CONSTANTS } from '../../constants';
+import { CONSTANTS } from "../../constants";
 import axios from "axios";
-
-
 
 const Shelters = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -58,11 +58,11 @@ const Shelters = () => {
   //     .then((data) => setShelterCard(data));
   // }, []);
   useEffect(() => {
-    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/shelter").then((res) => {
-      console.log(res.data.data);
-      setShelterCard(res.data.data);
-      console.log(shelterCard);
-    });
+    axios
+      .get("http://ah.khaledfathi.com/api/service/filter/service_type/shelter")
+      .then((res) => {
+        setShelterCard(res.data.data);
+      });
   }, []);
 
   return (
@@ -70,8 +70,7 @@ const Shelters = () => {
       <div
         className="shelterscover"
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
+        onMouseLeave={handleMouseLeave}>
         <img
           src={isHovered ? headerImageHover : headerImage}
           alt="Header"
@@ -81,8 +80,7 @@ const Shelters = () => {
       <div className="container">
         <div
           className="icon-container"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
+          style={{ display: "flex", justifyContent: "center" }}>
           <section>
             {/* <div
               className="graph__wrapper"
@@ -151,27 +149,37 @@ const Shelters = () => {
               alt="Cat Icon"
             />
           </section>
-          
-          <h3 className="SHhead" style={{ marginRight: "2rem", fontSize: "2.5vw", textAlign: "center" }}>
-    Click to Choose <span className="tittllee">your New Friend</span>
-    <br />
-    <h4
-      onClick={handleClickAll}
-      style={{
-        cursor: "pointer",
-        marginTop: "1rem",
-        color: "#ff642e",
-        fontSize: "1.7vw",
-      }}
-    >
-      Or Both
-    </h4>
-  </h3>
+
+          <h3
+            className="SHhead"
+            style={{
+              marginRight: "2rem",
+              fontSize: "2.5vw",
+              textAlign: "center",
+            }}>
+            Click to Choose <span className="tittllee">your New Friend</span>
+            <br />
+            <span
+              onClick={handleClickAll}
+              style={{
+                cursor: "pointer",
+                marginTop: "1rem",
+                color: "#ff642e",
+                fontSize: "1.7vw",
+                display:"block"
+              }}>
+              Or Both
+            </span>
+          </h3>
 
           <section>
             <img
-              style={{ cursor: "pointer",  width: "85%" , marginTop: "3rem" , marginLeft: "3rem"
-             }}
+              style={{
+                cursor: "pointer",
+                width: "85%",
+                marginTop: "3rem",
+                marginLeft: "3rem",
+              }}
               onClick={handleClickDog}
               src="./Images/dog.jpg"
               className="doggimage"
@@ -183,15 +191,13 @@ const Shelters = () => {
 
       <div className="container">
         <div className="row">
-          {filteredShelterCards.map((shelter) => (
+          {filteredShelterCards.map((shelter, index) => (
             <div
               className="shelterCard col-lg-4 col-md-6 col-sm-12 justify-content-center"
-              key={shelter.id}
-            >
+              key={index}>
               <a className="card">
-
                 <img
-                  src={"http://ah.khaledfathi.com/"+shelter.image}
+                  src={"http://ah.khaledfathi.com/" + shelter.image}
                   className="card__image"
                   alt=""
                 />
@@ -199,13 +205,12 @@ const Shelters = () => {
                   <div className="card__header">
                     <svg
                       className="card__arc"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                      xmlns="http://www.w3.org/2000/svg">
                       <path />
                     </svg>
                     <img
                       className="card__thumb"
-                      src={"http://ah.khaledfathi.com/"+shelter.image}
+                      src={"http://ah.khaledfathi.com/" + shelter.image}
                       alt=""
                     />
                     <div className="card__header-text">
@@ -213,10 +218,7 @@ const Shelters = () => {
                       <span className="card__status">{shelter.user_name}</span>
                     </div>
                   </div>
-
-                  <p className="card__description">
-                    {shelter.description}
-                  </p>
+                  <p className="card__description">{shelter.description}</p>
                   <p className="cardMoreInfo1">{shelter.address}</p>
                   <p className="cardMoreInfo2">
                     <FontAwesomeIcon

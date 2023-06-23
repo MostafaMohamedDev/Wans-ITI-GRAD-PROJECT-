@@ -21,12 +21,9 @@ const ApiContextProvider = (props) => {
     }
 
     const createData = async (data,ref) => {
-        console.log(data);
         ref = (ref.value)? ref:null
         const response = await ajax(apiUrl, "post", data,ref);
-        console.log(response);
         const newData = await response.json();
-        console.log(newData);
         
         setCreateStatus(newData)
         setUserData((prevUserData) => [...prevUserData, newData]);
@@ -39,19 +36,15 @@ const ApiContextProvider = (props) => {
 
     // services data
     const addServiceData = async (data,ref) => {
-        console.log(data);
         ref = (ref.value)? ref:null
         const response = await ajax(servicesUrl, "post", data,ref);
-        console.log(response);
         const newData = await response.json();
-        console.log(newData);
     }
 
     const updateData = async (id, data,ref) => {
         ref = (ref.value)? ref:null
         const response = await ajax(apiUrl + "/" + id + "/update", "POST", data,ref);
         const updatedData = await response.json();
-        console.log(updatedData.status);
         const updatedUserData = userData.map((item) =>
             item.id == id ? updatedData : item
         );
@@ -59,7 +52,6 @@ const ApiContextProvider = (props) => {
         setDataUpdated(true)
         if(updatedData.status){
             axios.get(apiUrl+"/"+id).then((res)=>{
-                console.log(res.data.data);
                 setSession('auth' , res.data.data);
                 // setUserData(updatedUserData)
                 // setDataUpdated(true)
@@ -74,9 +66,7 @@ const ApiContextProvider = (props) => {
     }
     const login = async (data) => {
         const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",data);
-        console.log(response);
         const newData = await response.json();
-        console.log(newData);
         if(newData.status){
             setSession('login' , true); 
             setSession('auth' , newData.record); 

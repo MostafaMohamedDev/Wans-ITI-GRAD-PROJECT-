@@ -73,7 +73,7 @@ export default function MultiActionAreaCard({ data }) {
             gutterBottom
             variant="h5"
             component="div"
-            class="line-head"
+            className="line-head"
             style={{
               marginBottom: "10px",
               color: "#333",
@@ -86,7 +86,7 @@ export default function MultiActionAreaCard({ data }) {
           <Typography
             variant="body2"
             color=""
-            class="fw-bold"
+            className="fw-bold"
             style={{ fontSize: "18px", color: "#ff642e" }}
           >
             {price}
