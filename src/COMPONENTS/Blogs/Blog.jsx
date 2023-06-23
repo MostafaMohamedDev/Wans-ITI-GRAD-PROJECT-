@@ -5,13 +5,15 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import styles from './Blog.module.css';
 import classNames from 'classnames';
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Blog = () => {
   const blogData = [
     {
         species: "Dog",
         name: "Fluffy",
-        title: "The Benefits of Regular Exercise for Dogs",
+        title:    "The Benefits of Regular Exercise for Dogs",
         overview: "Regular exercise is essential for keeping your dog healthy and happy. In this blog post, we'll explore the many benefits of exercise for dogs, including improved physical health, better behavior",
         breed: "Labrador Retriever",
         age: 3,
@@ -64,7 +66,8 @@ const Blog = () => {
             {blogData.map((blog, index) => (
               <Col key={index} xs={12} md={6} lg={4} className={classNames('my-col', styles.cardCol)}>
                 <div className={classNames('holder', styles.cardHolder)}>
-                  <Card className={classNames('my-card', styles.card)}>
+
+                  <Card className={classNames('my-card', styles.card)}  data-aos="fade-up-right" >
                     <div className={classNames('card-img-wrapper', styles.cardImgWrapper)}>
                       <Card.Img src={blog.image} alt="Card image" />
                     </div>

@@ -3,10 +3,13 @@
 import React, { useState } from "react";
 import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 import "./NavBar.css";
 
 const Navbar = () => {
+  const [t,i18n]= useTranslation();
+
   const [searchExpanded, setSearchExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -41,7 +44,7 @@ const Navbar = () => {
           <img
             className="nav navimg"
             src="Images/logo.png"
-            alt="Description of the"
+            alt="Description of the image"
           />
         </div>
 
@@ -59,14 +62,28 @@ const Navbar = () => {
           className="collapse navbar-collapse"
           id="navbarSupportedContent">
           <ul className="navbar-nav  mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link
+
+<li>       {i18n.language==="en"&&<input type='button' value="AR" onClick={()=>{
+            i18n.changeLanguage("ar")
+        }}></input>}
+         {i18n.language==="ar"&&<input type='button' value="EN" onClick={()=>{
+            i18n.changeLanguage("en")
+        }}></input>} </li>
+
+<li className="nav-item">
+          <Link
                 className="nav-link active home-link"
                 aria-current="page"
                 to="/">
-                Home
+                 {t("Home")}
               </Link>
             </li>
+            <li>     {i18n.language==="en"&&<input type='button' value="AR" onClick={()=>{
+      i18n.changeLanguage("ar")
+  }}></input>}
+   {i18n.language==="ar"&&<input type='button' value="EN" onClick={()=>{
+      i18n.changeLanguage("en")
+  }}></input>} </li>
             <li
               className={`nav-item dropdown ${
                 servicesDropdownOpen ? "show" : ""
@@ -77,7 +94,7 @@ const Navbar = () => {
                 role="button"
                 onClick={toggleServicesDropdown}
                 aria-expanded={servicesDropdownOpen}>
-                Services
+                   {t("Services")} 
               </a>
               <ul
                 className={`dropdown-menu ${
@@ -87,14 +104,14 @@ const Navbar = () => {
                   <Link
                     className="dropdown-item "
                     to="/clinc">
-                    Clincs
+                          {t("Clincs")}  
                   </Link>
                 </li>
                 <li>
                   <Link
                     className="dropdown-item"
                     to="/shelters">
-                    Shelters
+                          {t("Shelters")}   
                   </Link>
                 </li>
               </ul>
@@ -104,7 +121,7 @@ const Navbar = () => {
                 className="nav-link  shop-link"
                 aria-current="page"
                 to="/shop">
-                Shop
+                {t("Shop")} 
               </Link>
             </li>
             <li className="nav-item">
@@ -112,7 +129,7 @@ const Navbar = () => {
                 className="nav-link active blog-link"
                 aria-current="page"
                 to="/Blogging">
-                Blog
+                  {t("Blog")} 
               </Link>
             </li>
           </ul>
@@ -160,7 +177,7 @@ const Navbar = () => {
               <Link
                 clLinkssName="nav-link"
                 to="/login">
-                Login
+               {t("Login")} 
               </Link>
             </li>
             <li className="nav-item">
@@ -168,7 +185,7 @@ const Navbar = () => {
                 className="nav-link"
                 to="/User"
                 onClick={() => navigate("/Signup")}>
-                Signup
+                   {t("Signup")} 
               </Link>
             </li>
           </ul>

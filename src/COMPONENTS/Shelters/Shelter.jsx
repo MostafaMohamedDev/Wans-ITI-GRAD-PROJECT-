@@ -210,6 +210,7 @@ const Shelters = () => {
                     />
                     <div className="card__header-text">
                       <h3 className="card__title">{shelter.name}</h3>
+
                     </div>
                   </div>
 

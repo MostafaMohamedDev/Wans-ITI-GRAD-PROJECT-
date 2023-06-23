@@ -2,8 +2,10 @@ import { ajax } from "../libCustomAjax_v1";
 import React, { createContext, useEffect, useState } from 'react'
 import { setSession , getSession , removeSession ,  getCurrentTime } from "../helper";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 export const ApiContext = createContext(null);
 const apiUrl = "http://ah.khaledfathi.com/api/user"
+const servicesUrl = "http://ah.khaledfathi.com/api/service"
 
 const ApiContextProvider = (props) => {
 
@@ -35,14 +37,34 @@ const ApiContextProvider = (props) => {
         
     }
 
-    const updateData = async (id, data) => {
-        const response = await ajax(apiUrl + "/" + id + "/update", "POST", data);
+    // services data
+    const addServiceData = async (data,ref) => {
+        console.log(data);
+        ref = (ref.value)? ref:null
+        const response = await ajax(servicesUrl, "post", data,ref);
+        console.log(response);
+        const newData = await response.json();
+        console.log(newData);
+    }
+
+    const updateData = async (id, data,ref) => {
+        ref = (ref.value)? ref:null
+        const response = await ajax(apiUrl + "/" + id + "/update", "POST", data,ref);
         const updatedData = await response.json();
+        console.log(updatedData.status);
         const updatedUserData = userData.map((item) =>
             item.id == id ? updatedData : item
         );
         setUserData(updatedUserData)
         setDataUpdated(true)
+        if(updatedData.status){
+            axios.get(apiUrl+"/"+id).then((res)=>{
+                console.log(res.data.data);
+                setSession('auth' , res.data.data);
+                // setUserData(updatedUserData)
+                setDataUpdated(true)
+            })
+        }
     }
 
     const deleteData = async (id) => {
@@ -62,9 +84,11 @@ const ApiContextProvider = (props) => {
         /*************/ 
         const routeToHome = () => {
             redirect("/");
+            window.location.reload();
+
         }
         if (getSession('login')){
-            routeToHome(); 
+            routeToHome();
         }
         /*************/ 
     }
@@ -87,6 +111,8 @@ const ApiContextProvider = (props) => {
         deleteData,
         createStatus,
         login,
+        addServiceData,
+        dataUpdated
     }
 
     return (
