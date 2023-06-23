@@ -59,9 +59,7 @@ const Clinics = () => {
               >
                 <div className="clinic-card-header">
 
-=======
-                  <img src={"http://ah.khaledfathi.com/"+clinic.image} alt="img" width="400px"></img>
->>>>>>> 31423227f5138e76ce52912cf3ece80b33fd18b2
+                  <img className="CLINCIMAGE2" src={"http://ah.khaledfathi.com/"+clinic.image} alt="img"></img>
                 </div>
                 <div className="clinic-card-body">
                   <h3 className="ClinicName">{clinic.name}</h3>
