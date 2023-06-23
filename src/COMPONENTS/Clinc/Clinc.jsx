@@ -12,13 +12,15 @@ import clincImage from "../../images/clinc.jpg";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 
+import { constants } from '../../constants';
+const URL = constants.API_HOST; 
 const Clinics = () => {
   const [clinics, setClinics] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedClinic, setSelectedClinic] = useState({});
 
   useEffect(() => {
-    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/clinics").then((res) => {
+    axios.get(URL+"/api/service/filter/service_type/clinics").then((res) => {
       setClinics(res.data.data);
     });
   }, []);
@@ -53,7 +55,7 @@ const Clinics = () => {
                 onClick={() => handleCardClick(clinic)}
               >
                 <div className="clinic-card-header"   data-aos="fade-up"  >
-                  <img src={"http://ah.khaledfathi.com/"+clinic.image} alt="img" width="400px"  ></img>
+                  <img src={URL+"/"+clinic.image} alt="img" width="400px"  ></img>
                 </div>
                 <div className="clinic-card-body" >
                   <h3 className="ClinicName">{clinic.name}</h3>

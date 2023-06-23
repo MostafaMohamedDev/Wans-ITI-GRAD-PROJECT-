@@ -4,6 +4,8 @@ import { ShopContext } from "../../context/shop-context";
 import { faTrashAlt, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { constants } from '../../constants';
+const URL = constants.API_HOST; 
 import "./cart-item.css";
 const CartItem = ({ data }) => {
   const { addToCart, removeFromCart, cartItems, updateCartItem } =
@@ -18,7 +20,7 @@ const CartItem = ({ data }) => {
           <div className="col-sm-12 col-md-4 cart-Item  ">
             <div className="preview">
               <img
-                src={"http://ah.khaledfathi.com/" + image}
+                src={URL+"/" + image}
                 alt="Item Preview"
                 className="img-fluid"
               />

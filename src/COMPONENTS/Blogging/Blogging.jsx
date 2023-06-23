@@ -10,6 +10,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import blogImage from "../../images/blog.jpg";
 import axios from "axios";
 
+import { constants } from '../../constants';
+const URL = constants.API_HOST; 
 
 const Blogging = () => {
   const settings = {
@@ -26,7 +28,7 @@ const Blogging = () => {
   const [blogData,setBlogData] = useState([])
 
   useEffect(() => {
-    axios.get("http://ah.khaledfathi.com/api/blog").then((res) => {
+    axios.get(URL+"/api/blog").then((res) => {
       setBlogData(res.data.data);
     });
   }, []);
@@ -48,7 +50,7 @@ const Blogging = () => {
           <div className="row g-0">
             <div className="col-md-4">
               <img
-                src={"http://ah.khaledfathi.com/"+item.image}
+                src={URL+"/"+item.image}
                 alt="Trendy Pants and Shoes"
                 className="img-fluid rounded-start"
               />

@@ -5,8 +5,6 @@ import Home from './COMPONENTS/Home/Home';
 import Shelters from './COMPONENTS/Shelters/Shelter';
 import Login from './COMPONENTS/Login/Login';
 import Blogging from './COMPONENTS/Blogging/Blogging';
-import Navbar from './COMPONENTS/NavBar/NavBar';
-import Services from './COMPONENTS/Services/Services';
 import User from './COMPONENTS/User/User';
 import Clinc from './COMPONENTS/Clinc/Clinc';
 import ClientForm from './COMPONENTS/ClientForm/ClientForm';
@@ -15,6 +13,7 @@ import Shop from './COMPONENTS/Shop/Shop';
 import ShopContextProvider from './context/shop-context';
 import Cart from "./COMPONENTS/cart/cart";
 import Navtest from './COMPONENTS/navtest/navtest';
+import Navbar from './COMPONENTS/NavBar/NavBar';
 import ShelterProfile from"./COMPONENTS/Profile/Profile"
 import ApiContextProvider from './context/API-Context';
 import Admin from './COMPONENTS/Admin/Admin';
@@ -31,7 +30,6 @@ const App = () => {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blogging" element={<Blogging />} />
-        {/* <Route path="/services" element={<Services />} /> */}
         <Route path="/clinc" element={<Clinc />} />
         <Route path="/shelters" element={<Shelters />} />
         <Route path="/user" element={<User />} />

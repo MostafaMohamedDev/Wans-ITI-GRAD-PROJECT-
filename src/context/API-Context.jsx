@@ -4,9 +4,12 @@ import { setSession , getSession , removeSession ,  getCurrentTime } from "../he
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export const ApiContext = createContext(null);
-const apiUrl = "http://ah.khaledfathi.com/api/user"
-const servicesUrl = "http://ah.khaledfathi.com/api/service"
 
+import { constants } from '../constants';
+const URL = constants.API_HOST; 
+
+const apiUrl = URL+"/api/user"
+const servicesUrl = URL+"/api/service"
 const ApiContextProvider = (props) => {
 
     const [userData, setUserData] = useState()
@@ -65,7 +68,7 @@ const ApiContextProvider = (props) => {
         setDataUpdated(true)
     }
     const login = async (data) => {
-        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",data);
+        const response = await ajax(URL+"/api/auth/login","POST",data);
         const newData = await response.json();
         if(newData.status){
             setSession('login' , true); 

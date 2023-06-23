@@ -12,6 +12,8 @@ import {
 } from "../../helper";
 import { ApiContext } from "../../context/API-Context";
 
+import { constants } from '../../constants';
+const URL = constants.API_HOST; 
 const ShelterProfile = () => {
   const { addServiceData, updateData ,dataUpdated } = useContext(ApiContext);
   const [editMode, setEditMode] = useState(false);
@@ -129,7 +131,7 @@ const ShelterProfile = () => {
           <img
             src={
               auth.image
-                ? "http://ah.khaledfathi.com/" + auth.image
+                ? URL+"/" + auth.image
                 : profileImage
             }
             className="profileImage"
@@ -199,7 +201,7 @@ const ShelterProfile = () => {
               }}>
               <img
                 className="editImage"
-                src={"http://ah.khaledfathi.com/" + auth.image}
+                src={URL+"/" + auth.image}
                 alt="Edit Profile"
               />
               <label className="file-label">
@@ -291,7 +293,7 @@ const ShelterProfile = () => {
           id="form">
           <img
             className="editImage"
-            src={"http://ah.khaledfathi.com/" + auth.image}
+            src={URL+"/" + auth.image}
             alt="shelter"
           />
 

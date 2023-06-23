@@ -11,6 +11,8 @@ import { Badge } from "@mui/icons-material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Shop.css";
 
+import { constants } from '../../constants';
+const URL = constants.API_HOST; 
 // const Product = ({data}) => {
 
 //   return (
@@ -59,7 +61,7 @@ export default function MultiActionAreaCard({ data }) {
         <CardMedia
           component="img"
           height="400"
-          image={"http://ah.khaledfathi.com/" + image}
+          image={URL+"/" + image}
           alt="green iguana"
           className="bg-dark imgShop"
           style={{

@@ -9,6 +9,8 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { CONSTANTS } from "../../constants";
 import axios from "axios";
 
+import { constants } from '../../constants';
+const URL = constants.API_HOST; 
 const Shelters = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -59,7 +61,7 @@ const Shelters = () => {
   // }, []);
   useEffect(() => {
     axios
-      .get("http://ah.khaledfathi.com/api/service/filter/service_type/shelter")
+      .get(URL+"/api/service/filter/service_type/shelter")
       .then((res) => {
         setShelterCard(res.data.data);
       });
@@ -197,7 +199,7 @@ const Shelters = () => {
               key={index}>
               <a className="card">
                 <img
-                  src={"http://ah.khaledfathi.com/" + shelter.image}
+                  src={URL+"/" + shelter.image}
                   className="card__image"
                   alt=""
                 />
@@ -210,7 +212,7 @@ const Shelters = () => {
                     </svg>
                     <img
                       className="card__thumb"
-                      src={"http://ah.khaledfathi.com/" + shelter.image}
+                      src={URL+"/" + shelter.image}
                       alt=""
                     />
                     <div className="card__header-text">
