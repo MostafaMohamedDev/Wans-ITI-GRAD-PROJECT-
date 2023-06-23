@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Clinc.css";
 import { getCurrentTime } from "../../helper";
-// import Navbar from "../NavBar/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -11,9 +10,11 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import clincImage from "../../images/clinc.jpg";
 import Aos from "aos";
 import 'aos/dist/aos.css'
-
 import { constants } from '../../constants';
+
 const URL = constants.API_HOST; 
+
+//Component
 const Clinics = () => {
   const [clinics, setClinics] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);

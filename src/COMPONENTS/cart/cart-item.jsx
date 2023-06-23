@@ -3,10 +3,12 @@ import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { faTrashAlt, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { constants } from '../../constants';
-const URL = constants.API_HOST; 
 import "./cart-item.css";
+
+const URL = constants.API_HOST; 
+
+//component
 const CartItem = ({ data }) => {
   const { addToCart, removeFromCart, cartItems, updateCartItem } =
     useContext(ShopContext);

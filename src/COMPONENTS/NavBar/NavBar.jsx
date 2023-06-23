@@ -1,53 +1,25 @@
-/** @format */
-
-import React, { useState } from "react";
-import { FaShoppingCart, FaUser, FaSearch } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { getSession } from "../../helper";
 import { useTranslation } from 'react-i18next';
 
-import "./NavBar.css";
-
-const Navbar = () => {
+//component
+const Navtest = () => {
   const [t,i18n]= useTranslation();
-
-  const [searchExpanded, setSearchExpanded] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
-
-  const handleSearchToggle = () => {
-    setSearchExpanded(!searchExpanded);
-  };
-
-  const handleSearchInput = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const clearSearch = () => {
-    setSearchQuery("");
-  };
-
-  const toggleServicesDropdown = () => {
-    setServicesDropdownOpen(!servicesDropdownOpen);
-  };
-
-  const toggleShopDropdown = () => {
-    setShopDropdownOpen(!shopDropdownOpen);
-  };
-
-  const navigate = useNavigate();
-
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid nav-contain">
-        <div className="navbar-brand">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="/">
           <img
             className="nav navimg"
             src="Images/logo.png"
-            alt="Description of the image"
+            alt="Description of the"
           />
-        </div>
-
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -55,144 +27,102 @@ const Navbar = () => {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarSupportedContent">
-          <ul className="navbar-nav  mb-2 mb-lg-0">
-
-<li>       {i18n.language==="en"&&<input type='button' value="AR" onClick={()=>{
-            i18n.changeLanguage("ar")
-        }}></input>}
-         {i18n.language==="ar"&&<input type='button' value="EN" onClick={()=>{
-            i18n.changeLanguage("en")
-        }}></input>} </li>
-
-<li className="nav-item">
-          <Link
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link
                 className="nav-link active home-link"
                 aria-current="page"
-                to="/">
-                 {t("Home")}
+                to="/"
+              >
+           {t("Home")}
               </Link>
             </li>
-            <li>     {i18n.language==="en"&&<input type='button' value="AR" onClick={()=>{
-      i18n.changeLanguage("ar")
-  }}></input>}
-   {i18n.language==="ar"&&<input type='button' value="EN" onClick={()=>{
-      i18n.changeLanguage("en")
-  }}></input>} </li>
-            <li
-              className={`nav-item dropdown ${
-                servicesDropdownOpen ? "show" : ""
-              }`}>
+
+
+            <li className="nav-item dropdown">
+
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
+                id="navbarDropdown"
                 role="button"
-                onClick={toggleServicesDropdown}
-                aria-expanded={servicesDropdownOpen}>
-                   {t("Services")} 
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+              {t("Services")} 
               </a>
-              <ul
-                className={`dropdown-menu ${
-                  servicesDropdownOpen ? "show" : ""
-                }`}>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link
-                    className="dropdown-item "
-                    to="/clinc">
-                          {t("Clincs")}  
+                  <Link className="dropdown-item " to="/clinc">
+                  {t("Clincs")}  
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/shelters">
-                          {t("Shelters")}   
+                  <Link className="dropdown-item" to="/shelters">
+                  {t("Shelters")}   
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link  shop-link"
-                aria-current="page"
-                to="/shop">
-                {t("Shop")} 
+              <Link className="nav-link" aria-current="page" to="/shop">
+              {t("Shop")} 
               </Link>
             </li>
+
             <li className="nav-item">
-              <Link
-                className="nav-link active blog-link"
-                aria-current="page"
-                to="/Blogging">
-                  {t("Blog")} 
+              <Link className="nav-link " aria-current="page" to="/Blogging">
+              {t("Blog")} 
               </Link>
             </li>
-          </ul>
-          <form className="d-flex">
-            <div
-              className={`nav-item search-input ${
-                searchExpanded ? "expanded" : ""
-              }`}>
-              <a
-                className={`nav-link nav-link-icon ${
-                  searchExpanded ? "active" : ""
-                }`}
-                onClick={handleSearchToggle}>
-                <FaSearch className="iccons" />
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/cart">
+                <FontAwesomeIcon icon={faCartShopping} size="lg" />
+              </Link>
+            </li>
+            {(getSession("login"))?
+            <li className="nav-item">
+              <a className="nav-link" href="/profile">
+                <FontAwesomeIcon icon={faCircleUser} size="lg" />
               </a>
-              {searchExpanded && (
-                <>
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearchInput}
-                    placeholder="Search"
-                    className="form-control ps-3 me-2"
-                  />
-                  {searchQuery && (
-                    <span
-                      className="search-clear"
-                      onClick={clearSearch}>
-                      &times;
-                    </span>
-                  )}
-                </>
-              )}
-            </div>
-          </form>
-          <ul className="navbar-nav ms-lg-2">
-            <li className="nav-item">
-              <Link to={"/cart"}
-                className="nav-link pt-3 iccons"
-                href="#">
-                <FaShoppingCart className="mt-1" />
-              </Link>
+            </li>:
+              <li className="nav-item">
+              <a className="nav-link" href="./login">
+                <FontAwesomeIcon icon={faCircleUser} size="lg" />
+              </a>
             </li>
+            }   
+            {(getSession("login"))?
             <li className="nav-item">
-              <Link
-                clLinkssName="nav-link"
-                to="/login">
-               {t("Login")} 
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/User"
-                onClick={() => navigate("/Signup")}>
-                   {t("Signup")} 
-              </Link>
-            </li>
+              <a className="nav-link" href="./logout">
+              <FontAwesomeIcon icon={faRightFromBracket} size="lg"/>        
+            </a>
+            </li>:""
+            }
           </ul>
         </div>
       </div>
+
+
+
+     <div >  {i18n.language==="ar"&&< input   type='button' value="AR" onClick={()=>{
+      i18n.changeLanguage("en")
+  }}></input>}
+   {i18n.language==="en"&&<input     type='button' value="EN" onClick={()=>{
+      i18n.changeLanguage("ar")
+  }}></input>}  </div> 
+
+
+
+
     </nav>
   );
 };
 
-export default Navbar;
+export default Navtest;

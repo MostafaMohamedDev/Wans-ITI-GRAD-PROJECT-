@@ -12,7 +12,7 @@ import UserForm from './COMPONENTS/UserForm/UserForm';
 import Shop from './COMPONENTS/Shop/Shop';
 import ShopContextProvider from './context/shop-context';
 import Cart from "./COMPONENTS/cart/cart";
-import Navtest from './COMPONENTS/navtest/navtest';
+import Navtest from './COMPONENTS/NavBar/NavBar';
 import Navbar from './COMPONENTS/NavBar/NavBar';
 import ShelterProfile from"./COMPONENTS/Profile/Profile"
 import ApiContextProvider from './context/API-Context';
@@ -24,7 +24,7 @@ import Footer from './COMPONENTS/Footer/Footer';
 const App = () => {
   return (
     <div className="background-container">
-      <Navtest/>
+      <Navbar/>
       <ApiContextProvider>
       <ShopContextProvider>
         <Routes>

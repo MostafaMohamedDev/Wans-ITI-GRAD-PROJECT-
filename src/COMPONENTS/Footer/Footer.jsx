@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faMapMarkerAlt, faPhone, faClock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+//Component
 const Footer = () => {
   return (
     <footer className="footer">

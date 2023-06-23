@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Blogging.module.css"; // Update the import statement
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-
-
 import blogImage from "../../images/blog.jpg";
 import axios from "axios";
-
 import { constants } from '../../constants';
+
 const URL = constants.API_HOST; 
 
+//component
 const Blogging = () => {
   const settings = {
     dots: true,

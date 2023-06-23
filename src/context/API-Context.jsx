@@ -3,13 +3,15 @@ import React, { createContext, useEffect, useState } from 'react'
 import { setSession , getSession , removeSession ,  getCurrentTime } from "../helper";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { constants } from '../constants';
+
 export const ApiContext = createContext(null);
 
-import { constants } from '../constants';
 const URL = constants.API_HOST; 
-
 const apiUrl = URL+"/api/user"
 const servicesUrl = URL+"/api/service"
+
+//Context Provider
 const ApiContextProvider = (props) => {
 
     const [userData, setUserData] = useState()

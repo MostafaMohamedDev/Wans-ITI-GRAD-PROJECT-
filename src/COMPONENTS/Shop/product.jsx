@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
@@ -10,30 +12,12 @@ import { Link } from "react-router-dom";
 import { Badge } from "@mui/icons-material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Shop.css";
+import { constants } from "../../constants";
 
-import { constants } from '../../constants';
-const URL = constants.API_HOST; 
-// const Product = ({data}) => {
+const URL = constants.API_HOST;
 
-//   return (
-//     <div>
-//         {/* <h1>{data.id}</h1> */}
-//         <div>
-//             <div>
-//                 <img src={image} alt='proImg' width={500}/>
-//             </div>
-//             <p>{name}</p>
-//             <p>{price}</p>
-//             <button onClick={()=>addToCart(id)}>Add To Cart
-//             {cartItemCount > 0 && <span> ( {cartItemCount} ) </span>}</button>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Product;
-
-export default function MultiActionAreaCard({ data }) {
+//component
+function MultiActionAreaCard({ data }) {
   //Fake Data From  API
 
   const { id, name, price, image } = data;
@@ -44,7 +28,6 @@ export default function MultiActionAreaCard({ data }) {
   const { addToCart, cartItems } = useContext(ShopContext);
 
   const cartItemCount = cartItems[id];
-
   return (
     <Card
       sx={{
@@ -55,13 +38,12 @@ export default function MultiActionAreaCard({ data }) {
         borderColor: "5px",
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)", // Added box shadow
         borderRadius: "30px 30px 10px 10px ", // Added border radius
-      }}
-    >
+      }}>
       <CardActionArea className="m-auto">
         <CardMedia
           component="img"
           height="400"
-          image={URL+"/" + image}
+          image={URL + "/" + image}
           alt="green iguana"
           className="bg-dark imgShop"
           style={{
@@ -70,7 +52,9 @@ export default function MultiActionAreaCard({ data }) {
           }}
         />
 
-        <CardContent className="text-center line1" style={{ padding: "20px" }}>
+        <CardContent
+          className="text-center line1"
+          style={{ padding: "20px" }}>
           <Typography
             gutterBottom
             variant="h5"
@@ -81,21 +65,21 @@ export default function MultiActionAreaCard({ data }) {
               color: "#333",
               textTransform: "uppercase",
               letterSpacing: "1px",
-            }}
-          >
+            }}>
             {name}
           </Typography>
           <Typography
             variant="body2"
             color=""
             className="fw-bold"
-            style={{ fontSize: "18px", color: "#ff642e" }}
-          >
+            style={{ fontSize: "18px", color: "#ff642e" }}>
             {price}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className="bottom-card" style={{ padding: "10px" }}>
+      <CardActions
+        className="bottom-card"
+        style={{ padding: "10px" }}>
         <IconButton
           size="large"
           style={{
@@ -109,8 +93,7 @@ export default function MultiActionAreaCard({ data }) {
           aria-label="show 17 new notifications"
           color="inherit"
           onClick={() => addToCart(id)}
-          className="cart-icon"
-        >
+          className="cart-icon">
           <AddShoppingCartIcon />
           {cartItemCount > 0 && (
             <span style={{ fontSize: "18px" }}> ( {cartItemCount} ) </span>
@@ -120,3 +103,6 @@ export default function MultiActionAreaCard({ data }) {
     </Card>
   );
 }
+
+
+export default  MultiActionAreaCard ; 

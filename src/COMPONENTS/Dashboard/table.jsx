@@ -1,10 +1,13 @@
-
-
+/**
+ * FOR TESTING ONLY 
+ * WELL BE REMOVED ON PRODUCTION 
+ */
 import React, { useContext, useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
 import { ApiContext } from '../../context/api-context';
 
- const UserTable = () => {
+//component
+const UserTable = () => {
     const { userData, createData, updateData, deleteData } = useContext(ApiContext);
   
     const [newUser, setNewUser] = useState({

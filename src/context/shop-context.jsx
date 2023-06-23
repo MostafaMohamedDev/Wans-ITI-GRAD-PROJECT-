@@ -1,12 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
-export const ShopContext = createContext(null);
 import { constants } from '../constants';
+
+export const ShopContext = createContext(null);
+
 const URL = constants.API_HOST; 
-
 const jsonPort = constants.JSON_SERVER.PORT; 
-
-
 const baseURL = 'http://localhost:'+jsonPort+'/products';
 const cartURL = 'http://localhost:'+jsonPort+'/cart';
 
@@ -18,6 +17,7 @@ const defaultCart = (items) => {
   return cart;
 };
 
+//Context Provider
 const ShopContextProvider = (props) => {
   const [productItems, setProductItems] = useState([]);
   const [cartItems, setCartItems] = useState(null);

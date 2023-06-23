@@ -8,9 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { CONSTANTS } from "../../constants";
 import axios from "axios";
-
 import { constants } from '../../constants';
+
 const URL = constants.API_HOST; 
+
+//component
 const Shelters = () => {
   const [isHovered, setIsHovered] = useState(false);
 

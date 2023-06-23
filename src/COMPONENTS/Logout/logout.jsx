@@ -21,14 +21,6 @@ const Logout = () => {
     /***********************/
   return (
     <>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-        <div>logout</div>
-        
     </>
   )
 }

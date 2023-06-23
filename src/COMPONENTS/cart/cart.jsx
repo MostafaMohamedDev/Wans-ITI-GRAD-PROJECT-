@@ -1,10 +1,11 @@
 /** @format */
 import React from "react";
-// import { PRODUCTS } from "../../products";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { useNavigate } from "react-router-dom";
 import CartItem from "./cart-item";
+
+//Component
 const Cart = () => {
   const { cartItems, getTotalAmount, checkout, productItems } =
     useContext(ShopContext);

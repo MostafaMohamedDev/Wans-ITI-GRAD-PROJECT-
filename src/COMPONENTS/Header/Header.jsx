@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from 'react-i18next';
 
-
+//Component
 const Header = () => {
   const videoRef = useRef(null);
   const [t,i18n]= useTranslation();

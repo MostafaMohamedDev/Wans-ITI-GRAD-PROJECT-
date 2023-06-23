@@ -3,6 +3,7 @@ import styles from "./ClientForm.module.css";
 import { ApiContext } from "../../context/API-Context";
 import { useContext } from "react";
 
+//Component
 const ClientForm = () => {
   const {createData,createStatus} = useContext(ApiContext)
   const [confirmPassword, setConfirmPassword] = useState("");

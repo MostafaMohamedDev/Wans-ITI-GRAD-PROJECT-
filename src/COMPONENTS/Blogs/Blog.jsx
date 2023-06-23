@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import Aos from "aos";
 import 'aos/dist/aos.css'
 
+//Component
 const Blog = () => {
   const blogData = [
     {

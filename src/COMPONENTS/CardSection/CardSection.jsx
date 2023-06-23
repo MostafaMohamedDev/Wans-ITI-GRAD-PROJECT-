@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Aos from "aos";
 import 'aos/dist/aos.css'
 
+//Component
 const CardSection = () => {
   const [t,i18n]= useTranslation();
   Aos.init();
