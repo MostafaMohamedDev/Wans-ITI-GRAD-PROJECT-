@@ -15,7 +15,6 @@ import { constants } from "../../constants";
 
 const URL = constants.API_HOST;
 
-
 //component
 const ShelterProfile = () => {
   /*******************/
@@ -32,7 +31,6 @@ const ShelterProfile = () => {
   }, []);
 
   /*******************/
-
 
   const { addServiceData, updateData, dataUpdated } = useContext(ApiContext);
   const [editMode, setEditMode] = useState(false);
@@ -79,14 +77,9 @@ const ShelterProfile = () => {
     event.preventDefault();
     const file =
       fileInputRef.current !== null ? fileInputRef.current : undefined;
+    /******/
     await updateData(editUser.id, editUser, file);
-    setEditUser({
-      name: "",
-      password: "",
-      email: "",
-      address: "",
-      phone: "",
-    });
+    /******/
   };
 
   const handleInputChange = (event) => {
@@ -122,6 +115,12 @@ const ShelterProfile = () => {
     setShowForm(false);
   };
 
+  useEffect(() => {
+    if (dataUpdated) {
+      setAuth(getSession("auth"));
+      // setDataUpdated(false)
+    }
+  }, [dataUpdated]);
   return (
     <div>
       <div className="prof">
@@ -195,7 +194,7 @@ const ShelterProfile = () => {
               }}>
               <img
                 className="editImage"
-                src={URL + "/" + auth.image}
+                src={(auth.image)? URL + "/" + auth.image : ""}
                 alt="Edit Profile"
               />
               <label className="file-label">
@@ -277,7 +276,7 @@ const ShelterProfile = () => {
         <button
           id="add"
           onClick={handleForm}>
-          {auth.type == "shelter" ? "Add Shelter" : "Add Clinic"}
+          Add { (auth.type == "shelter")? "Shelter" : "Clinic" }
         </button>
       </div>
 
@@ -287,7 +286,7 @@ const ShelterProfile = () => {
           id="form">
           <img
             className="editImage"
-            src={URL + "/" + auth.image}
+            src={(auth.image)?URL + "/" + auth.image:""}
             alt="shelter"
           />
 
@@ -361,7 +360,7 @@ const ShelterProfile = () => {
               required></textarea>
           </div>
           <div className="">
-            {(auth.type = "shelter") ? (
+            {(auth.type == "shelter") ? (
               <select
                 required
                 className="form-select"

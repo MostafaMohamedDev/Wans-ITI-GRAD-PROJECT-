@@ -19,7 +19,7 @@ import ApiContextProvider from './context/API-Context';
 import Admin from './COMPONENTS/Admin/Admin';
 import Logout from './COMPONENTS/Logout/logout';
 import Footer from './COMPONENTS/Footer/Footer';
-
+import Post from './COMPONENTS/Blogs/Post';
 
 const App = () => {
   return (
@@ -39,8 +39,11 @@ const App = () => {
         <Route path="/cart"element={<Cart/>}/>
         <Route path="/profile" element={<ShelterProfile />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
+        <Route  path="/logout" element={<Logout />} />
         <Route path="/Admin" element={<Admin/>} />
+        <Route path = "/post">
+          <Route path=":id" element={<Post/>} />
+        </Route> 
       </Routes>  
       <Footer/>
 

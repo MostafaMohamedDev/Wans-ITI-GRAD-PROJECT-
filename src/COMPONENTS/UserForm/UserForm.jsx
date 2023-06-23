@@ -11,7 +11,6 @@ const UserForm = () => {
   const [creationFail, setCreationFail] = useState(false);
   const fileInputRef = useRef(null);
 
-  console.log(createStatus);
 
   const [newUser, setNewUser] = useState({
     name: "",

@@ -100,7 +100,7 @@ const Navtest = () => {
             }   
             {(getSession("login"))?
             <li className="nav-item">
-              <a className="nav-link" href="./logout">
+              <a className="nav-link" href="/logout">
               <FontAwesomeIcon icon={faRightFromBracket} size="lg"/>        
             </a>
             </li>:""

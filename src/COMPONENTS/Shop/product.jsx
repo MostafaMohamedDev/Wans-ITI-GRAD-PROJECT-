@@ -22,7 +22,6 @@ function MultiActionAreaCard({ data }) {
 
   const { id, name, price, image } = data;
 
-  // console.log(id);
 
   // Cart items
   const { addToCart, cartItems } = useContext(ShopContext);

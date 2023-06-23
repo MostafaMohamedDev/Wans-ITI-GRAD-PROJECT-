@@ -8,6 +8,7 @@ import { constants } from '../constants';
 export const ApiContext = createContext(null);
 
 const URL = constants.API_HOST; 
+
 const apiUrl = URL+"/api/user"
 const servicesUrl = URL+"/api/service"
 
@@ -25,9 +26,9 @@ const ApiContextProvider = (props) => {
         setUserData(data.data)
     }
 
-    const createData = async (data,ref) => {
-        ref = (ref.value)? ref:null
-        const response = await ajax(apiUrl, "post", data,ref);
+    const createData = async (data,file) => {
+        file = (file.value)? file:null
+        const response = await ajax(apiUrl, "post", data,file);
         const newData = await response.json();
         
         setCreateStatus(newData)
@@ -40,15 +41,15 @@ const ApiContextProvider = (props) => {
     }
 
     // services data
-    const addServiceData = async (data,ref) => {
-        ref = (ref.value)? ref:null
-        const response = await ajax(servicesUrl, "post", data,ref);
+    const addServiceData = async (data,file) => {
+        file = (file.value)? file:null
+        const response = await ajax(servicesUrl, "post", data,file);
         const newData = await response.json();
     }
 
-    const updateData = async (id, data,ref) => {
-        ref = (ref.value)? ref:null
-        const response = await ajax(apiUrl + "/" + id + "/update", "POST", data,ref);
+const updateData = async (id, data,file) => {
+        file = (file.value)? file:null
+        const response = await ajax(apiUrl + "/" + id + "/update", "POST", data,file);
         const updatedData = await response.json();
         const updatedUserData = userData.map((item) =>
             item.id == id ? updatedData : item
@@ -58,8 +59,7 @@ const ApiContextProvider = (props) => {
         if(updatedData.status){
             axios.get(apiUrl+"/"+id).then((res)=>{
                 setSession('auth' , res.data.data);
-                // setUserData(updatedUserData)
-                // setDataUpdated(true)
+
             })
         }
     }
