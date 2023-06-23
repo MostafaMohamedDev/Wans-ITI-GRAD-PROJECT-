@@ -62,7 +62,7 @@ const ApiContextProvider = (props) => {
                 console.log(res.data.data);
                 setSession('auth' , res.data.data);
                 // setUserData(updatedUserData)
-                setDataUpdated(true)
+                // setDataUpdated(true)
             })
         }
     }

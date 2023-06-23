@@ -145,7 +145,7 @@ const Shelters = () => {
 
             <img
               className="CatImg"
-              style={{ cursor: "grab", width: "65%", marginTop: "50px" }}
+              style={{ cursor: "grab", width: "65%", marginTop: "-45px" }}
               onClick={handleClickCat}
               src="./Images/cat.jpg"
               alt="Cat Icon"
@@ -210,7 +210,7 @@ const Shelters = () => {
                     />
                     <div className="card__header-text">
                       <h3 className="card__title">{shelter.name}</h3>
-
+                      <span className="card__status">{shelter.user_name}</span>
                     </div>
                   </div>
 

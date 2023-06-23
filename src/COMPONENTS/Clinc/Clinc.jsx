@@ -17,16 +17,9 @@ const Clinics = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedClinic, setSelectedClinic] = useState({});
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:4001/clinics").then((response) => {
-  //     setClinics(response.data);
-  //   });
-  // }, []);
   useEffect(() => {
     axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/clinics").then((res) => {
-      console.log(res.data.data);
       setClinics(res.data.data);
-      console.log(clinics);
     });
   }, []);
   
@@ -53,17 +46,14 @@ const Clinics = () => {
       <h2 className="clinic-header">Clinics</h2>
       <div className="clinic-parentCard container">
         <div className="row"   >
-          {clinics.map((clinic) => (
-            <div className="col-sm-12 col-md-6 col-lg-4 px-3"   >
+          {clinics.map((clinic , index) => (
+            <div key={index} className="col-sm-12 col-md-6 col-lg-4 px-3"   >
               <div
-                key={clinic.id}
                 className="clinic-card " 
                 onClick={() => handleCardClick(clinic)}
               >
-                <div className="clinic-card-header">
-
-                  <img className="CLINCIMAGE2" src={"http://ah.khaledfathi.com/"+clinic.image} alt="img"></img>
-
+                <div className="clinic-card-header"   data-aos="fade-up"  >
+                  <img src={"http://ah.khaledfathi.com/"+clinic.image} alt="img" width="400px"  ></img>
                 </div>
                 <div className="clinic-card-body" >
                   <h3 className="ClinicName">{clinic.name}</h3>

@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-md-6 col-sm-12 footer-col">
+          <div className="Loogoo footer-col">
             <img
               className="footer-logo"
               src="Images/white.png"
@@ -23,7 +23,7 @@ const Footer = () => {
             <h5 className="logo-par">Fur-Ever Loved <br/> Fur-Ever Cared</h5>
           </div>
 
-          <div className="col-lg-3 col-md-6 col-sm-12 footer-col">
+          <div className="footer-col">
             <h4>company</h4>
             <ul>
               <li>
@@ -41,7 +41,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-lg-3 col-md-6 col-sm-12 footer-col">
+          <div className="footer-col">
             <h4>Contact</h4>
             <ul>
               <li className="contact-info">
@@ -59,7 +59,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-lg-3 col-md-6 col-sm-12 footer-col">
+          <div className="footer-col">
             <h4>follow us</h4>
             <div className="social-links">
               <a href="#">

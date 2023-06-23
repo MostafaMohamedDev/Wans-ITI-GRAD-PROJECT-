@@ -11,13 +11,14 @@ body{
 	box-sizing: border-box;
 }
 .container{
-	width: 80%;
+	width: 100%;
 	margin:auto;
 }
 .row{
     
 	display: flex;
 	flex-wrap: wrap;
+    justify-content : space-between
 }
 ul{
 	list-style: none;
@@ -88,7 +89,7 @@ ul{
 
 
 
-/* responsive
+/*responsive*/
 @media(max-width: 767px){
   .footer-col{
     width: 50%;
@@ -105,7 +106,7 @@ ul{
     width: 250px;
     height : 120px;
     
-} */
+}
 
 
 .logo-par{

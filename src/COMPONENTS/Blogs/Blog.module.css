@@ -40,7 +40,6 @@ height: auto;
 .span {
 color: #ff642e;
 font-family: 'Signika', sans-serif;
-font-weight : bolder
 
 }
 
@@ -56,7 +55,6 @@ backdrop-filter: blur(1.25rem); / Converted from 20px */
 font-weight: bolder;
 color: #ff642e;
 font-family: 'Kanit', sans-serif;
-
 }
 
 .cardDate {

@@ -48,7 +48,7 @@ const PartnersSlider = () => {
   return (
     <div className="slid-container slidSection">
       <h2 className="header">
-      {t("Best")}    <span classNAme="slidspan">   {t("Sellers")}    </span>
+      {t("Best")}    <span className="slidspan">   {t("Sellers")}    </span>
       </h2>
       <Slider {...settings} className="partners-slider mt-4">
         <div className="item">

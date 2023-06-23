@@ -1,163 +1,72 @@
-.container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: url(../../../public/Images/reg.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.container::before {
-  /* Dark layer */
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.1); /* Adjust opacity as needed */
-}
+.container{
 
-.form {
-  width: 60rem;
-  /* height : 20rem; */
-  padding: 1.875rem;
-  border: 1px solid #ccc;
-  border-radius: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.62);
-  position: relative;
-  top: 6rem;
-  left: 2rem;
-}
-
-.formRow {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0.625rem;
-}
-
-.formGroup {
-  margin-bottom: 0.9375rem;
-}
-
-.label {
-  position: relative;
-  font-family: 'Mukta', sans-serif;
-  font-weight: 500;
-}
-
-.label::after {
-  content: "";
-  position: absolute;
-  bottom: -0.0125rem;
-  left: 0;
-  width: 100%;
-  height: 0.0125rem;
-  background-color: #4caf50;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.input:focus::after {
-  transform: scaleX(1);
-}
-
-.input,
-.textarea {
-  width: 90%;
-  padding: 0.3125rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-}
-
-.button {
-  display: block;
-  width: 100%;
-  padding: 0.5rem;
-  background: linear-gradient(117deg, rgb(248, 137, 73), rgb(248, 82, 49));
-  color: #fff;
-  border: none;
-  border-radius: 0.4rem;
-  cursor: pointer;
-}
-
-.button:hover {
-  background: linear-gradient(117deg, rgb(248, 137, 73), rgb(248, 82, 49));
-  box-shadow: 0 0.00390625rem 0.03125rem rgb(254, 100, 70);
-  color: black;
-  font-weight: bold;
-}
-
-/* styles.css */
-
-.formGroup {
-  flex: 1 1 50%; /* Adjust the width as needed */
-  margin-bottom: 0.625rem;
-}
-
-/* Styles for the file upload input */
-.input-file-label {
-  display: block;
-  margin-bottom: 0.3125rem;
-  font-size: 0.875rem;
-  color: #333;
-}
-
-.input-file {
-  display: none;
-}
-
-.upload-button {
-  display: inline-block;
-  padding: 0.625rem;
-  background-color: #5c9eff;
-  border: none;
-  border-radius: 0.25rem;
-  color: #fff;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-
-/* Style the label when the upload button is clicked */
-.upload-button:focus + .input-file-label {
-  outline: none;
-  border-color: #5c9eff;
-  box-shadow: 0 0 0.25rem #5c9eff;
-}
-
-/* Styles for the select element */
-.select {
-  width: 100%;
-  padding: 0.625rem;
-  margin-bottom: 0.3125rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  color: #333;
-}
-
-/* Style the select when focused */
-.select:focus {
-  outline: none;
-  border-color: #5c9eff;
-  box-shadow: 0 0 0.25rem #5c9eff;
-}
-
-/* Style the select when a value is selected */
-.select:valid {
-  color: #333;
-}
-
-/* Add any additional styles as needed */
-/* Define breakpoints for different screen sizes */
-@media (max-width: 768px) {
-  .formRow {
-    /* Adjust the layout for smaller screens */
-    flex-direction: column;
-  }}
-
-  .formGroup {
-    /* Adjust the width for smaller screens */
+    position: relative;
     width: 100%;
-  }
+    height: 100vh;
+    background-image: url(../../../public/Images/reg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;}
+    .container::before {
+        /* Dark layer */
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1); /* Adjust opacity as needed */
+      }
+      
+
+      .form {
+        width: 40rem;
+        /* height : 30rem; */
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 0.8rem;
+        background-color: rgba(255, 255, 255, 0.62);
+        position: relative;
+        top : 6rem  ;
+    left : 4rem  }
+      
+      .formRow {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+      }
+      
+      .formColumn {
+        flex: 1;
+        padding: 10px;
+      }
+      
+      .formGroup {
+        margin-bottom: 15px;
+      }
+      
+      .label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .input,
+      .textarea {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      .button {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .button:hover {
+        background-color: #45a049;
+      }

@@ -36,7 +36,6 @@ const ShelterProfile = () => {
     setEditMode(false);
   };
 
-
   const [newShelter, setNewShelter] = useState({
     name: "",
     phone: "",
@@ -59,7 +58,7 @@ const ShelterProfile = () => {
     event.preventDefault();
     const file =
       fileInputRef.current !== null ? fileInputRef.current : undefined;
-    // console.log(editUser);
+    console.log(editUser);
     await updateData(editUser.id, editUser, file);
     setEditUser({
       name: "",
@@ -118,12 +117,12 @@ const ShelterProfile = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (dataUpdated) {
-      setAuth(getSession("auth"));
-        // setDataUpdated(false)
-    }
-}, [dataUpdated])
+//   useEffect(() => {
+//     if (dataUpdated) {
+//       setAuth(getSession("auth"));
+//         // setDataUpdated(false)
+//     }
+// }, [dataUpdated])
   /*******************/
   // console.log(auth);
 
@@ -259,6 +258,14 @@ const ShelterProfile = () => {
                 onChange={handleInputChange}
               />
               <input
+                className="editEmail"
+                type="text"
+                value={auth.type}
+                // name="address"
+                // onChange={handleInputChange}
+                hidden
+              />
+              <input
                 className="save"
                 type="submit"
                 value="Save"
@@ -278,7 +285,7 @@ const ShelterProfile = () => {
         <button
           id="add"
           onClick={handleForm}>
-          {auth.type == "clinics" ? "Add Clinic" : "Add Shelter"}
+          {auth.type == "shelter" ?  "Add Shelter" : "Add Clinic"}
         </button>
       </div>
 
@@ -295,7 +302,7 @@ const ShelterProfile = () => {
           <div className="form-row">
             <div className="form-group">
               <h5 className="editNM">
-                {auth.type == "clinics" ? "Clinic Name" : "Pet Name"}
+                {auth.type == "shelter" ?  "Pet Name" : "Clinic Name"}
               </h5>
               <input
                 type="text"
@@ -362,21 +369,20 @@ const ShelterProfile = () => {
               required></textarea>
           </div>
           <div className="">
-            {(auth.type = "clinics") ? (
-              ""
-            ) : (
-              <select
-                required
-                className="form-select"
-                id="businessType"
-                name="animal_type"
-                value={newShelter.animal_type}
-                onChange={handleInputChange}>
-                <option value="">Select Pet Type</option>
-                <option value="dog">dog</option>
-                <option value="cat">cat</option>
-              </select>
-            )}
+            {(auth.type = "shelter") ? 
+                <select
+                  required
+                  className="form-select"
+                  id="businessType"
+                  name="animal_type"
+                  value={newShelter.animal_type}
+                  onChange={handleInputChange}>
+                  <option value="">Select Pet Type</option>
+                  <option value="dog">dog</option>
+                  <option value="cat">cat</option>
+                </select>
+              
+             : ""}
           </div>
           <label className="file-label">
             <input

@@ -21,9 +21,7 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     axios.get("http://ah.khaledfathi.com/api/product").then((res) => {
-      console.log(res.data.data);
       setProductItems(res.data.data);
-      // console.log(productItems);
     });
 
     axios.get(cartURL).then((res) => {
@@ -42,7 +40,7 @@ const ShopContextProvider = (props) => {
         // handle successful response
       })
       .catch((error) => {
-        console.log(error.response.data);
+        //
       });
   };
 
@@ -53,7 +51,7 @@ const ShopContextProvider = (props) => {
         // handle successful response
       })
       .catch((error) => {
-        console.log(error.response.data);
+        //
       });
   };
 
@@ -64,7 +62,7 @@ const ShopContextProvider = (props) => {
         // handle successful response
       })
       .catch((error) => {
-        console.log(error.response.data);
+        //
       });
   };
 
@@ -76,10 +74,10 @@ const ShopContextProvider = (props) => {
     }
     axios.post(cartURL, newCartItems)
       .then((response) => {
-        console.log("Cart updated successfully:", response.data);
+        //
       })
       .catch((error) => {
-        console.log("Error updating cart:", error.response.data);
+        //
       });
     setCartItems(newCartItems);
   };
