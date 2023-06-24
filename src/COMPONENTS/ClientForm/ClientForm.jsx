@@ -3,13 +3,13 @@ import styles from "./ClientForm.module.css";
 import { ApiContext } from "../../context/API-Context";
 import { useContext } from "react";
 
+//Component
 const ClientForm = () => {
   const {createData,createStatus} = useContext(ApiContext)
   const [confirmPassword, setConfirmPassword] = useState("");
   const [creationSuccess, setCreationSuccess] = useState(false);
   const [creationFail, setCreationFail] = useState(false);
   const fileInputRef = useRef(null);
-// console.log(fileInputRef.current);
   const [newUser, setNewUser] = useState({
     name:"",
     password:"",

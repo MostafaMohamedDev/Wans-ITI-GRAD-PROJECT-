@@ -1,54 +1,48 @@
-  import React, { useEffect, useRef, useState } from "react";
-  import styles from "./UserForm.module.css"; // Import the CSS module
-  import { ApiContext } from "../../context/API-Context";
-  import { useContext } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./UserForm.module.css"; // Import the CSS module
+import { ApiContext } from "../../context/API-Context";
+import { useContext } from "react";
 
-  const UserForm = () => {
+//component
+const UserForm = () => {
+  const { createData, createStatus } = useContext(ApiContext);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [creationSuccess, setCreationSuccess] = useState(false);
+  const [creationFail, setCreationFail] = useState(false);
+  const fileInputRef = useRef(null);
 
-    const {createData,createStatus} = useContext(ApiContext)
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [creationSuccess, setCreationSuccess] = useState(false);
-    const [creationFail, setCreationFail] = useState(false);
-    const fileInputRef = useRef(null);
 
-    console.log(createStatus);
-
-    
-
-    const [newUser, setNewUser] = useState({
-      name:"",
-      password:"",
-      email:"",
-      type:"user"
+  const [newUser, setNewUser] = useState({
+    name: "",
+    password: "",
+    email: "",
+    type: "user",
   });
 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewUser({ ...newUser, [name]: value });
+  };
 
-
-    const handleInputChange = (event) => {
-      const { name, value } = event.target;
-      setNewUser({ ...newUser, [name]: value });
-    }
-
-
-    const handleAddUser = async (event) => {
-      event.preventDefault();
-      if (newUser.password !== confirmPassword) {
-        alert('Passwords do not match');
-        return;
-      }
-      else{
-        const file = fileInputRef.current !== null ? fileInputRef.current : undefined;
-        await createData(newUser, file);
-        setNewUser({
-            name:"",
-            password:"",
-            email:"",
-            type:"user"
+  const handleAddUser = async (event) => {
+    event.preventDefault();
+    if (newUser.password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    } else {
+      const file =
+        fileInputRef.current !== null ? fileInputRef.current : undefined;
+      await createData(newUser, file);
+      setNewUser({
+        name: "",
+        password: "",
+        email: "",
+        type: "user",
       });
-  
-      setCreationSuccess(true)
-      }
-      setConfirmPassword("");
+
+      setCreationSuccess(true);
+    }
+    setConfirmPassword("");
   };
 
   useEffect(() => {
@@ -61,16 +55,14 @@
     }
   }, [createStatus]);
 
-
-
-    return (
-      <div className={styles.user}>
-        <div className={styles.signup}>
-          <div className={styles["signup-container"]} >
-            <div className={`${styles["form-container"]}`}>
-              <div className={styles["signup-form"]}>
-                <h2 className="h2">Register</h2>
-                {creationSuccess && (
+  return (
+    <div className={styles.user}>
+      <div className={styles.signup}>
+        <div className={styles["signup-container"]}>
+          <div className={`${styles["form-container"]}`}>
+            <div className={styles["signup-form"]}>
+              <h2 className="h2">Register</h2>
+              {creationSuccess && (
                 <div className="alert alert-success">
                   User created successfully!
                 </div>
@@ -78,74 +70,96 @@
               {creationFail && (
                 <div className="alert alert-danger">{createStatus.errors}</div>
               )}
-                <form onSubmit={handleAddUser}>
-                  <div className={styles["form-group"]}>
-                    <label className={styles.label} htmlFor="name">Name</label>
-                    <input className={styles.input}
-                     type="text"
-                      id="name" 
-                      name="name"
-                      placeholder="Enter your name" 
-                      value={newUser.name}
-                      onChange={handleInputChange}
-                      />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label className={styles.label} htmlFor="email">Email</label>
-                    <input
+              <form onSubmit={handleAddUser}>
+                <div className={styles["form-group"]}>
+                  <label
+                    className={styles.label}
+                    htmlFor="name">
+                    Name
+                  </label>
+                  <input
                     className={styles.input}
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      value={newUser.email}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label className={styles.label} htmlFor="password">Password</label>
-                    <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={newUser.name}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles["form-group"]}>
+                  <label
+                    className={styles.label}
+                    htmlFor="email">
+                    Email
+                  </label>
+                  <input
                     className={styles.input}
-                      type="password"
-                      id="password"
-                      name="password"
-                      placeholder="Create your password"
-                      value={newUser.password}
-                      onChange={handleInputChange}
-                    />
-                  </div>
-                  <div className={styles["form-group"]}>
-                    <label className={styles.label} htmlFor="password">Confirm Password</label>
-                    <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={newUser.email}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles["form-group"]}>
+                  <label
+                    className={styles.label}
+                    htmlFor="password">
+                    Password
+                  </label>
+                  <input
                     className={styles.input}
-                      type="password"
-                      id="password"
-                      name="confirm"
-                      placeholder="Create your password"
-                      value={confirmPassword}
-                      onChange={(e)=>setConfirmPassword(e.target.value)}
-                    />
-                  </div>
-                  <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="file"></label>
-              <input
-                className={styles.input}
-                type="file"
-                id="file"
-                name="file"
-                ref={fileInputRef}
-                hidden
-              />
-            </div>
-                  <button className={styles.button} type="submit">Sign Up</button>
-                  
-                </form>
-              </div>
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create your password"
+                    value={newUser.password}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className={styles["form-group"]}>
+                  <label
+                    className={styles.label}
+                    htmlFor="password">
+                    Confirm Password
+                  </label>
+                  <input
+                    className={styles.input}
+                    type="password"
+                    id="password"
+                    name="confirm"
+                    placeholder="Create your password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label
+                    className={styles.label}
+                    htmlFor="file"></label>
+                  <input
+                    className={styles.input}
+                    type="file"
+                    id="file"
+                    name="file"
+                    ref={fileInputRef}
+                    hidden
+                  />
+                </div>
+                <button
+                  className={styles.button}
+                  type="submit">
+                  Sign Up
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default UserForm;
+export default UserForm;

@@ -1,4 +1,7 @@
-import React, { useContext } from "react";
+/** @format */
+
+import React from "react";
+import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,14 +11,20 @@ import { Button, CardActionArea, CardActions, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Shop.css";
+import { constants } from "../../constants";
 
-export default function MultiActionAreaCard({ data }) {
+const URL = constants.API_HOST;
+
+//component
+function MultiActionAreaCard({ data }) {
+  //Fake Data From  API
+
   const { id, name, price, image } = data;
 
+  // Cart items
   const { addToCart, cartItems } = useContext(ShopContext);
 
   const cartItemCount = cartItems[id];
-
   return (
     <Card
       sx={{
@@ -23,16 +32,17 @@ export default function MultiActionAreaCard({ data }) {
         marginBottom: "25px",
         padding: 0,
         borderColor: "5px",
-        boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-        borderRadius: "30px 30px 10px 10px",
+
+        boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)", // Added box shadow
+        borderRadius: "30px 30px 10px 10px ", // Added border radius
       }}
     >
       <CardActionArea className="m-auto">
         <CardMedia
           component="img"
           height="400"
-          image={"http://ah.khaledfathi.com/" + image}
-          alt="product"
+          image={URL + "/" + image}
+          alt="green iguana"
           className="bg-dark imgShop"
           style={{
             borderRadius: "30px 30px 0 0",
@@ -40,15 +50,12 @@ export default function MultiActionAreaCard({ data }) {
           }}
         />
 
-        <CardContent
-          className="text-center line1"
-          style={{ backgroundColor: "#f5f5f5", padding: "20px" }}
-        >
+        <CardContent className="text-center line1" style={{ padding: "20px" }}>
           <Typography
             gutterBottom
             variant="h5"
             component="div"
-            class="line-head"
+            className="line-head"
             style={{
               marginBottom: "10px",
               color: "#333",
@@ -61,39 +68,37 @@ export default function MultiActionAreaCard({ data }) {
           <Typography
             variant="body2"
             color=""
-            class="fw-bold"
+            className="fw-bold"
             style={{ fontSize: "18px", color: "#ff642e" }}
           >
             {price}
           </Typography>
         </CardContent>
-
-        <CardActions
-          className="bottom-card"
-          style={{ backgroundColor: "#333", padding: "10px" }}
-        >
-          <IconButton
-            size="large"
-            style={{
-              color: "#ff642e",
-              marginLeft: "auto",
-              borderRadius: "50%",
-              backgroundColor: "#fff",
-              boxShadow: "0px 0px 10px rgba(255, 100, 46, 0.3)",
-              transition: "transform 0.3s ease-in-out",
-            }}
-            aria-label={`Add ${name} to cart`}
-            color="inherit"
-            onClick={() => addToCart(id)}
-            className="cart-icon"
-          >
-            <AddShoppingCartIcon />
-            {cartItemCount > 0 && (
-              <span style={{ fontSize: "18px" }}> ( {cartItemCount} ) </span>
-            )}
-          </IconButton>
-        </CardActions>
       </CardActionArea>
+      <CardActions className="bottom-card" style={{ padding: "10px" }}>
+        <IconButton
+          size="large"
+          style={{
+            color: "#ff642e",
+            margin: "auto",
+            borderRadius: "30%",
+            backgroundColor: "#fff",
+            boxShadow: "0px 0px 10px rgba(255, 100, 46, 0.3)",
+            transition: "transform 0.3s ease-in-out",
+          }}
+          aria-label="show 17 new notifications"
+          color="inherit"
+          onClick={() => addToCart(id)}
+          className="cart-icon"
+        >
+          <AddShoppingCartIcon />
+          {cartItemCount > 0 && (
+            <span style={{ fontSize: "18px" }}> ( {cartItemCount} ) </span>
+          )}
+        </IconButton>
+      </CardActions>
     </Card>
   );
 }
+
+export default MultiActionAreaCard;

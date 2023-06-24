@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Clinc.css";
-// import Navbar from "../NavBar/NavBar";
+import { getCurrentTime } from "../../helper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import clincImage from "../../images/clinc.jpg";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { constants } from '../../constants';
 
+const URL = constants.API_HOST; 
+
+//Component
 const Clinics = () => {
   const [clinics, setClinics] = useState([]);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedClinic, setSelectedClinic] = useState({});
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:4001/clinics").then((response) => {
-  //     setClinics(response.data);
-  //   });
-  // }, []);
   useEffect(() => {
-    axios.get("http://ah.khaledfathi.com/api/service/filter/service_type/clinics").then((res) => {
-      console.log(res.data.data);
+    axios.get(URL+"/api/service/filter/service_type/clinics").then((res) => {
       setClinics(res.data.data);
-      console.log(clinics);
     });
   }, []);
-
+  
 
   const handleCardClick = (clinic) => {
     setSelectedClinic(clinic);
@@ -49,18 +48,17 @@ const Clinics = () => {
       </div>
       <h2 className="clinic-header">Clinics</h2>
       <div className="clinic-parentCard container">
-        <div className="row">
-          {clinics.map((clinic) => (
-            <div className="col-sm-12 col-md-6 col-lg-4 px-3">
+        <div className="row"   >
+          {clinics.map((clinic , index) => (
+            <div key={index} className="col-sm-12 col-md-6 col-lg-4 px-3"   >
               <div
-                key={clinic.id}
-                className="clinic-card "
+                className="clinic-card " 
                 onClick={() => handleCardClick(clinic)}
               >
-                <div className="clinic-card-header">
-                  <img src={clinic.img} alt="img" width="400px"></img>
+                <div className="clinic-card-header"   data-aos="fade-up"  >
+                  <img src={URL+"/"+clinic.image} alt="img" width="400px"  ></img>
                 </div>
-                <div className="clinic-card-body">
+                <div className="clinic-card-body" >
                   <h3 className="ClinicName">{clinic.name}</h3>
                   <p className="clincPar">
                     {" "}
@@ -87,7 +85,7 @@ const Clinics = () => {
             <div className="clinic-popup">
               <div className="clinic-popup-content">
                 <button className="clinic-close-btn" onClick={handlePopupClose}>
-                  X
+                  
                 </button>
                 <h3 className="popUp-ClinicName">{selectedClinic.name}</h3>
                 <p>
@@ -99,11 +97,11 @@ const Clinics = () => {
                   {" "}
                   <FontAwesomeIcon icon={faLocationDot} color="#ff642e" />{" "}
                   &nbsp; &nbsp;
-                  {selectedClinic.fullAddress}
+                  {selectedClinic.address}
                 </p>
                 <p>
                   <FontAwesomeIcon icon={faCalendarCheck} color="#ff642e" />{" "}
-                  Avilable Appointements :{selectedClinic.availableAppointments}
+                  Avilable Appointements :{selectedClinic.working_hours}
                 </p>
                 <div>
                   <iframe

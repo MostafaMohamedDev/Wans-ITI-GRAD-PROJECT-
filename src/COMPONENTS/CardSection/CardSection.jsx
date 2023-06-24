@@ -1,22 +1,28 @@
 import React from "react";
 import styles from "./CardSection.module.css";
+import { useTranslation } from 'react-i18next';
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
+//Component
 const CardSection = () => {
+  const [t,i18n]= useTranslation();
+  Aos.init();
   return (
     <div className={styles.servicesSection}>
       <div className="container cardback">
         <div className="row align-items-center">
           <div className="col-lg-12 col-md-12 col-sm-12 text-center">
             <h4 className={styles.iconHeader}>
-              Providing the{" "}
+            {t("Providing the")} {" "}
               <span className={styles.span}>
-                best <br /> quality services for your pets
+              {t("best")}  <br />      {t("quality services for your pets")}  
               </span>
             </h4>
           </div>
         </div>
 
-        <div className={styles.cardSection}>
+        <div className={styles.cardSection}     >
           <div className="row d-flex justify-content-center">
             {" "}
             {/* Center the cards on small screens */}
@@ -24,7 +30,7 @@ const CardSection = () => {
             <div
               className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
-              <div className={`card ${styles.card}`}>
+              <div className={`card ${styles.card}`}   data-aos="fade-up-right"  >
                 <img
                   src="Images/vetclinic.jpg"
                   alt="Im1"
@@ -33,19 +39,31 @@ const CardSection = () => {
                 <div className={`card-overlay ${styles.cardOverlay}`}></div>
                 <div className={`card-body ${styles.cardBody}`}>
                   <h3 className={`card-title ${styles.cardTitle}`}>
-                    Best <br /> Clinics
+                  {t("Best")}  <br />      {t("Clinics")}  
                   </h3>
                   <p className={`card-text ${styles.cardDescription}`}>
-                    Trusted expertise for exceptional care.
+                  {t("Trusted expertise for exceptional care.")}   
                   </p>
                 </div>
               </div>
+
+
+
+
+
             </div>
             {/* Second Card */}
             <div
               className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} ${styles.psMd3} ${styles.psSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
-              <div className={`card ${styles.card}`}>
+
+
+
+
+
+
+
+              <div className={`card ${styles.card}`}  data-aos="fade-up" >
                 <img
                   src="Images/shoop.jpg"
                   alt="Im2"
@@ -54,19 +72,24 @@ const CardSection = () => {
                 <div className={`card-overlay ${styles.cardOverlay}`}></div>
                 <div className={`card-body ${styles.cardBody}`}>
                   <h3 className={`card-title ${styles.cardTitle}`}>
-                    Product Shopping
+                  {t("Product Shopping")}   
                   </h3>
                   <p className={`card-text ${styles.cardDescription}`}>
-                    Premium selections for quality shopping.
+                  {t("Premium selections for quality shopping.")}  
                   </p>
                 </div>
               </div>
             </div>
             {/* Third Card */}
             <div
+
+
+
+
+
               className={`${styles.cardCircle} ${styles.psMd3} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
-              <div className={`card ${styles.card}`}>
+              <div className={`card ${styles.card}`}    data-aos="fade-up-left" >
                 <img
                   src="Images/chelter.jpg"
                   alt="Ima3"
@@ -75,10 +98,10 @@ const CardSection = () => {
                 <div className={`card-overlay ${styles.cardOverlay}`}></div>
                 <div className={`card-body ${styles.cardBody}`}>
                   <h3 className={`card-title ${styles.cardTitle}`}>
-                    Safe <br /> Havens
+                  {t("Safe")} <br />    {t("Havens")}  
                   </h3>
                   <p className={`card-text ${styles.cardDescription}`}>
-                    Discover shelters providing loving homes for pets.
+                  {t("Discover shelters providing loving homes for pets.")} 
                   </p>
                 </div>
               </div>

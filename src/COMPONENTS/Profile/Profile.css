@@ -6,6 +6,8 @@
   position: relative;
   height: 300px;
 
+
+
 }
 .info{
   position: absolute;
@@ -41,10 +43,7 @@
   padding-top: 200px;
   position: relative;
   height : 100vh;
- 
   background-color: #ececec;
-  
-  
 }
 
 
@@ -104,11 +103,11 @@
 
 .form {
   background-color: #fff;
-  border: 1px solid transperant;
+  border: 1px solid transparent;
   border-radius: 8px;
   width: 30%;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 30px 30px;
   position: absolute;
   left: 20%;
   transform: translateX(-50%);
@@ -116,9 +115,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 40px 40px 20px 20px;
   top : 10%;
-  height : 73%
-
-
+  /* height : 73% */
 }
 
 .form .close {
@@ -189,7 +186,7 @@
  }
  
  .form-group {
-   width: 48%;
+   width: 100%;
  }
  
  .form-group textarea {
@@ -214,7 +211,7 @@
   background-color: #ffffff;
   position: absolute;
   width: 25%;
-  height: 650px;
+  /* height: 650px; */
   border: 1px solid #e6e6e6;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-left: 65%;

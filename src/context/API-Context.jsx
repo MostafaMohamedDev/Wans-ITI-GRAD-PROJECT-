@@ -2,9 +2,17 @@ import { ajax } from "../libCustomAjax_v1";
 import React, { createContext, useEffect, useState } from 'react'
 import { setSession , getSession , removeSession ,  getCurrentTime } from "../helper";
 import { useNavigate } from "react-router-dom";
-export const ApiContext = createContext(null);
-const apiUrl = "http://ah.khaledfathi.com/api/user"
+import axios from "axios";
+import { constants } from '../constants';
 
+export const ApiContext = createContext(null);
+
+const URL = constants.API_HOST; 
+
+const apiUrl = URL+"/api/user"
+const servicesUrl = URL+"/api/service"
+
+//Context Provider
 const ApiContextProvider = (props) => {
 
     const [userData, setUserData] = useState()
@@ -18,13 +26,10 @@ const ApiContextProvider = (props) => {
         setUserData(data.data)
     }
 
-    const createData = async (data,ref) => {
-        console.log(data);
-        ref = (ref.value)? ref:null
-        const response = await ajax(apiUrl, "post", data,ref);
-        console.log(response);
+    const createData = async (data,file) => {
+        file = (file.value)? file:null
+        const response = await ajax(apiUrl, "post", data,file);
         const newData = await response.json();
-        console.log(newData);
         
         setCreateStatus(newData)
         setUserData((prevUserData) => [...prevUserData, newData]);
@@ -35,14 +40,28 @@ const ApiContextProvider = (props) => {
         
     }
 
-    const updateData = async (id, data) => {
-        const response = await ajax(apiUrl + "/" + id + "/update", "POST", data);
+    // services data
+    const addServiceData = async (data,file) => {
+        file = (file.value)? file:null
+        const response = await ajax(servicesUrl, "post", data,file);
+        const newData = await response.json();
+    }
+
+const updateData = async (id, data,file) => {
+        file = (file.value)? file:null
+        const response = await ajax(apiUrl + "/" + id + "/update", "POST", data,file);
         const updatedData = await response.json();
         const updatedUserData = userData.map((item) =>
             item.id == id ? updatedData : item
         );
         setUserData(updatedUserData)
         setDataUpdated(true)
+        if(updatedData.status){
+            axios.get(apiUrl+"/"+id).then((res)=>{
+                setSession('auth' , res.data.data);
+
+            })
+        }
     }
 
     const deleteData = async (id) => {
@@ -51,10 +70,8 @@ const ApiContextProvider = (props) => {
         setDataUpdated(true)
     }
     const login = async (data) => {
-        const response = await ajax("http://ah.khaledfathi.com/api/auth/login","POST",data);
-        console.log(response);
+        const response = await ajax(URL+"/api/auth/login","POST",data);
         const newData = await response.json();
-        console.log(newData);
         if(newData.status){
             setSession('login' , true); 
             setSession('auth' , newData.record); 
@@ -62,9 +79,11 @@ const ApiContextProvider = (props) => {
         /*************/ 
         const routeToHome = () => {
             redirect("/");
+            window.location.reload();
+
         }
         if (getSession('login')){
-            routeToHome(); 
+            routeToHome();
         }
         /*************/ 
     }
@@ -87,6 +106,8 @@ const ApiContextProvider = (props) => {
         deleteData,
         createStatus,
         login,
+        addServiceData,
+        dataUpdated
     }
 
     return (

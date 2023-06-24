@@ -1,24 +1,46 @@
-import React, { useState } from "react";
+/** @format */
+
+import React, { useContext, useRef, useState } from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { setSession , getSession , removeSession ,  getCurrentTime } from "../../helper";
+import {
+  setSession,
+  getSession,
+  removeSession,
+  getCurrentTime,
+} from "../../helper";
+import { ApiContext } from "../../context/API-Context";
+import { constants } from "../../constants";
 
+const URL = constants.API_HOST;
+
+//component
 const ShelterProfile = () => {
+  /*******************/
+  const redirect = useNavigate();
+  const routeLogin = () => {
+    redirect("/login");
+  };
+  useEffect(() => {
+    if (!getSession("login")) {
+      routeLogin();
+    } else {
+      setAuth(getSession("auth"));
+    }
+  }, []);
+
+  /*******************/
+
+  const { addServiceData, updateData, dataUpdated } = useContext(ApiContext);
   const [editMode, setEditMode] = useState(false);
-  const [name, setName] = useState("Asmaa");
-  const [email, setEmail] = useState("Asmaa@gmail.com");
-  const [profileImage, setProfileImage] = useState("./Images/profile .jpg");
-  const [profileImage2, setProfileImage2] = useState("./Images/profile .jpg");
   const [showForm, setShowForm] = useState(false);
-  const [ShelterImage, setShelterImage] = useState("./Images/bloggg.jpg");
-  const [PetName, setPetName] = useState("");
-  const [ShelterName, setShelterName] = useState("");
-  const [people, setPeople] = useState("");
-  const [description, setDescription] = useState("");
-  const [ShelterAddress, setShelterAddress] = useState("");
-  const [ShelterPhone, setShelterPhone] = useState("");
+  // const [dataUpdated, setDataUpdated] = useState(false)
+
   const [auth, setAuth] = useState({});
+
+  const [profileImage, setProfileImage] = useState("./Images/profile .jpg");
+  const fileInputRef = useRef(null);
 
   const handleEdit = () => {
     setEditMode(true);
@@ -33,24 +55,58 @@ const ShelterProfile = () => {
     setEditMode(false);
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
+  const [newShelter, setNewShelter] = useState({
+    name: "",
+    phone: "",
+    user_id: "",
+    address: "",
+    working_hours: "",
+    description: "",
+    animal_type: "",
+    approval: "pending",
+    service_type: "",
+  });
+  const [editUser, setEditUser] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
 
-    reader.onload = () => {
-      if (editMode) {
-        setProfileImage(reader.result);
-      } else {
-        setShelterImage(reader.result);
-      }
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
+  const handleEditUser = async (event) => {
+    event.preventDefault();
+    const file =
+      fileInputRef.current !== null ? fileInputRef.current : undefined;
+    /******/
+    await updateData(editUser.id, editUser, file);
+    /******/
   };
 
-  const handleAddShelter = () => {
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewShelter({ ...newShelter, [name]: value });
+    setEditUser({ ...editUser, [name]: value });
+  };
+
+  const handleAddShelter = async (event) => {
+    event.preventDefault();
+    const file =
+      fileInputRef.current !== null ? fileInputRef.current : undefined;
+    await addServiceData(newShelter, file);
+    setNewShelter({
+      name: "",
+      phone: "",
+      user_id: "",
+      address: "",
+      working_hours: "",
+      description: "",
+      animal_type: "",
+      approval: "pending",
+      service_type: "",
+    });
+  };
+
+  const handleForm = () => {
     setShowForm(true);
   };
 
@@ -59,30 +115,18 @@ const ShelterProfile = () => {
     setShowForm(false);
   };
 
-  /*******************/
-  const redirect = useNavigate();
-  const routeLogin = () => {
-      redirect("/login");
-  }
-   useEffect(()=>{
-    if (! getSession('login')){
-      routeLogin(); 
-    }else {
-      setAuth(getSession('auth')); 
-      console.log(auth);
-
-
-
+  useEffect(() => {
+    if (dataUpdated) {
+      setAuth(getSession("auth"));
+      // setDataUpdated(false)
     }
-   },[]); 
-  /*******************/
- 
+  }, [dataUpdated]);
   return (
     <div>
       <div className="prof">
         <div className="info">
           <img
-            src={(auth.image)?"http://ah.khaledfathi.com/"+auth.image:profileImage}
+            src={auth.image ? URL + "/" + auth.image : profileImage}
             className="profileImage"
             alt="Profile"
             style={{
@@ -102,8 +146,7 @@ const ShelterProfile = () => {
               marginBottom: "10px",
               textAlign: "center",
               fontSize: "30px",
-            }}
-          >
+            }}>
             {auth.name}
           </h3>
           <h4
@@ -111,8 +154,7 @@ const ShelterProfile = () => {
               textAlign: " center",
               fontSize: "20px",
               marginBottom: "10px",
-            }}
-          >
+            }}>
             {auth.email}
           </h4>
           <button
@@ -128,136 +170,235 @@ const ShelterProfile = () => {
               cursor: "pointer",
               borderRadius: "8px",
             }}
-            onClick={handleEdit}
-          >
+            onClick={() => {
+              handleEdit();
+              setEditUser(auth);
+            }}>
             Edit profile
           </button>
         </div>
 
         {editMode && (
-          <div
-            className="edit"
-            style={{
-              backgroundColor: "#ffff",
-              position: "absolute",
-              width: "25%",
-              height: "540px",
-              border: "1px solid transparent",
-              marginLeft: "65%",
-              marginTop: "6%",
-              borderRadius: "40px 40px 20px 20px",
-              zIndex: "150",
-            }}
-          >
-            <img className="editImage" src={profileImage2} alt="Edit Profile" />
-            <label className="file-label">
-              <input
-                type="file"
-                className="file-input "
-                accept="image/*"
-                onChange={handleImageChange}
+          <form onSubmit={handleEditUser}>
+            <div
+              className="edit"
+              style={{
+                backgroundColor: "#ffff",
+                position: "absolute",
+                width: "25%",
+                border: "1px solid transparent",
+                marginLeft: "65%",
+                marginTop: "6%",
+                borderRadius: "40px 40px 20px 20px",
+                zIndex: "150",
+              }}>
+              <img
+                className="editImage"
+                src={(auth.image)? URL + "/" + auth.image : ""}
+                alt="Edit Profile"
               />
-              <span className="file-custom">
-                <i className="fas fa-upload"></i> Choose File
-              </span>
-            </label>
+              <label className="file-label">
+                <input
+                  type="file"
+                  className="file-input"
+                  accept="image/*"
+                  ref={fileInputRef}
+                />
+                <span className="file-custom">
+                  <i className="fas fa-upload"></i> Choose File
+                </span>
+              </label>
 
-            <h5 className="editNM"> Name</h5>
-            <input
-              className="editName"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <h5 className="editNM">Email</h5>
-            <input
-              className="editEmail"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button className="save" onClick={handleSave}>
-              Save
-            </button>
-          </div>
+              <input
+                className="editName"
+                type="hidden"
+                value={(editUser.id = auth.id)}
+                name="id"
+                onChange={handleInputChange}
+              />
+              <h5 className="editNM"> Name</h5>
+              <input
+                className="editName"
+                type="text"
+                value={editUser.name}
+                name="name"
+                onChange={handleInputChange}
+              />
+              <h5 className="editNM">Email</h5>
+              <input
+                className="editEmail"
+                type="email"
+                value={editUser.email}
+                name="email"
+                onChange={handleInputChange}
+              />
+              <h5 className="editNM">Phone</h5>
+              <input
+                className="editEmail"
+                type="tel"
+                value={editUser.phone}
+                name="phone"
+                onChange={handleInputChange}
+              />
+              <h5 className="editNM">Address</h5>
+              <input
+                className="editEmail"
+                type="text"
+                value={editUser.address}
+                name="address"
+                onChange={handleInputChange}
+              />
+              <input
+                className="editEmail"
+                type="text"
+                value={auth.type}
+                name="address"
+                onChange={handleInputChange}
+                hidden
+              />
+              <input
+                className="save"
+                type="submit"
+                value="Save"
+              />
+              <button
+                className="save"
+                onClick={handleSave}>
+                Close
+              </button>
+            </div>
+          </form>
         )}
 
         {/* ////////////////////////////////////////////////////////////////////////// */}
       </div>
       <div className="addShelter">
-        <button id="add" onClick={handleAddShelter}>
-          Add Shelter
+        <button
+          id="add"
+          onClick={handleForm}>
+          Add { (auth.type == "shelter")? "Shelter" : "Clinic" }
         </button>
       </div>
 
       {showForm && (
-        <div className="form" id="form">
-          <img className="editImage" src={ShelterImage} alt="shelter" />
-          <label className="file-label">
-            <input
-              type="file"
-              className="file-input"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
-            <span className="file-custom">
-              <i className="fas fa-upload"></i> Choose File
-            </span>
-          </label>
+        <div
+          className="form"
+          id="form">
+          <img
+            className="editImage"
+            src={(auth.image)?URL + "/" + auth.image:""}
+            alt="shelter"
+          />
+
           <div className="form-row">
             <div className="form-group">
-              <h5 className="editNM">Pet name</h5>
+              <h5 className="editNM">
+                {auth.type == "shelter" ? "Pet Name" : "Clinic Name"}
+              </h5>
               <input
                 type="text"
                 className="editName"
-                value={PetName}
-                onChange={(e) => setPetName(e.target.value)}
+                value={newShelter.name}
+                name="name"
+                onChange={handleInputChange}
+                required
               />
             </div>
-            <div className="form-group">
-              <h5 className="editNM">Shelter Name</h5>
-              <input
-                type="text"
-                className="editName"
-                value={ShelterName}
-                onChange={(e) => setShelterName(e.target.value)}
-              />
-            </div>
+            <input
+              type="text"
+              className="editName"
+              name="user_id"
+              value={(newShelter.user_id = auth.id)}
+              onChange={handleInputChange}
+              hidden
+            />
+            <input
+              type="text"
+              className="editName"
+              name="service_type"
+              value={(newShelter.service_type = auth.type)}
+              onChange={handleInputChange}
+              hidden
+            />
           </div>
           <div className="form-row">
+            <input
+              type="text"
+              className="editName"
+              name="address"
+              value={(newShelter.address = auth.address)}
+              onChange={handleInputChange}
+              hidden
+            />
+            <input
+              type="tel"
+              className="editName"
+              value={(newShelter.phone = auth.phone)}
+              name="phone"
+              onChange={handleInputChange}
+              hidden
+            />
             <div className="form-group">
-              <h5 className="editNM">Address</h5>
+              <h5 className="editNM">Working Hours</h5>
               <input
-                type="text"
+                type="datetime-local"
                 className="editName"
-                value={ShelterAddress}
-                onChange={(e) => setShelterAddress(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <h5 className="editNM">Phone</h5>
-              <input
-                type="text"
-                className="editName"
-                value={ShelterPhone}
-                onChange={(e) => setShelterPhone(e.target.value)}
+                name="working_hours"
+                value={newShelter.working_hours}
+                onChange={handleInputChange}
+                required
               />
             </div>
           </div>
           <div className="form-group">
             <h5 className="editNM">Description</h5>
-            <textarea 
-              className="textarea "
-              value={description }
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
+            <textarea
+              className="textarea"
+              value={newShelter.description}
+              name="description"
+              onChange={handleInputChange}
+              required></textarea>
           </div>
-          <button className="save" onClick={handleSaveShelter}>
+          <div className="">
+            {(auth.type == "shelter") ? (
+              <select
+                required
+                className="form-select"
+                id="businessType"
+                name="animal_type"
+                value={newShelter.animal_type}
+                onChange={handleInputChange}>
+                <option value="">Select Pet Type</option>
+                <option value="dog">dog</option>
+                <option value="cat">cat</option>
+              </select>
+            ) : (
+              ""
+            )}
+          </div>
+          <label className="file-label">
+            <input
+              type="file"
+              className="file-input"
+              ref={fileInputRef}
+              required
+            />
+            <span className="file-custom">
+              <i className="fas fa-upload"></i> Choose Image
+            </span>
+          </label>
+          <button
+            className="save"
+            onClick={handleAddShelter}>
             Save
+          </button>
+          <button
+            className="save"
+            onClick={handleSaveShelter}>
+            Close
           </button>
         </div>
       )}
-      
     </div>
   );
 };

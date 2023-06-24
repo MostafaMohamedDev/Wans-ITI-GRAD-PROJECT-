@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import CardSection from "../CardSection/CardSection";
-// import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import Works from "../Works/Works";
 import Slider from "../Slider/Slider";
@@ -10,12 +9,8 @@ import { Outlet } from "react-router-dom";
 import backgroundImage from "../../allground.jpg";
 import { useNavigate } from "react-router-dom";
 import { getSession } from "../../helper";
-{
-  /* <div className="background-container" style={{backgroundImage: `url(${backgroundImage})`,}}> */
-}
 
 const Home = () => {
-  /*******************/
   const redirect = useNavigate();
   const routeLogin = () => {
     redirect("/login");
@@ -25,11 +20,12 @@ const Home = () => {
       routeLogin();
     }
   }, []);
-  /*******************/
+
   return (
     <>
       <div
         className="background-container"
+        // className="background-container"
         // style={{
         //   backgroundImage: `url(${backgroundImage})`,
         // }}

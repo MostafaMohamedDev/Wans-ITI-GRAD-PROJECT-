@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Login.module.css"; // Update the CSS file path
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ApiContext } from "../../context/API-Context";
 import { setSession , getSession , removeSession ,  getCurrentTime } from "../../helper";
+
+//component
 const Login = () => {
+  /*******************/
+  const redirect = useNavigate();
+  const routeHome = () => {
+    redirect("/");
+  };
+  useEffect(() => {
+    if (getSession("login")) {
+      routeHome();
+    }
+  }, []);
+
+  /*******************/
+
+
   //Authentication
   const {login} =useContext(ApiContext)
   // const [email, setEmail] = useState("");
@@ -20,7 +36,6 @@ const handleInputChange = (event) => {
   const logInFun = async (e) => {
     e.preventDefault();
     await login(data);
-    console.log(data);
   };
 
   return (

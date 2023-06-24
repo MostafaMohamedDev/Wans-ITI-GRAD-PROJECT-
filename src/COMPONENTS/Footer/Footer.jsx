@@ -14,6 +14,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
+//Component
 const Footer = () => {
   return (
     <footer className="footer">

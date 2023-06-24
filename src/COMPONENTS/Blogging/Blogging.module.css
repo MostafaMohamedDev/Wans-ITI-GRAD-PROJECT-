@@ -76,16 +76,11 @@ z-index: 9999;
 }
   
 
-
-
-
-
 /* Blogging.module.css */
 .rating {
   display: flex;
   align-items: center;
 }
-
 
 .star {
   color: gold;

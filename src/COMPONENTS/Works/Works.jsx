@@ -1,47 +1,74 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
-import styles from "./Works.css"
-
+import styles from "./Works.css";
+import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Works.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
+//component
 const Works = () => {
+  const [t, i18n] = useTranslation();
   return (
     <div className="worksSection pt-5 mt-5">
       <div className="container">
         <div className="background-layer">
           <div className="row">
-            <div className="col-12 text-center">
-              
-            </div>
+            <div className="col-12 text-center"></div>
             <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-              <h4 className="iconHead">How  <span className="workspan"> it Works</span> </h4>
+              <h4 className="iconHead">
+                {" "}
+                {t("How")} <span className="workspan"> {t("it Works")}</span>{" "}
+              </h4>
             </div>
           </div>
         </div>
 
         <div className="workCards">
           <div className="cards-work row">
-            <div className="cardd red col-lg-4 col-md-6 col-sm-12">
-              <img src="images/search.jpg" alt="Image 1" className="F-img" />
-              <h3 className="works-title">Search Services</h3>
+            <div
+              className="cardd red col-lg-4 col-md-6 col-sm-12"
+              data-aos="fade-up">
+              <img
+                src="images/search.jpg"
+                alt="Image 1"
+                className="F-img"
+              />
+              <h3 className="works-title"> {t("Search Services")}</h3>
               <p className="works-description">
-                Find what you're looking for with our efficient search services.
+                {t(
+                  "Find what you're looking for with our efficient search services."
+                )}
               </p>
             </div>
-            <div className="cardd blue col-lg-4 col-md-6 col-sm-12">
-              <img src="images/book.jpg" alt="Image 2" />
-              <h3 className="works-title">Book & Pay</h3>
+            <div
+              className="cardd blue col-lg-4 col-md-6 col-sm-12"
+              data-aos="fade-up">
+              <img
+                src="images/book.jpg"
+                alt="Image 2"
+              />
+              <h3 className="works-title">{t("Book & Pay")}</h3>
               <p className="works-description">
-                Simplify your booking and payment process with our intuitive system.
+                {t(
+                  "Simplify your booking and payment process with our intuitive system."
+                )}
               </p>
             </div>
-            <div className="cardd green col-lg-4 col-md-6 col-sm-12">
-              <img src="images/relax.jpg" alt="Image 3" />
-              <h3 className="works-title">Relax</h3>
+            <div
+              className="cardd green col-lg-4 col-md-6 col-sm-12"
+              data-aos="fade-up">
+              <img
+                src="images/relax.jpg"
+                alt="Image 3"
+              />
+              <h3 className="works-title">{t("Relax")}</h3>
               <p className="works-description">
-                Effortless searching, smooth payments, relaxation as easy as breathing.
+                {t(
+                  "Effortless searching, smooth payments, relaxation as easy as breathing."
+                )}
               </p>
             </div>
           </div>

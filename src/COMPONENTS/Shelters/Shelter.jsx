@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import "./Shelter.css";
 import headerImage from "../../images/adopt1.jpg";
@@ -7,6 +9,10 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 import { CONSTANTS } from "../../constants";
 import axios from "axios";
+import { constants } from "../../constants";
+
+// const jsonPort = CONSTANTS.JSON_SERVER.PORT;
+// const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
 
 const jsonPort = CONSTANTS.JSON_SERVER.PORT;
 const baseURL = "http://localhost:" + jsonPort + "/Shelters";
@@ -164,19 +170,20 @@ const Shelters = () => {
               textAlign: "center",
             }}
           >
-            Click to Choose <span className="tittllee">your New Friend</span>
+            Click to Choose your New Friend
             <br />
-            <h4
+            <span
               onClick={handleClickAll}
               style={{
                 cursor: "pointer",
                 marginTop: "1rem",
                 color: "#ff642e",
                 fontSize: "1.7vw",
+                display: "block",
               }}
             >
               Or Both
-            </h4>
+            </span>
           </h3>
 
           <section>
@@ -198,10 +205,10 @@ const Shelters = () => {
 
       <div className="container">
         <div className="row">
-          {filteredShelterCards.map((shelter) => (
+          {filteredShelterCards.map((shelter, index) => (
             <div
               className="shelterCard col-lg-4 col-md-6 col-sm-12 justify-content-center"
-              key={shelter.id}
+              key={index}
             >
               <a className="card">
                 <img
@@ -224,9 +231,10 @@ const Shelters = () => {
                     />
                     <div className="card__header-text">
                       <h3 className="card__title">{shelter.name}</h3>
-                      <span className="card__status">{shelter.name}</span>
+                      <span className="card__status">{shelter.user_name}</span>
                     </div>
                   </div>
+                  <p className="card__description">{shelter.description}</p>
                   <p className="cardMoreInfo1">{shelter.address}</p>
                   <p className="cardMoreInfo2">
                     <FontAwesomeIcon

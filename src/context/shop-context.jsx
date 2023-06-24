@@ -1,9 +1,11 @@
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { CONSTANTS } from '../constants';
-export const ShopContext = createContext(null);
-const jsonPort = CONSTANTS.JSON_SERVER.PORT; 
+import { constants } from '../constants';
 
+export const ShopContext = createContext(null);
+
+const URL = constants.API_HOST; 
+const jsonPort = constants.JSON_SERVER.PORT; 
 const baseURL = 'http://localhost:'+jsonPort+'/products';
 const cartURL = 'http://localhost:'+jsonPort+'/cart';
 
@@ -15,15 +17,14 @@ const defaultCart = (items) => {
   return cart;
 };
 
+//Context Provider
 const ShopContextProvider = (props) => {
   const [productItems, setProductItems] = useState([]);
   const [cartItems, setCartItems] = useState(null);
 
   useEffect(() => {
-    axios.get("http://ah.khaledfathi.com/api/product").then((res) => {
-      console.log(res.data.data);
+    axios.get(URL+"/api/product").then((res) => {
       setProductItems(res.data.data);
-      // console.log(productItems);
     });
 
     axios.get(cartURL).then((res) => {
@@ -42,7 +43,7 @@ const ShopContextProvider = (props) => {
         // handle successful response
       })
       .catch((error) => {
-        console.log(error.response.data);
+        //
       });
   };
 
@@ -53,7 +54,7 @@ const ShopContextProvider = (props) => {
         // handle successful response
       })
       .catch((error) => {
-        console.log(error.response.data);
+        //
       });
   };
 
@@ -64,7 +65,7 @@ const ShopContextProvider = (props) => {
         // handle successful response
       })
       .catch((error) => {
-        console.log(error.response.data);
+        //
       });
   };
 
@@ -76,10 +77,10 @@ const ShopContextProvider = (props) => {
     }
     axios.post(cartURL, newCartItems)
       .then((response) => {
-        console.log("Cart updated successfully:", response.data);
+        //
       })
       .catch((error) => {
-        console.log("Error updating cart:", error.response.data);
+        //
       });
     setCartItems(newCartItems);
   };
