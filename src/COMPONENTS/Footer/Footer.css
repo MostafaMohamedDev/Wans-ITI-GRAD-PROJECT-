@@ -50,7 +50,7 @@ ul{
 	background-color: #ff642e;
 	height: 2px;
 	box-sizing: border-box;
-	width: 50px;
+	width: 60px;
 }
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;

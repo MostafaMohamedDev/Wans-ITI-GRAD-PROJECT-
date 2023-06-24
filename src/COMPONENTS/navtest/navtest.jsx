@@ -9,13 +9,13 @@ const Navtest = () => {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <div class="navbar-brand" href="#">
           <img
             className="nav navimg"
-            src="Images/logo.png"
-            alt="Description of the"
+            src="Images/LOGO.png"
+            alt="Description "
           />
-        </a>
+        </div>
         <button
           class="navbar-toggler"
           type="button"

@@ -7,7 +7,12 @@ import {
   faInstagram,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
-import { faMapMarkerAlt, faPhone, faClock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMapMarkerAlt,
+  faPhone,
+  faClock,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -18,9 +23,11 @@ const Footer = () => {
             <img
               className="footer-logo"
               src="Images/white.png"
-              alt="Description of the image"
+              alt="Description"
             />
-            <h5 className="logo-par">Fur-Ever Loved <br/> Fur-Ever Cared</h5>
+            <h5 className="logo-par">
+              Fur-Ever Loved <br /> Fur-Ever Cared
+            </h5>
           </div>
 
           <div className="footer-col">
@@ -45,16 +52,20 @@ const Footer = () => {
             <h4>Contact</h4>
             <ul>
               <li className="contact-info">
-                <FontAwesomeIcon className="footerIcon" icon={faMapMarkerAlt} /> 123 Main Street, City, Country
+                <FontAwesomeIcon className="footerIcon" icon={faMapMarkerAlt} />{" "}
+                123 Main Street, City, Country
               </li>
               <li className="contact-info">
-                <FontAwesomeIcon className="footerIcon" icon={faPhone} /> +1 (555) 123-4567
+                <FontAwesomeIcon className="footerIcon" icon={faPhone} /> +1
+                (555) 123-4567
               </li>
               <li className="contact-info">
-                <FontAwesomeIcon className="footerIcon" icon={faClock} /> Monday-Friday: 9 AM - 5 PM
+                <FontAwesomeIcon className="footerIcon" icon={faClock} />{" "}
+                Monday-Friday: 9 AM - 5 PM
               </li>
               <li className="contact-info">
-                <FontAwesomeIcon className="footerIcon" icon={faEnvelope} /> example@example.com
+                <FontAwesomeIcon className="footerIcon" icon={faEnvelope} />{" "}
+                example@example.com
               </li>
             </ul>
           </div>
@@ -79,7 +90,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom ">
-        <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+        </p>
       </div>
     </footer>
   );

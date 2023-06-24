@@ -5,7 +5,6 @@ import Home from './COMPONENTS/Home/Home';
 import Shelters from './COMPONENTS/Shelters/Shelter';
 import Login from './COMPONENTS/Login/Login';
 import Blogging from './COMPONENTS/Blogging/Blogging';
-import Navbar from './COMPONENTS/NavBar/NavBar';
 import Services from './COMPONENTS/Services/Services';
 import User from './COMPONENTS/User/User';
 import Clinc from './COMPONENTS/Clinc/Clinc';

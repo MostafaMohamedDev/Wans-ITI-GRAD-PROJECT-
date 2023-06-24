@@ -18,22 +18,18 @@ const Home = () => {
   /*******************/
   const redirect = useNavigate();
   const routeLogin = () => {
-      redirect("/login");
-  }
-   useEffect(()=>{
-    if (! getSession('login')){
-      routeLogin(); 
+    redirect("/login");
+  };
+  useEffect(() => {
+    if (!getSession("login")) {
+      routeLogin();
     }
-   },[]); 
+  }, []);
   /*******************/
   return (
     <>
       <div
-<<<<<<< HEAD
         className="background-container"
-=======
-        // className="background-container"
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
         // style={{
         //   backgroundImage: `url(${backgroundImage})`,
         // }}
@@ -45,7 +41,6 @@ const Home = () => {
         <Slider />
         <Blog />
       </div>
-      
     </>
   );
 };

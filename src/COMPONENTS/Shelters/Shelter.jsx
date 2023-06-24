@@ -204,6 +204,11 @@ const Shelters = () => {
               key={shelter.id}
             >
               <a className="card">
+                <img
+                  src={"http://ah.khaledfathi.com/" + shelter.image}
+                  className="card__image"
+                  alt=""
+                />
                 <div className="card__overlay">
                   <div className="card__header">
                     <svg

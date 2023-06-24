@@ -68,7 +68,7 @@ z-index: 9999;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 2);
 }
 
-<<<<<<< HEAD
+
 .h5{
   font-weight : bolder;
   font-family: 'Kanit', sans-serif;
@@ -76,24 +76,16 @@ z-index: 9999;
 }
   
 
-=======
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
 
 
-<<<<<<< HEAD
-  font-weight : 500;
-  font-family: 'Mukta', sans-serif;
-  line-height: 2rem;
-  text-align: justify;
-}
- 
-=======
+
+
 /* Blogging.module.css */
 .rating {
   display: flex;
   align-items: center;
 }
->>>>>>> cb311980d4debd9fa06a796a92b4ef907a5aa3a5
+
 
 .star {
   color: gold;
