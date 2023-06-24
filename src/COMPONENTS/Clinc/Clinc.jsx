@@ -7,12 +7,12 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import clincImage from "../../images/clinc.jpg";
+// import clincImage from "../../images/clinc.jpg";
 import Aos from "aos";
-import 'aos/dist/aos.css'
-import { constants } from '../../constants';
+import "aos/dist/aos.css";
+import { constants } from "../../constants";
 
-const URL = constants.API_HOST; 
+const URL = constants.API_HOST;
 
 //Component
 const Clinics = () => {
@@ -21,11 +21,10 @@ const Clinics = () => {
   const [selectedClinic, setSelectedClinic] = useState({});
 
   useEffect(() => {
-    axios.get(URL+"/api/service/filter/service_type/clinics").then((res) => {
+    axios.get(URL + "/api/service/filter/service_type/clinics").then((res) => {
       setClinics(res.data.data);
     });
   }, []);
-  
 
   const handleCardClick = (clinic) => {
     setSelectedClinic(clinic);
@@ -38,27 +37,31 @@ const Clinics = () => {
 
   return (
     <div className="clinc-section">
-      <div className="ClincImage">
+      {/* <div className="ClincImage">
         <img
           src={clincImage}
           alt="Header"
           className="responsive-image"
           width="100%"
         />
-      </div>
+      </div> */}
       <h2 className="clinic-header">Clinics</h2>
       <div className="clinic-parentCard container">
-        <div className="row"   >
-          {clinics.map((clinic , index) => (
-            <div key={index} className="col-sm-12 col-md-6 col-lg-4 px-3"   >
+        <div className="row">
+          {clinics.map((clinic, index) => (
+            <div key={index} className="col-sm-12 col-md-6 col-lg-4 px-3">
               <div
-                className="clinic-card " 
+                className="clinic-card "
                 onClick={() => handleCardClick(clinic)}
               >
-                <div className="clinic-card-header"   data-aos="fade-up"  >
-                  <img src={URL+"/"+clinic.image} alt="img" width="400px"  ></img>
+                <div className="clinic-card-header" data-aos="fade-up">
+                  <img
+                    src={URL + "/" + clinic.image}
+                    alt="img"
+                    width="400px"
+                  ></img>
                 </div>
-                <div className="clinic-card-body" >
+                <div className="clinic-card-body">
                   <h3 className="ClinicName">{clinic.name}</h3>
                   <p className="clincPar">
                     {" "}
@@ -85,7 +88,7 @@ const Clinics = () => {
             <div className="clinic-popup">
               <div className="clinic-popup-content">
                 <button className="clinic-close-btn" onClick={handlePopupClose}>
-                  
+                  X
                 </button>
                 <h3 className="popUp-ClinicName">{selectedClinic.name}</h3>
                 <p>

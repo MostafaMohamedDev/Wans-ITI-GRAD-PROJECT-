@@ -5,7 +5,7 @@ import styles from "./Works.css";
 import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Works.css";
-import Aos from "aos";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 //component
@@ -30,12 +30,9 @@ const Works = () => {
           <div className="cards-work row">
             <div
               className="cardd red col-lg-4 col-md-6 col-sm-12"
-              data-aos="fade-up">
-              <img
-                src="images/search.jpg"
-                alt="Image 1"
-                className="F-img"
-              />
+              data-aos="fade-up"
+            >
+              <img src="images/search.jpg" alt="Image 1" className="F-img" />
               <h3 className="works-title"> {t("Search Services")}</h3>
               <p className="works-description">
                 {t(
@@ -45,11 +42,9 @@ const Works = () => {
             </div>
             <div
               className="cardd blue col-lg-4 col-md-6 col-sm-12"
-              data-aos="fade-up">
-              <img
-                src="images/book.jpg"
-                alt="Image 2"
-              />
+              data-aos="fade-up"
+            >
+              <img src="images/book.jpg" alt="Image 2" />
               <h3 className="works-title">{t("Book & Pay")}</h3>
               <p className="works-description">
                 {t(
@@ -59,11 +54,9 @@ const Works = () => {
             </div>
             <div
               className="cardd green col-lg-4 col-md-6 col-sm-12"
-              data-aos="fade-up">
-              <img
-                src="images/relax.jpg"
-                alt="Image 3"
-              />
+              data-aos="fade-up"
+            >
+              <img src="images/relax.jpg" alt="Image 3" />
               <h3 className="works-title">{t("Relax")}</h3>
               <p className="works-description">
                 {t(

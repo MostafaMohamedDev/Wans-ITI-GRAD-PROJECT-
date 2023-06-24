@@ -11,20 +11,11 @@ import { useNavigate } from "react-router-dom";
 import { getSession } from "../../helper";
 
 const Home = () => {
-  const redirect = useNavigate();
-  const routeLogin = () => {
-    redirect("/login");
-  };
-  useEffect(() => {
-    if (!getSession("login")) {
-      routeLogin();
-    }
-  }, []);
-
   return (
     <>
       <div
         className="background-container"
+
         // className="background-container"
         // style={{
         //   backgroundImage: `url(${backgroundImage})`,

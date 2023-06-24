@@ -1,8 +1,16 @@
+ .navbar {
+ position: fixed;
+ z-index: 9999;
+ width: 100%;
+}
 
-.navimg {
-
-    width: 15%;
-    height: 32%;
+ .navimg {
+    width: 30%;
+    height: 20%;
+    margin-left: 5rem;
+  } 
+  .navbar-nav {
+    margin-left: 28rem;
   }
   .navbar-toggler,
   .navbar-brand {
@@ -13,9 +21,22 @@
   }
   .nav-item {
     margin-right: 50px;
+    font-size:18px;
     transition: color 0.9s ease-in-out;
   }
   .nav-item:hover,
   .nav-item:focus {
     color: #ff642e
   }
+ .languages input{
+  width:50px;
+  color:#fff;
+  background-color:#f5865d;
+  margin-top: 7px;
+  border-radius: 10px
+}
+@media screen and (max-width: 576px) {
+  .navbar-nav{
+    margin-left:0
+  }
+}

@@ -14,7 +14,8 @@ import { constants } from "../../constants";
 // const jsonPort = CONSTANTS.JSON_SERVER.PORT;
 // const baseURL = 'http://localhost:'+jsonPort+'/Shelters';
 
-const jsonPort = CONSTANTS.JSON_SERVER.PORT;
+// const jsonPort = CONSTANTS.JSON_SERVER.PORT;
+const jsonPort = constants.JSON_SERVER.PORT;
 const baseURL = "http://localhost:" + jsonPort + "/Shelters";
 
 const Shelters = () => {

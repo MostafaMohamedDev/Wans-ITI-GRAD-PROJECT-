@@ -1,18 +1,10 @@
-/* .clinic-parentCard{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-} */
 
 .clinic-header {
   color: black;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   font-size : 5rem;
   font-family: 'Signika', sans-serif;
 }
-
-
 .clinic-parentCard .clinic-card {
   background-color: #f7f5f5;
   border-radius: 8px;
@@ -25,6 +17,7 @@
   border-bottom: 1px solid #ff642e;
   transition: all 0.4s;
   padding-bottom: 0.5rem;
+  /* width: 350px; */
 
 }
 .clinic-parentCard .clinic-card:hover{
@@ -102,7 +95,7 @@ color: rgb(0, 0, 0);
 
 .clinic-popup-content .clinic-close-btn {
   background-color: #ff642e;
-  color: #f7f5f5;
+  color: #333;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -121,15 +114,13 @@ color: rgb(0, 0, 0);
   margin: auto;
 }
 
-
-
-.clinc-section {
+/* .clinc-section {
   position: relative;
   justify-content: center;
   align-items: center; 
-  margin-top: 40px;
-}
-
+  
+} */
+/* 
 .clinc-section::before {
   content: "";
   position: absolute;
@@ -137,9 +128,9 @@ color: rgb(0, 0, 0);
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../../../public/Images/clincbg.jpg);
+ 
   background-size: cover;
   background-position: center;
-  filter: blur(3px); /* Adjust the blur intensity as needed */
+  filter: blur(3px); 
   z-index: -1;
-}
+} */

@@ -13,6 +13,7 @@ import {
   faClock,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 //Component
 const Footer = () => {
@@ -35,16 +36,16 @@ const Footer = () => {
             <h4>company</h4>
             <ul>
               <li>
-                <a href="#">about us</a>
+                <Link to="/">about us</Link>
               </li>
               <li>
-                <a href="#">our services</a>
+                <Link to="/clinc">our services</Link>
               </li>
               <li>
-                <a href="#">privacy policy</a>
+                <Link to="/">privacy policy</Link>
               </li>
               <li>
-                <a href="#">affiliate program</a>
+                <Link to="/">affiliate program</Link>
               </li>
             </ul>
           </div>
@@ -66,7 +67,7 @@ const Footer = () => {
               </li>
               <li className="contact-info">
                 <FontAwesomeIcon className="footerIcon" icon={faEnvelope} />{" "}
-                example@example.com
+                Wanas@example.com
               </li>
             </ul>
           </div>
