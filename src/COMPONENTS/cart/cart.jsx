@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { useNavigate } from "react-router-dom";
 import CartItem from "./cart-item";
+import {PayPalScriptProvider,PayPalButtons} from "@paypal/react-paypal-js"
+
 
 //Component
 const Cart = () => {
@@ -73,7 +75,28 @@ const Cart = () => {
           display: "flex",
           justifyContent: "center",
           marginTop: "2rem",
-        }}></div>
+        }}>
+                  <PayPalScriptProvider options={{"client-id":"AdhDbKF_Lov12WaVtt1dRbyhS4W3Np2M9SfjGlY5vrs4q8NOwMjG8icMqBxlvvdsOWjTilS-iVYyWdpD"}}>
+           <PayPalButtons
+            createOrder={(data, actions) => {
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        value: totalAmount,
+                      },
+                    },
+                  ],
+                });
+              }}
+              onApprove={async (data, actions) => {
+                const details = await actions.order.capture();
+                const name = details.payer.name.given_name;
+                alert("Transaction completed by " + name);
+              }}
+            />
+        </PayPalScriptProvider>
+        </div>
     </div>
   );
 };

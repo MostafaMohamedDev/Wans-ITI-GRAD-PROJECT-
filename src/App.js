@@ -40,7 +40,7 @@ const App = () => {
         <Route path="/profile" element={<ShelterProfile />} />
         <Route path="/login" element={<Login />} />
         <Route  path="/logout" element={<Logout />} />
-        <Route path="/Admin" element={<Admin/>} />
+        <Route path="/admin/*" element={<Admin/>} />
         <Route path = "/post">
           <Route path=":id" element={<Post/>} />
         </Route> 

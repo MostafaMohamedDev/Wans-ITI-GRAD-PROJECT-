@@ -5,10 +5,7 @@ import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import {
-  setSession,
-  getSession,
-  removeSession,
-  getCurrentTime,
+  getSession
 } from "../../helper";
 import { ApiContext } from "../../context/API-Context";
 import { constants } from "../../constants";
@@ -62,7 +59,7 @@ const ShelterProfile = () => {
     address: "",
     working_hours: "",
     description: "",
-    animal_type: "",
+    animal_type: "dog",
     approval: "pending",
     service_type: "",
   });
@@ -100,7 +97,7 @@ const ShelterProfile = () => {
       address: "",
       working_hours: "",
       description: "",
-      animal_type: "",
+      animal_type: "dog",
       approval: "pending",
       service_type: "",
     });
