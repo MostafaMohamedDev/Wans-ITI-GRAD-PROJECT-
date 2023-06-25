@@ -19,14 +19,14 @@
   .navbar-collapse{
     background-color: #212529;
   }
-  .nav-item {
+  .nav-link {
     margin-right: 50px;
     font-size:18px;
     transition: color 0.9s ease-in-out;
   }
-  .nav-item:hover,
-  .nav-item:focus {
-    color: #ff642e
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #ff642e;
   }
  .languages input{
   width:50px;

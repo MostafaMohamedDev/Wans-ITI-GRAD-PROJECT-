@@ -17,7 +17,9 @@
   border-bottom: 1px solid #ff642e;
   transition: all 0.4s;
   padding-bottom: 0.5rem;
+  margin-top: 4rem;
   /* width: 350px; */
+
 
 }
 .clinic-parentCard .clinic-card:hover{
