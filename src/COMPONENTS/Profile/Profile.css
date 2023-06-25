@@ -1,6 +1,6 @@
 
 .prof{
-   background-image: url("../../../public/Images/10.webp"); 
+   background-image: url("../../../public/Images/blog6.webp"); 
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
@@ -11,7 +11,7 @@
 }
 .info{
   position: absolute;
-  background-image: url("../../../public/Images/10.webp"); 
+  background-image: url("../../../public/Images/blog3.webp"); 
   background-repeat: no-repeat;
   background-size: 100%;
   top: 60%;

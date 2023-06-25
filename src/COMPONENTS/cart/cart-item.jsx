@@ -17,9 +17,9 @@ const CartItem = ({ data }) => {
 
   return (
     <div className="cartSection">
-      <div className="container  ">
-        <div className="row cart-card m-5  ">
-          <div className="col-sm-12 col-md-4 cart-Item  ">
+      <div className="container mb-5  ">
+        <div className="row cart-card mb-6 ">
+          <div className="col-sm-12 col-md-4 cart-Item mt-5 ">
             <div className="preview">
               <img
                 src={URL+"/" + image}
