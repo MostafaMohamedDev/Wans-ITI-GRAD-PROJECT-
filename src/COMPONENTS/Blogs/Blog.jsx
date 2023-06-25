@@ -14,7 +14,7 @@ const Blog = () => {
     {
         species: "Dog",
         name: "Fluffy",
-        title:    "The Benefits of Regular Exercise for Dogs",
+        title:    "The Benefits of Regular Exercise for All Dogs",
         overview: "Regular exercise is essential for keeping your dog healthy and happy. In this blog post, we'll explore the many benefits of exercise for dogs, including improved physical health, better behavior",
         breed: "Labrador Retriever",
         age: 3,

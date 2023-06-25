@@ -5,6 +5,11 @@
   font-size : 5rem;
   font-family: 'Signika', sans-serif;
 }
+
+.ClincImage{
+margin-bottom : 50px}
+
+
 .clinic-parentCard .clinic-card {
   background-color: #f7f5f5;
   border-radius: 8px;
@@ -120,9 +125,10 @@ color: rgb(0, 0, 0);
   position: relative;
   justify-content: center;
   align-items: center; 
-  
-} */
-/* 
+
+}
+
+>>>>>>> main
 .clinc-section::before {
   content: "";
   position: absolute;
@@ -130,7 +136,9 @@ color: rgb(0, 0, 0);
   left: 0;
   right: 0;
   bottom: 0;
- 
+
+  background-image: url(../../../public/Images/clincbg.webp);
+>>>>>>> main
   background-size: cover;
   background-position: center;
   filter: blur(3px); 

@@ -7,7 +7,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import clincImage from "../../images/clinc.jpg";
+import clincImage from "../../images/clinc.webp";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { constants } from "../../constants";
@@ -41,7 +41,7 @@ const Clinics = () => {
         <img
           src={clincImage}
           alt="Header"
-          className="responsive-image"
+          className="responsive-image ClincImage "
           width="100%"
         />
       </div>

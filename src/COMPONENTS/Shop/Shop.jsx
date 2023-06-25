@@ -1,6 +1,6 @@
 import React from "react";
 import "./Shop.css";
-import shopimage from "../../images/shelter.jpg";
+import shopimage from "../../images/shelter.webp";
 import Product from "./product";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";

@@ -51,7 +51,7 @@ const Header = () => {
         <div className="row">
           <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-1 col-sm-12 ">
             <img
-              className={`${styles.nav} ${styles.headimg} img-fluid ms-5`}
+              className={`${styles.nav} ${styles.headimg} img-fluid ms-5 ps-2`}
               src="Images/white.png"
               alt="Description of the image"
             />

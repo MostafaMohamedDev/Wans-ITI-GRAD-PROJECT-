@@ -52,7 +52,12 @@ const PartnersSlider = () => {
       <Slider {...settings} className="partners-slider mt-4">
         <div className="item">
           <a href="#1">
-            <img width="100%" src="Images/9.jpg" alt="img1" />
+         
+            <img
+              width="100%"
+              src="Images/9.webp"
+              alt="img1"
+            />
             <div className="layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("PetsCare Collection")} </h3>
@@ -63,7 +68,11 @@ const PartnersSlider = () => {
         </div>
         <div className="item">
           <a href="#1">
-            <img width="100%" src="Images/3.jpg" alt="img3" />
+            <img
+              width="100%"
+              src="Images/3.webp"
+              alt="img3"
+            />
             <div className="layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("Groovy pet Carrier")} </h3>
@@ -73,8 +82,15 @@ const PartnersSlider = () => {
           </a>
         </div>
         <div className="item">
-          <a href="#1" className="border-0">
-            <img width="100%" src="Images/2.jpg" alt="img2" />
+
+          <a
+            href="#1"
+            className="border-0">
+            <img
+              width="100%"
+              src="Images/2.webp"
+              alt="img2"
+            />
             <div className="layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("Ariika pet Bed")} </h3>
@@ -85,7 +101,12 @@ const PartnersSlider = () => {
         </div>
         <div className="item">
           <a href="#1">
-            <img width="100%" src="Images/4.jpg" alt="img1" />
+
+            <img
+              width="100%"
+              src="Images/4.webp"
+              alt="img1"
+            />
             <div className="layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("Suprium Rubber Dog Toys")} </h3>
@@ -96,7 +117,11 @@ const PartnersSlider = () => {
         </div>
         <div className="item">
           <a href="#1">
-            <img width="100%" src="Images/11.jpg" alt="img1" />
+            <img
+              width="100%"
+              src="Images/11.webp"
+              alt="img1"
+            />
             <div className="layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("Groovy pet Carrier-small")} </h3>
@@ -107,7 +132,11 @@ const PartnersSlider = () => {
         </div>
         <div className="item">
           <a href="#1">
-            <img width="100%" src="Images/10.jpg" alt="img1" />
+            <img
+              width="100%"
+              src="Images/10.webp"
+              alt="img1"
+            />
             <div className=" layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("Dogcare Collection")} </h3>
@@ -118,7 +147,11 @@ const PartnersSlider = () => {
         </div>
         <div className="item">
           <a href="#1">
-            <img width="100%" src="Images/7.jpg" alt="img1" />
+            <img
+              width="100%"
+              src="Images/7.webp"
+              alt="img1"
+            />
             <div className="layer">
               <div className="layer-content">
                 <h3 className="slidHead"> {t("Catmania Cat litter")} </h3>

@@ -30,7 +30,7 @@ const CardSection = () => {
             <div
               className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
-              <Link to="/Clinc" className={`card ${styles.card}`} data-aos="fade-up-right">
+              <Link to="/Clinc"   style={{ color: "white" }} className={`card ${styles.card}`} data-aos="fade-up-right">
                 <img
                   src="Images/vetclinic.webp"
                   alt="Im1"
@@ -52,7 +52,7 @@ const CardSection = () => {
             <div
               className={`${styles.cardCircle} ${styles.peMd3} ${styles.peSm0} ${styles.psMd3} ${styles.psSm0} col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center`}
             >
-              <Link to="/Shop"   className={`card ${styles.card}`} data-aos="fade-up">
+              <Link to="/Shop"  style={{ color: "white" }} className={`card ${styles.card}`} data-aos="fade-up">
                 <img
                   src="Images/shoop.webp"
                   alt="Im2"

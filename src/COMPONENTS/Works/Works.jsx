@@ -32,7 +32,11 @@ const Works = () => {
               className="cardd red col-lg-4 col-md-6 col-sm-12"
               data-aos="fade-up"
             >
-              <img src="images/search.jpg" alt="Image 1" className="F-img" />
+              <img
+                src="images/search.webp"
+                alt="Image 1"
+                className="F-img"
+              />
               <h3 className="works-title"> {t("Search Services")}</h3>
               <p className="works-description">
                 {t(
@@ -44,7 +48,10 @@ const Works = () => {
               className="cardd blue col-lg-4 col-md-6 col-sm-12"
               data-aos="fade-up"
             >
-              <img src="images/book.jpg" alt="Image 2" />
+              <img
+                src="images/book.webp"
+                alt="Image 2"
+              />
               <h3 className="works-title">{t("Book & Pay")}</h3>
               <p className="works-description">
                 {t(
@@ -56,7 +63,10 @@ const Works = () => {
               className="cardd green col-lg-4 col-md-6 col-sm-12"
               data-aos="fade-up"
             >
-              <img src="images/relax.jpg" alt="Image 3" />
+              <img
+                src="images/relax.webp"
+                alt="Image 3"
+              />
               <h3 className="works-title">{t("Relax")}</h3>
               <p className="works-description">
                 {t(

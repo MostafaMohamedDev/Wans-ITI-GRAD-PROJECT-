@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import "./Shelter.css";
-import headerImage from "../../images/adopt1.jpg";
-import headerImageHover from "../../images/adopt2.jpg";
+import headerImage from "../../images/adopt1.webp";
+import headerImageHover from "../../images/adopt2.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -156,9 +156,9 @@ const Shelters = () => {
 
             <img
               className="CatImg"
-              style={{ cursor: "grab", width: "65%", marginTop: "-45px" }}
+              style={{ cursor: "grab", width: "65%", marginTop: "45px" }}
               onClick={handleClickCat}
-              src="./Images/cat.jpg"
+              src="./Images/cat.webp"
               alt="Cat Icon"
             />
           </section>
@@ -196,7 +196,7 @@ const Shelters = () => {
                 marginLeft: "3rem",
               }}
               onClick={handleClickDog}
-              src="./Images/dog.jpg"
+              src="./Images/dog.webp"
               className="doggimage"
               alt="Dog Icon"
             />
@@ -232,7 +232,6 @@ const Shelters = () => {
                     />
                     <div className="card__header-text">
                       <h3 className="card__title">{shelter.name}</h3>
-                      <span className="card__status">{shelter.user_name}</span>
                     </div>
                   </div>
                   <p className="card__description">{shelter.description}</p>

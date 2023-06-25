@@ -15,8 +15,7 @@ const Cart = () => {
   const navigate = useNavigate();
   return (
     <div className="cart">
-      <div className="shopTitle">
-        <h1>Pets Shop Cart</h1>
+      <div >
       </div>
       <div className="cartProduct">
         {productItems.map((product) => {
