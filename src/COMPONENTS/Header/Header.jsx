@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import styles from "./Header.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom"; // Import Link component for internal navigation
+
 
 //Component
 const Header = () => {
@@ -49,17 +51,20 @@ const Header = () => {
         <div className="row">
           <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-1 col-sm-12 ">
             <img
-              className={`${styles.nav} ${styles.headimg} img-fluid`}
+              className={`${styles.nav} ${styles.headimg} img-fluid ms-5 ps-2`}
               src="Images/white.png"
               alt="Description of the image"
             />
 
-            <div className={`${styles.headerContent} text-center`}>
+            <div className={`${styles.headerContent}    text-center`}>
               <p>
               {t("  Where Pets are Family! Discover a comprehensive directory of pet clinics, expert articles, and helpful resources for optimal pet care. Join our community of passionate pet lovers and ensure your furry friends live their happiest, healthiest lives. Find trusted veterinarians, explore pet care topics, and connect with like-minded individuals at Wans. Your go-to destination for all things pets.")}
               </p>
-              <button className={` ${styles.headerBtn} `}>  {t("LEARN MORE")}  </button>
-
+              <div className="text-center mt-5  headerBtn">
+                   <Link to="/Login" className={`btn2 ${styles.headerBtn} headerBtn mt-5  px-5`} style={{ textDecoration: "none" }}>
+                        {t("Join Us")}
+                    </Link>
+              </div>
 
 
 

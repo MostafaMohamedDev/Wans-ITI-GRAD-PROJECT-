@@ -39,7 +39,7 @@ const ShelterProfile = () => {
 
   const [auth, setAuth] = useState({});
 
-  const [profileImage, setProfileImage] = useState("./Images/profile .jpg");
+  const [profileImage, setProfileImage] = useState("./Images/profile.webp");
   const fileInputRef = useRef(null);
 
   const handleEdit = () => {

@@ -19,7 +19,7 @@ const User = () => {
       <div className={styles.row}>
         <div className={styles.column}>
           <div className={styles.card}>
-            <img src="../Images/busines2.jpg" alt="Business" className={styles.image} />
+            <img src="../Images/busines2.webp" alt="Business" className={styles.image} />
             <button
               onClick={handleClientFormClick}
               className={`${styles.btn} ${styles.businessBtn}`}
@@ -30,7 +30,7 @@ const User = () => {
         </div>
         <div className={styles.column}>
           <div className={styles.card}>
-            <img src="../Images/owner.jpg" alt="User" className={styles.image} />
+            <img src="../Images/owner.webp" alt="User" className={styles.image} />
             <button
               onClick={handleUserFormClick}
               className={`${styles.btn} ${styles.userBtn}`}

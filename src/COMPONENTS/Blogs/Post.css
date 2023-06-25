@@ -1,0 +1,42 @@
+/* Post.css */
+
+/* Container styles */
+.post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Title styles */
+  .post-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff642e
+  }
+  
+  /* Image styles */
+  .post-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* Author styles */
+  .post-author {
+    font-style: italic;
+    color: #999;
+  }
+  
+  /* Time styles */
+  .post-time {
+    color: #666;
+  }
+  
+  /* Article styles */
+  .post-article {
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  

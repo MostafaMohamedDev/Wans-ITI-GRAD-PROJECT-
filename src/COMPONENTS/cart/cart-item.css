@@ -34,6 +34,13 @@ img {
 
 }
 
+.shopTitle{
+  font-family: 'Signika', sans-serif;
+  font-weight : bolder;
+text-align : center;
+margin-top : 4rem;
+font-size : 4rem
+}
 
   .btn-quantity {
     transition: background-color 0.3s ease;
@@ -189,7 +196,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(../../../public/Images/cart.jpg);
+    background-image: url(../../../public/Images/cart.webp);
     background-size: cover;
     background-position: center;
     filter: blur(2px); /* Adjust the blur intensity as needed */

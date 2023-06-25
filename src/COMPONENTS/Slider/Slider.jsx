@@ -58,7 +58,7 @@ const PartnersSlider = () => {
           <a href="#1">
             <img
               width="100%"
-              src="Images/9.jpg"
+              src="Images/9.webp"
               alt="img1"
             />
             <div className="layer">
@@ -73,7 +73,7 @@ const PartnersSlider = () => {
           <a href="#1">
             <img
               width="100%"
-              src="Images/3.jpg"
+              src="Images/3.webp"
               alt="img3"
             />
             <div className="layer">
@@ -90,7 +90,7 @@ const PartnersSlider = () => {
             className="border-0">
             <img
               width="100%"
-              src="Images/2.jpg"
+              src="Images/2.webp"
               alt="img2"
             />
             <div className="layer">
@@ -105,7 +105,7 @@ const PartnersSlider = () => {
           <a href="#1">
             <img
               width="100%"
-              src="Images/4.jpg"
+              src="Images/4.webp"
               alt="img1"
             />
             <div className="layer">
@@ -120,7 +120,7 @@ const PartnersSlider = () => {
           <a href="#1">
             <img
               width="100%"
-              src="Images/11.jpg"
+              src="Images/11.webp"
               alt="img1"
             />
             <div className="layer">
@@ -135,7 +135,7 @@ const PartnersSlider = () => {
           <a href="#1">
             <img
               width="100%"
-              src="Images/10.jpg"
+              src="Images/10.webp"
               alt="img1"
             />
             <div className=" layer">
@@ -150,7 +150,7 @@ const PartnersSlider = () => {
           <a href="#1">
             <img
               width="100%"
-              src="Images/7.jpg"
+              src="Images/7.webp"
               alt="img1"
             />
             <div className="layer">

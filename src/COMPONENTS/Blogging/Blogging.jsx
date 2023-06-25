@@ -1,8 +1,6 @@
-/** @format */
-
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import styles from "./Blogging.module.css"; // Update the import statement
+import styles from "./Blogging.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +11,6 @@ import { constants } from "../../constants";
 
 const URL = constants.API_HOST;
 
-//component
 const Blogging = () => {
   const settings = {
     dots: true,
@@ -23,7 +20,7 @@ const Blogging = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    cssEase: "linear", // Add smooth transition
+    cssEase: "linear",
   };
 
   const [blogData, setBlogData] = useState([]);
@@ -35,6 +32,7 @@ const Blogging = () => {
   }, []);
 
   const [postId, setPostId] = useState("");
+
   return (
     <>
       <div className={styles.BlogSection}>
@@ -46,8 +44,12 @@ const Blogging = () => {
           />
         </div>
         {blogData.map((item, index) => (
-          <Link to={"/Post/" + item.id} key={index}>
-            <div >
+          <Link
+            to={"/Post/" + item.id}
+            key={index}
+            style={{ textDecoration: "none" }}
+          >
+            <div>
               <div className={`${styles["blog-articals"]} container mt-5`}>
                 <div className="card mb-3">
                   <div className="row g-0">
@@ -63,7 +65,6 @@ const Blogging = () => {
                         <h5 className={`${styles.h5} card-titleBlog`}>
                           {item.title}
                         </h5>
-
                         <p className={`${styles.p} card-text`}>
                           {item.abstract}
                         </p>
@@ -89,7 +90,6 @@ const Blogging = () => {
                             className={styles.star}
                           />
                         </div>
-
                         <p className={`${styles.p} card-text`}>
                           <small className="text-muted">{item.time}</small>
                         </p>
@@ -101,7 +101,6 @@ const Blogging = () => {
             </div>
           </Link>
         ))}
-        ;
       </div>
     </>
   );

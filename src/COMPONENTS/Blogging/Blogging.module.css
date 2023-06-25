@@ -23,7 +23,6 @@
   position: relative;
   justify-content: center;
   align-items: center; 
-  margin-top: 40px;
 }
 
 .BlogSection::before {
@@ -33,7 +32,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../../../public/Images/blogbg.jpg);
+  background-image: url(../../../public/Images/blogbg.webp);
   background-size: cover;
   background-position: center;
   filter: blur(3px); /* Adjust the blur intensity as needed */
@@ -62,7 +61,10 @@ z-index: 9999;
   font-weight: 500;
   font-family: "Mukta", sans-serif;
   margin-top: 2rem;
-  text-align: justify;}
+  text-align: justify;
+color : black ;
+ text-decoration : none
+}
 
 .card {
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 2);
