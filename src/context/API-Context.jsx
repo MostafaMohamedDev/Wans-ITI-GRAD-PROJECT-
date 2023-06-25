@@ -22,40 +22,7 @@ const ApiContextProvider = (props) => {
     const redirect = useNavigate();
 // /////////////////////product////////////////////
 
-     // site states product
-     const [productData, setProductData] = useState(null);
-     const [productUpdated, setProductUpdated] = useState(false)
-
-
-       // CRUD operations for products
-       const fetchProductData = async () => {
-        const response = await ajax(productUrl);
-        const data = await response.json();
-        setProductData(data.data)  
-    }
-
-  const createProduct = async (Product) => {
-    const response = await ajax(productUrl,"post",Product);
-    const newProduct = await response.json();
-    setProductData((productData) => [...productData, newProduct]);
-    setProductUpdated(true)
-  };
-
-  const updateProductData = async (id, updatedPro) => {
-    const response = await ajax(`${productUrl}/${id}`, updatedPro);
-    const updatedProduct = await response.json();
-    const updatedProductData = productData.map((product) => (product.id === id ? updatedProduct : product));
-    setProductData(updatedProductData)
-    setProductUpdated(true)
-  };
-
-  const deleteProduct = async (id) => {
-    await ajax(`${productUrl}/${id}`,"delete");
-    setProductData(productData.filter((product) => product.id !== id));
-    setProductUpdated(true)
-  };
-
-
+     
 
 
 
@@ -129,18 +96,15 @@ const updateData = async (id, data,file) => {
     }
     useEffect(() => {
         fetchData();
-        fetchProductData();
     }, [])
 
     useEffect(() => {
         if (dataUpdated) {
             fetchData();
             setDataUpdated(false)
-        }else if(productUpdated){
-            fetchProductData();
-            setProductUpdated(false)
-        }
-    }, [dataUpdated,productUpdated])
+
+       }
+    }, [dataUpdated])
 // //////////////////////////////////////admin/////////////////////////////////////////////////
 ///////////////users/////////////////
 const createAdminData = async (data) => {
@@ -174,10 +138,7 @@ const updateAdminData = async (id, data) => {
         createAdminData,
         updateAdminData,
         // products
-        productData,
-        createProduct,
-        updateProductData,
-        deleteProduct
+
 
 
         

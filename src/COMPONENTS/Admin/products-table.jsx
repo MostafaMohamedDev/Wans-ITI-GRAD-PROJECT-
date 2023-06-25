@@ -1,17 +1,75 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Spinner, Table, Form, Button, Col, Row } from 'react-bootstrap';
-import { ApiContext } from "../../context/API-Context";
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { Spinner, Table, form, button, Col, Row } from 'react-bootstrap';
+// import { ApiContext } from "../../context/API-Context";
+import { ajax } from '../../libCustomAjax_v1';
+
+import { constants } from '../../constants';
+
+const URL = constants.API_HOST; 
+
+const productUrl = URL+"/api/product"
+
 
 const ProductsTable = () => {
-const { productData, createProduct, updateProductData, deleteProduct } = useContext(ApiContext);
+
+    // site states product
+    const [productData, setProductData] = useState(null);
+    const [productUpdated, setProductUpdated] = useState(false)
+
+
+      // CRUD operations for products
+      const fetchProductData = async () => {
+       const response = await ajax(productUrl);
+       const data = await response.json();
+       setProductData(data.data)  
+   }
+
+ const createProduct = async (Product,file) => {
+   file = (file.value)? file:null
+   const response = await ajax(productUrl,"post",Product,file);
+   console.log(response);
+   const newProduct = await response.json();
+   console.log(newProduct);
+   setProductData((productData) => [...productData, newProduct]);
+   setProductUpdated(true)
+ };
+
+ const updateProductData = async (id, updatedPro,file) => {
+   file = (file.value)? file:null
+   const response = await ajax(`${productUrl}/${id}`,"post", updatedPro,file);
+   console.log(response);
+   const updatedProduct = await response.json();
+   console.log(updatedProduct);
+   const updatedProductData = productData.map((product) => (product.id === id ? updatedProduct : product));
+   setProductData(updatedProductData)
+   setProductUpdated(true)
+ };
+
+ const deleteProduct = async (id) => {
+   await ajax(`${productUrl}/${id}`,"delete");
+   setProductData(productData.filter((product) => product.id !== id));
+   setProductUpdated(true)
+ };
+ useEffect(() => {
+    fetchProductData();
+}, [])
+useEffect(() => {
+
+ if(productUpdated){
+        fetchProductData();
+        setProductUpdated(false)
+    }
+}, [productUpdated])
+
+
+const fileInputRef = useRef(null);
 const [newProduct, setNewProduct] = useState({
 name: '',
 description: '',
 price: '',
 approval: '',
 category: '',
-file: null,
-user_id: null,
+// user_id: null,
 });
 
 const [editProduct, setEditProduct] = useState({
@@ -21,14 +79,12 @@ description: '',
 price: '',
 approval: '',
 category: '',
-file: null,
 user_id: null,
 });
 
 const [showAddForm, setShowAddForm] = useState(false);
 const [showEditForm, setShowEditForm] = useState(false);
 const [isLoading, setIsLoading] = useState(false);
-const [errors, setErrors] = useState({});
 
 const handleInputChange = (event) => {
 const { name, value } = event.target;
@@ -36,55 +92,30 @@ setNewProduct({ ...newProduct, [name]: value });
 setEditProduct({ ...editProduct, [name]: value });
 };
 
-const handleFileChange = (event) => {
-setNewProduct({ ...newProduct, file: event.target.files[0] });
-setEditProduct({ ...editProduct, file: event.target.files[0] });
-};
-
 const handleAddProduct = async (event) => {
+    const file =
+    fileInputRef.current !== null ? fileInputRef.current : undefined;
 event.preventDefault();
-const errors = validateForm(newProduct);
-if (Object.keys(errors).length === 0) {
-setIsLoading(true);
-const formData = new FormData();
-formData.append('name', newProduct.name);
-formData.append('description', newProduct.description);
-formData.append('price', newProduct.price);
-formData.append('approval', newProduct.approval);
-formData.append('category', newProduct.category);
-formData.append('file', newProduct.file);
-formData.append('user_id', newProduct.user_id);
-await createProduct(formData);
+await createProduct(newProduct,file);
 setNewProduct({
 name: '',
 description: '',
 price: '',
 approval: '',
 category: '',
-file: null,
-user_id: null,
+// file: null,
+// user_id: null,
 });
 setShowAddForm(false);
 setIsLoading(false);
-} else {
-setErrors(errors);
-}
-};
+} 
 
-const handleEditProduct = async (event) => {
-event.preventDefault();
-const errors = validateForm(editProduct);
-if (Object.keys(errors).length === 0) {
-setIsLoading(true);
-const formData = new FormData();
-formData.append('name', editProduct.name);
-formData.append('description', editProduct.description);
-formData.append('price', editProduct.price);
-formData.append('approval', editProduct.approval);
-formData.append('category', editProduct.category);
-formData.append('file', editProduct.file);
-formData.append('user_id', editProduct.user_id);
-await updateProductData(editProduct.id, formData);
+const handleEditProduct = async (event) => {    
+    event.preventDefault();
+
+    const file = fileInputRef.current !== null ? fileInputRef.current : undefined;
+
+await updateProductData(editProduct.id, editProduct,file);
 setEditProduct({
 id: '',
 name: '',
@@ -92,53 +123,17 @@ description: '',
 price: '',
 approval: '',
 category: '',
-file: null,
 user_id: null,
 });
 setShowEditForm(false);
 setIsLoading(false);
-} else {
-setErrors(errors);
-}
-};
+} 
+
 
 const handleDeleteProduct = (id) => {
 deleteProduct(id);
 };
 
-const validateForm = (formData) => {
-const errors = {};
-if (!formData.name) {
-errors.name = 'Name is required';
-}
-if (!formData.price) {
-errors.price = 'Price is required';
-} else if (!/^\d+$/.test(formData.price)) {
-errors.price = 'Price must be a valid integer';
-}
-if (!formData.approval) {
-errors.approval = 'Approval is required';
-} else if (!['pending', 'approved', 'rejected'].includes(formData.approval)) {
-errors.approval = 'Approval must be either pending, approved, or rejected';
-}
-if (!formData.category) {
-errors.category = 'Category is required';
-} else if (!['food', 'toys', 'accessories', 'beds', 'grooming'].includes(formData.category)) {
-errors.category = 'Category must be one of food, toys, accessories, beds, or grooming';
-}
-if (!formData.file) {
-errors.file = 'File is required';
-} else {
-const allowedTypes = ['image/jpeg', 'image/png', 'image/bmp', 'image/tiff', 'image/webp', 'image/heif'];
-if (!allowedTypes.includes(formData.file.type)) {
-errors.file = 'File type not allowed. Allowed types are: jpg, jpeg, bmp, png, tiff, webp, and heif';
-}
-if (formData.file.size > 10000000) {
-errors.file = 'File size exceeds 10MB';
-}
-}
-return errors;
-};
 
 useEffect(() => {
 setIsLoading(true);
@@ -160,54 +155,49 @@ return (
 <br />
 <br />
 <br />
-<Button onClick={() => setShowAddForm(true)}>Add</Button>
+<button onClick={() => setShowAddForm(true)}>Add</button>
 {showAddForm && (
-<Form onSubmit={handleAddProduct}>
-<Form.Group>
-<Form.Label>Name</Form.Label>
-<Form.Control type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
-{errors.name && <Form.Text className="text-danger">{errors.name}</Form.Text>}
-</Form.Group>
-<Form.Group>
-<Form.Label>Description</Form.Label>
-<Form.Control type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
-</Form.Group>
-<Form.Group>
-<Form.Label>Price</Form.Label>
-<Form.Control type="number" name="price" value={newProduct.price} onChange={handleInputChange} />
-{errors.price && <Form.Text className="text-danger">{errors.price}</Form.Text>}
-</Form.Group>
-<Form.Group>
-<Form.Label>Approval</Form.Label>
-<Form.Control as="select" name="approval" value={newProduct.approval} onChange={handleInputChange}>
+<form onSubmit={handleAddProduct}>
+<dev>
+<label>Name</label>
+<input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
+</dev>
+<dev>
+<label>Description</label>
+<input type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
+</dev>
+<dev>
+<label>Price</label>
+<input type="number" name="price" value={newProduct.price} onChange={handleInputChange} />
+</dev>
+<dev>
+<label>Approval</label>
+<select as="select" name="approval" value={newProduct.approval} onChange={handleInputChange}>
 <option value="">-- Select Approval --</option>
 <option value="pending">Pending</option>
 <option value="approved">Approved</option>
 <option value="rejected">Rejected</option>
-</Form.Control>
-{errors.approval && <Form.Text className="text-danger">{errors.approval}</Form.Text>}
-</Form.Group>
-<Form.Group>
-<Form.Label>Category</Form.Label>
-<Form.Control as="select" name="category" value={newProduct.category} onChange={handleInputChange}>
+</select>
+</dev>
+<dev>
+<label>Category</label>
+<select as="select" name="category" value={newProduct.category} onChange={handleInputChange}>
 <option value="">-- Select Category --</option>
 <option value="food">Food</option>
 <option value="toys">Toys</option>
 <option value="accessories">Accessories</option>
 <option value="beds">Beds</option>
 <option value="grooming">Grooming</option>
-</Form.Control>
-{errors.category && <Form.Text className="text-danger">{errors.category}</Form.Text>}
-</Form.Group>
-<Form.Group>
-<Form.Label>Image</Form.Label>
-<Form.File name="file" onChange={handleFileChange} />
-{errors.file && <Form.Text className="text-danger">{errors.file}</Form.Text>}
-</Form.Group>
-<Button variant="primary" type="submit">
+</select>
+</dev>
+<dev>
+<label>Image</label>
+<input type="file" name="file"  ref={fileInputRef}/>
+</dev>
+<button variant="primary" type="submit">
 Submit
-</Button>
-</Form>
+</button>
+</form>
 )}
 {isLoading ? (
 <Spinner animation="border" />
@@ -241,20 +231,15 @@ productData.map((product) => (
 <img src={product.image} alt="product" />
 </td>
 <td>
-<Button variant="danger" onClick={() => handleDeleteProduct(product.id)}>
+<button variant="danger" onClick={() => handleDeleteProduct(product.id)}>
 Delete
-</Button>
+</button>
 </td>
 <td>
-<Button
-variant="warning"
-onClick={() => {
-setEditProduct(product);
-setShowEditForm(true);
-}}
->
-Update
-</Button>
+<button variant="warning" onClick={() => { setEditProduct(product);
+     setShowEditForm(true);}}>Update</button>
+{/* <button onClick={() => setShowAddForm(true)}>Add</button> */}
+
 </td>
 </tr>
 ))}
@@ -262,52 +247,47 @@ Update
 </Table>
 )}
 {showEditForm && (
-<Form onSubmit={handleEditProduct}>
-<Form.Group>
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" name="name" value={editProduct.name} onChange={handleInputChange} />
-            {errors.name && <Form.Text className="text-danger">{errors.name}</Form.Text>}
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Description</Form.Label>
-            <Form.Control type="text" name="description" value={editProduct.description} onChange={handleInputChange} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Price</Form.Label>
-            <Form.Control type="number" name="price" value={editProduct.price} onChange={handleInputChange} />
-            {errors.price && <Form.Text className="text-danger">{errors.price}</Form.Text>}
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Approval</Form.Label>
-            <Form.Control as="select" name="approval" value={editProduct.approval} onChange={handleInputChange}>
+<form onSubmit={handleEditProduct}>
+<dev>
+            <label>Name</label>
+            <input type="text" name="name" value={editProduct.name} onChange={handleInputChange} />
+          </dev>
+          <dev>
+            <label>Description</label>
+            <input type="text" name="description" value={editProduct.description} onChange={handleInputChange} />
+          </dev>
+          <dev>
+            <label>Price</label>
+            <input type="number" name="price" value={editProduct.price} onChange={handleInputChange} />
+          </dev>
+          <dev>
+            <label>Approval</label>
+            <select as="select" name="approval" value={editProduct.approval} onChange={handleInputChange}>
               <option value="">-- Select Approval --</option>
               <option value="pending">Pending</option>
               <option value="approved">Approved</option>
               <option value="rejected">Rejected</option>
-            </Form.Control>
-            {errors.approval && <Form.Text className="text-danger">{errors.approval}</Form.Text>}
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Category</Form.Label>
-            <Form.Control as="select" name="category" value={editProduct.category} onChange={handleInputChange}>
+            </select>
+          </dev>
+          <dev>
+            <label>Category</label>
+            <select as="select" name="category" value={editProduct.category} onChange={handleInputChange}>
               <option value="">-- Select Category --</option>
               <option value="food">Food</option>
               <option value="toys">Toys</option>
               <option value="accessories">Accessories</option>
               <option value="beds">Beds</option>
               <option value="grooming">Grooming</option>
-            </Form.Control>
-            {errors.category && <Form.Text className="text-danger">{errors.category}</Form.Text>}
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Image</Form.Label>
-            <Form.File name="file" onChange={handleFileChange} />
-            {errors.file && <Form.Text className="text-danger">{errors.file}</Form.Text>}
-          </Form.Group>
-          <Button variant="primary" type="submit">
+            </select>
+          </dev>
+          <dev>
+            <label>Image</label>
+            {/* <input type="file" name="file" ref={fileInputRef}/> */}
+          </dev>
+          <button variant="primary" type="submit">
             Submit
-          </Button>
-        </Form>
+          </button>
+        </form>
       )}
     </div>
   );
