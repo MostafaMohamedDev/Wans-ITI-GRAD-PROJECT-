@@ -3,7 +3,14 @@ import styles from "./Login.module.css"; // Update the CSS file path
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ApiContext } from "../../context/API-Context";
-import { setSession , getSession , removeSession ,  getCurrentTime } from "../../helper";
+import { setSession, getSession, removeSession, getCurrentTime } from "../../helper";
+import { ajax } from "../../libCustomAjax_v1";
+
+/* ### Start Khaled ########################################### */
+import { constants } from "../../constants";
+import "./loginResult.css";
+const URL = constants.API_HOST; 
+/* ### End Khaled ########################################### */
 
 //component
 const Login = () => {
@@ -22,26 +29,71 @@ const Login = () => {
 
 
   //Authentication
-  const {login} =useContext(ApiContext)
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   const [data, setData] = useState({
-    email:"",
-    password:""
-});
-const handleInputChange = (event) => {
-  const { name, value } = event.target;
-  setData({ ...data, [name]: value });
-}
+    email: "",
+    password: ""
+  });
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setData({ ...data, [name]: value });
+  }
+
+
+  /* ### Start Khaled ########################################### */
+  //data carier 
+  const [loginMessage  , setLoginMessage]= useState(null); 
+  const [loginWatingIndecator  , setLoginWatingIndecator]= useState(null); 
+  //login request  
+  const login = async (data) => {
+    //view wating indicator
+    setLoginWatingIndecator(true); 
+    const response = await ajax(URL + "/api/auth/login", "POST", data);
+    const newData = await response.json();
+    if (newData.status) {//login success
+      setLoginWatingIndecator(false); 
+      setSession('login', true);
+      setSession('auth', newData.record);
+    }else {//fail to login 
+      setLoginWatingIndecator(false); 
+      setLoginMessage(newData.msg); 
+    }
+    /*************/
+    const routeToHome = () => {
+      redirect("/");
+      window.location.reload();
+
+    }
+    if (getSession('login')) {
+      routeToHome();
+    }
+    /*************/
+  }
+
+  //Event for login 
   const logInFun = async (e) => {
     e.preventDefault();
     await login(data);
   };
+  /* ### End Khaled ########################################### */
 
   return (
     <div className={styles.login}>
+
       <div className={styles["login-container"]}>
         <div className={`${styles["form-container"]} ${styles["login-form"]}`}>
+          
+          {/* ### Start Khaled ########################################### */}
+            { loginWatingIndecator ? 
+                <h4>Please Wait . . . </h4>:null
+            }
+            
+            { loginMessage ? 
+              <h4 style={{"color":"red" , "text-align":"center"}} >{loginMessage} </h4> : null
+            }
+          {/* ### End Khaled ########################################### */}
+
           <h2 className={styles.h2}>Login</h2>
           <form onSubmit={logInFun}>
             <div className={styles["form-group"]}>
