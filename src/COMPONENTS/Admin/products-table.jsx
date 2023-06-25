@@ -15,6 +15,8 @@ const ProductsTable = () => {
     // site states product
     const [productData, setProductData] = useState(null);
     const [productUpdated, setProductUpdated] = useState(false)
+    const fileInputRef = useRef(null);
+
 
 
       // CRUD operations for products
@@ -62,7 +64,6 @@ useEffect(() => {
 }, [productUpdated])
 
 
-const fileInputRef = useRef(null);
 const [newProduct, setNewProduct] = useState({
 name: '',
 description: '',

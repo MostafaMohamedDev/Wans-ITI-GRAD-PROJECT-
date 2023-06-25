@@ -90,7 +90,7 @@ const Login = () => {
             }
             
             { loginMessage ? 
-              <h4 style={{"col or":"red" , "text-align":"center"}} >{loginMessage} </h4> : null
+              <h4 style={{"color":"red" , "text-align":"center"}} >{loginMessage} </h4> : null
             }
           {/* ### End Khaled ########################################### */}
 
